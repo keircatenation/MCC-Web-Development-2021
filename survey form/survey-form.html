@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Email Form</title>
+    <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </head>  
+  
+  <body>
+    <form action="https://mailthis.to/keircatenation" method="POST">
+      
+      <label for="yourName">Your Name: <input type="text" name="name" id="yourName"></label>
+      <label for="yourEmail">Your Email: <input type="email" name="email" id="yourEmail"></label>
+      <br/>
+      <label for="yourMessage">Your Message: <textarea name="message" id="yourMessage"></textarea></label>
+      <br/>
+      <label for="services">
+        <select name="services" id="services">
+          <option value="design">Design</option>
+          <option value="development">Development</option>
+          <option value="illustration">Illustration</option>
+          <option value="other">Other</option>
+        </select>
+      </label>
+
+      <input type="hidden" name="_subject" value="Contact form submitted">
+      <input type="hidden" name="_honeypot" value="">
+      <input type="hidden" name="_confirmation" value="">
+
+      <input type="submit" value="Send">
+    </form>
+
+
+  </body>
+</html>

@@ -1,0 +1,22 @@
+.card{
+    max-width: 520px;
+    background-color: lightgray;
+    position: relative;
+    margin: 3rem;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.card > img{
+    max-width: 40%;
+}
+
+.card-text{
+    position:absolute;
+    right:0;
+    top:0;
+    max-width: 49%;
+    padding: 1rem;
+    /*font-size:calc(12px + .5vw);*/
+    font-size:clamp(12px,2vw,18px);
+}

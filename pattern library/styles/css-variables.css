@@ -1,0 +1,10 @@
+:root{
+    --primary-color:#21c967;
+    --secondary-color: #003f56;
+        --secondary-transparent: rgba(0,63,86,.9); 
+    --dark-offset:#087c56;
+    --light-offset:#eeffff;
+    --para-font: 'Open Sans', sans-serif;
+    --header-font: 'Antonio', sans-serif;
+    --mono-font: 'Courier New', Courier, monospace;
+}
