@@ -1,0 +1,270 @@
+/*headings and basic paragraph styles*/
+
+h1,h2,h3,h4,h5,h6{
+    font-family: var(--header-font);
+    color: var(--secondary-color);
+}
+
+h1{
+    font-size:4rem;
+    margin:2rem 0 1rem;
+    padding-bottom:1rem;
+    border-bottom: solid 1px var(--primary-color);
+}
+
+h2{
+    font-size: 3rem;
+    margin:1.5rem 0 .5rem;
+}
+
+h3{
+    font-size:2.5rem;
+    margin: 1rem 0 .5rem;
+}
+
+h4{
+    font-size:2rem;
+    margin:1rem 0 .5rem;
+}
+
+h5{
+    font-size:1.5rem;
+    margin:1rem 0 .5rem;
+}
+
+h6{
+    font-size: 1.25rem;
+    margin:.75rem 0 .25rem;
+}
+
+p{
+    font-family: var(--para-font);
+    font-size: 1rem;
+    max-width: 60rem;
+    line-height: 1.5rem;
+    margin-bottom: .5rem;
+    margin-top:.25rem;
+}
+
+
+
+/*Block elements*/
+
+blockquote{
+    font-family: var(--para-font);
+    padding:1rem 5rem;
+    color: var(--secondary-color);
+    line-height: 1.25rem;
+}
+
+figcaption{
+    color: var(--secondary-color);
+    font-family: var(--para-font);
+    background-color: var(--light-offset);
+    margin:.1rem;
+    padding:.5rem;
+    font-size: .9rem;
+}
+
+details{
+    background-color: var(--light-offset);
+}
+
+details > summary{
+    font-family: var(--header-font);
+    color: var(--light-offset);
+    font-size: 1.5rem;
+    background-color: var(--dark-offset);
+    padding:1rem;
+    margin-top:1rem;
+}
+
+details > p{
+    padding: 1rem;
+}
+
+pre{
+    font-family: var(--mono-font);
+    overflow: auto;
+    margin:.5rem 0;
+}
+
+
+
+/*inline elements*/
+
+p a{
+    color:var(--dark-offset);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+p a:hover{
+    color:var(--primary-color);
+}
+
+abbr{
+    font-style: italic;
+    color: var(--secondary-color);
+}
+
+acronym{
+    color: var(--secondary-color);
+    text-transform: uppercase;
+}
+
+b{
+    font-weight: 700;
+}
+
+cite{
+    font-size: .9rem;
+}
+
+code {
+    background-color: var(--light-offset);
+    border-radius: 3px;
+    font-family: var(--mono-font);
+    color: var(--secondary-color);
+    white-space:pre;
+    word-wrap: break-word;
+    
+}
+
+pre > code{
+    display:block;
+    padding:1rem;
+    font-size:clamp(.7rem,2vw,1rem);
+}
+
+del{
+    color: var(--secondary-transparent);
+    font-style: italic;
+    text-decoration: 2px line-through;
+}
+
+dfn{
+    color:var(--secondary-transparent);
+    font-style: italic;
+}
+
+em{
+    font-style: italic;
+}
+
+i{
+    font-style:italic;
+}
+
+ins{
+    color: var(--secondary-color);
+    text-decoration: 2px underline;
+}
+
+kbd{
+    font-family: 'Courier New', Courier, monospace;
+    padding: .15rem .25rem;
+    background-color: var(--light-offset);
+    border:1px var(--secondary-color) solid;
+    border-radius: 5px;
+    color:var(--secondary-color);
+}
+
+mark{
+    background-color:var(--dark-offset);
+    color:var(--light-offset);
+    padding:.25rem .5rem;
+    font-size: .9rem;
+}
+
+pre > p{
+    font-family: var(--mono-font);
+    white-space: pre-wrap;
+}
+
+q {
+	quotes:initial;
+}
+
+s{
+    text-decoration: line-through;
+}
+
+samp{
+    font-family: 'Courier New', Courier, monospace;
+    padding: .5rem;
+}
+
+small{
+    font-size: .8rem;
+}
+
+strong{
+    font-weight: 700;
+}
+
+sub{
+    vertical-align: sub;
+    font-size: .8rem;
+}
+
+sup{
+    vertical-align: super;
+    font-size: .8rem;
+}
+
+time{
+    font-weight: 700;
+}
+
+u{
+    text-decoration: underline wavy var(--primary-color);
+}
+
+var{
+    font-style: italic;
+    font-weight: 700;
+}
+
+
+
+
+/*lists*/
+
+dl, ol, ul{
+    margin-left:1.5rem;
+    font-family: var(--para-font);
+    line-height: 1.25rem;;
+}
+
+ol:last-child, ul:last-child{
+    margin-bottom: .5rem;;
+}
+
+dt{
+    font-style: italic;
+}
+
+ol > li{
+    list-style:decimal inside;
+}
+
+ol > li > ol > li{
+    list-style: upper-alpha inside;
+}
+
+ol > li > ol > li > ol > li{
+    list-style: lower-roman inside;
+}
+
+ul > li{
+    list-style: inside circle;
+}
+
+ul > li > ul > li{
+    list-style: square inside;
+}
+
+ul > li > ul > li > ul > li{
+    list-style: disc inside;
+}

@@ -1,0 +1,60 @@
+
+/*Nav Bar element*/
+
+nav{
+    background-color: var(--secondary-color);
+    border:solid 2px var(--secondary-color);
+    border-bottom-width:1px;
+    position: sticky;
+    top:0;
+}
+
+nav > header{
+    background-color: var(--secondary-color);
+    padding:1rem 2rem 2rem;
+    border-bottom: solid 1px var(--light-offset);
+}
+
+nav > header > h1{
+    color:var(--light-offset);
+    border-bottom: none;
+}
+
+.nav-link{
+    display:block;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color:var(--dark-offset);
+    font-family:var(--para-font);
+    font-weight: 700;
+    border-bottom:solid 1px var(--dark-offset);
+}
+
+.nav-link:hover{
+    color:var(--primary-color);
+    background-color: var(--secondary-color);
+}
+
+main{
+    margin:0 2rem;
+}
+
+@media screen and (min-width:900px) {
+    nav{
+        width:275px;
+        
+    }
+
+}
+
+
+
+/*main section*/
+
+
+
+/*OTHER MISC.*/
+
+hr{
+    color:var(--primary-color);
+}
