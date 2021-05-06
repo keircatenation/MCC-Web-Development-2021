@@ -1,6 +1,8 @@
 nav{
     flex-direction: column;
     max-width:275px;
+    position: sticky;
+    top:0;
 }
 
 nav > header{

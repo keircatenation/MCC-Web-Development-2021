@@ -21,6 +21,8 @@ nav > header > h1{
     border-bottom: none;
 }
 
+/*get a hamburger menu in this thing!*/
+
 .collapsible-menu label{
     font-family:var(--header-font);
     font-size:1.25rem;
@@ -67,6 +69,8 @@ input:checked +label{
     border-bottom: none;
 }
 
+/*styling the menu links*/
+
 .nav-link{
     color:var(--dark-offset);
     font-family:var(--para-font);
@@ -81,24 +85,4 @@ input:checked +label{
 
 main{
     margin:0 2rem;
-}
-
-@media screen and (min-width:900px) {
-    nav{
-        width:275px;
-        
-    }
-
-}
-
-
-
-/*main section*/
-
-
-
-/*OTHER MISC.*/
-
-hr{
-    color:var(--primary-color);
 }
