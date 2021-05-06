@@ -5,14 +5,15 @@ nav{
     background-color: var(--secondary-color);
     border:solid 2px var(--secondary-color);
     border-bottom-width:1px;
-    position: sticky;
-    top:0;
+    display:flex;
+    flex-direction: column-reverse;
+    flex-wrap:wrap;
 }
 
 nav > header{
     background-color: var(--secondary-color);
     padding:1rem 2rem 2rem;
-    border-bottom: solid 1px var(--light-offset);
+    border-top: solid 1px var(--light-offset);
 }
 
 nav > header > h1{
@@ -20,14 +21,57 @@ nav > header > h1{
     border-bottom: none;
 }
 
-.nav-link{
+.collapsible-menu label{
+    font-family:var(--header-font);
+    font-size:1.25rem;
     display:block;
-    padding: 1rem 1.5rem;
-    text-decoration: none;
+    cursor:pointer;
+    background:url(menu-icon.png) no-repeat left center;
+    padding:1rem 0 1rem 3rem;
+    color:var(--light-offset);
+}
+
+input#menu{
+    display:none;
+}
+
+input:checked +label{
+    background-image:url(close-icon-01.png);
+}
+
+.menu-content{
+    max-height:0;
+    overflow:hidden;
+    margin:0;
+}
+
+ul.menu-content:last-child{
+    margin:0;
+}
+
+input:checked ~ .menu-content{
+    max-height:100%;
+}
+
+input:checked +label{
+    border-bottom:1px solid var(--light-offset);
+}
+
+.menu-content li{
+    border-bottom:solid 1px var(--dark-offset);
+    list-style: none;
+    padding:1rem 2rem;
+}
+
+.menu-content li:last-child{
+    border-bottom: none;
+}
+
+.nav-link{
     color:var(--dark-offset);
     font-family:var(--para-font);
     font-weight: 700;
-    border-bottom:solid 1px var(--dark-offset);
+    text-decoration: none;
 }
 
 .nav-link:hover{

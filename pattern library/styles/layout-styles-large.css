@@ -3,6 +3,10 @@ nav{
     max-width:275px;
 }
 
+nav > header{
+    border:none;
+}
+
 .menu-content{
     border-bottom: none;
     border-top:solid 1px var(--light-offset);
