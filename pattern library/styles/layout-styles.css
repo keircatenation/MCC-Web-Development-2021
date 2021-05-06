@@ -1,77 +1,18 @@
-/*the nav bar*/
+
+/*Nav Bar element*/
 
 nav{
     background-color: var(--secondary-color);
     border:solid 2px var(--secondary-color);
     border-bottom-width:1px;
-    display:flex;
-    flex-direction: column-reverse;
-    flex-wrap: wrap;
+    position: sticky;
+    top:0;
 }
-
-.menu-content{
-    font-size: 1rem;
-    border-bottom: solid 1px var(--light-offset);
-    margin-left:0;
-    max-height:0;
-    overflow:hidden;
-}
-
-.menu-content li{
-    text-decoration: none;
-    list-style: none;
-    border-bottom:solid 1px var(--dark-offset);
-    padding: 1rem 0rem;
-    margin: 0 2rem;
-}
-
-.menu-content li:last-child{
-    border:none;
-}
-
-.collapsible-menu label{
-    font-family:var(--header-font);
-    color:var(--light-offset);
-    font-size: 1rem;
-    letter-spacing: 1px;
-    display:block;
-    cursor:pointer;
-    padding:1rem 0 1rem 3rem;
-    border-bottom:1px solid var(--light-offset);
-    background-image: url(menu-icon.png);
-    background-repeat: no-repeat;
-}
-
-input#menu{
-    display: none;
-}
-
-.collapsible-menu input:checked +label{
-    background-image:url(close-icon-01.png);
-}
-
-input:checked ~ .menu-content{
-    max-height:100%;
-}
-
-.nav-link{
-    text-decoration: none;
-    color:var(--dark-offset);
-    font-family:var(--para-font);
-    font-weight: 700;
-}
-
-.nav-link:hover{
-    color:var(--primary-color);
-    background-color: var(--secondary-color);
-}
-
-/*the title of the page*/
 
 nav > header{
     background-color: var(--secondary-color);
     padding:1rem 2rem 2rem;
-    
+    border-bottom: solid 1px var(--light-offset);
 }
 
 nav > header > h1{
@@ -79,8 +20,41 @@ nav > header > h1{
     border-bottom: none;
 }
 
-/*the content of the page*/
+.nav-link{
+    display:block;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color:var(--dark-offset);
+    font-family:var(--para-font);
+    font-weight: 700;
+    border-bottom:solid 1px var(--dark-offset);
+}
+
+.nav-link:hover{
+    color:var(--primary-color);
+    background-color: var(--secondary-color);
+}
 
 main{
     margin:0 2rem;
+}
+
+@media screen and (min-width:900px) {
+    nav{
+        width:275px;
+        
+    }
+
+}
+
+
+
+/*main section*/
+
+
+
+/*OTHER MISC.*/
+
+hr{
+    color:var(--primary-color);
 }
