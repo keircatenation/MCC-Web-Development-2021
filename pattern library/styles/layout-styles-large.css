@@ -1,0 +1,17 @@
+nav{
+    flex-direction: column;
+    max-width:275px;
+}
+
+.menu-content{
+    border-bottom: none;
+    border-top:solid 1px var(--light-offset);
+}
+
+.collapsible-menu label{
+    display: none;
+}
+
+.menu-content{
+    max-height:100%;
+}

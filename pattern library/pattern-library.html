@@ -7,15 +7,11 @@
         <title>Keiran's Pattern Library</title>
 
         <link rel="stylesheet" href="styles/reset.css" type="text/css">
-        <link rel="stylesheet" href="styles/css-variables.css" type="text/css">
-        <link rel="stylesheet" href="styles/typography.css" type="text/css">
-        <link rel="stylesheet" href="styles/lists-tables-media.css" type="text/css">
-        <link rel="stylesheet" href="styles/pattern-styles-page.css" type="text/css">
-
-
-        <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="styles/pattern-library-styles.css" type="text/css">
+        <link rel="stylesheet" href="styles/layout-styles.css" type="text/css">
+        <link rel="stylesheet" media="screen and (min-width:1020px)" href="styles/layout-styles-large.css">
         
-        <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+        <!--<script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>-->
     </head>
 
     <body>
@@ -23,15 +19,22 @@
             <header>
                 <h1>Pattern Library: [NAME]</h1>
             </header>
-            <a href="#headings" class="nav-link">Headings</a>
-            <a href="#headings_with_text" class="nav-link">Headings with text</a>
-            <a href="#block_elements" class="nav-link">Block Elements</a>
-            <a href="#text_elements" class="nav-link">Text Elements</a>
-            <a href="#monospace_and_preformatted" class="nav-link">Monospace and Preformatted</a>
-            <a href="#list_types" class="nav-link">List Types</a>
-            <a href="#tables" class="nav-link">Tables</a>
-            <a href="#media_elements" class="nav-link">Media Elements</a>
-            <a href="#form_elements" class="nav-link">Form Elements</a>
+            <div class="collapsible-menu">
+                <input type="checkbox" id="menu"><label for="menu">MENU</label>
+
+                <ul class="menu-content">
+                    <li><a href="#headings" class="nav-link">Headings</a></li>
+                    <li><a href="#headings_with_text" class="nav-link">Headings with text</a></li>
+                    <li><a href="#block_elements" class="nav-link">Block Elements</a></li>
+                    <li><a href="#text_elements" class="nav-link">Text Elements</a></li>
+                    <li><a href="#monospace_and_preformatted" class="nav-link">Monospace and Preformatted</a></li>
+                    <li><a href="#list_types" class="nav-link">List Types</a></li>
+                    <li><a href="#tables" class="nav-link">Tables</a></li>
+                    <li><a href="#media_elements" class="nav-link">Media Elements</a></li>
+                    <li><a href="#form_elements" class="nav-link">Form Elements</a></li>
+                </ul>
+            </div>
+
         </nav>
         
         <main id="main-doc">

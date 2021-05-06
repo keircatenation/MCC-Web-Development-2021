@@ -1,3 +1,18 @@
+/*root variables and font imports*/
+
+@import url(https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap);
+
+:root{
+    --primary-color:#21c967;
+    --secondary-color: #003f56;
+        --secondary-transparent: rgba(0,63,86,.9); 
+    --dark-offset:#087c56;
+    --light-offset:#eeffff;
+    --para-font: 'Open Sans', sans-serif;
+    --header-font: 'Antonio', sans-serif;
+    --mono-font: 'Courier New', Courier, monospace;
+}
+
 /*headings and basic paragraph styles*/
 
 h1,h2,h3,h4,h5,h6{
@@ -6,40 +21,42 @@ h1,h2,h3,h4,h5,h6{
 }
 
 h1{
-    font-size:4rem;
+    font-size:clamp(3rem,5vw,4rem);
     margin:2rem 0 1rem;
     padding-bottom:1rem;
     border-bottom: solid 1px var(--primary-color);
 }
 
 h2{
-    font-size: 3rem;
+    
+    font-size:clamp(2.5rem,5vw,3rem);
     margin:1.5rem 0 .5rem;
 }
 
 h3{
-    font-size:2.5rem;
+    font-size:clamp(2rem,4vw,2.5rem);
     margin: 1rem 0 .5rem;
 }
 
 h4{
-    font-size:2rem;
+    font-size:clamp(1.5rem,3vw,2rem);
     margin:1rem 0 .5rem;
 }
 
 h5{
-    font-size:1.5rem;
+    font-size:clamp(1.25rem,2vw,1.5rem);
     margin:1rem 0 .5rem;
 }
 
 h6{
-    font-size: 1.25rem;
+    font-size:clamp(1.1rem,1.5vw,1.25rem);
     margin:.75rem 0 .25rem;
+    font-style: italic;
 }
 
 p{
     font-family: var(--para-font);
-    font-size: 1rem;
+    font-size: clamp(.9rem,2vw,1rem);
     max-width: 60rem;
     line-height: 1.5rem;
     margin-bottom: .5rem;
@@ -55,6 +72,7 @@ blockquote{
     padding:1rem 5rem;
     color: var(--secondary-color);
     line-height: 1.25rem;
+    font-size: clamp(.9rem,2vw,1rem);
 }
 
 figcaption{
@@ -73,7 +91,7 @@ details{
 details > summary{
     font-family: var(--header-font);
     color: var(--light-offset);
-    font-size: 1.5rem;
+    font-size:clamp(1.25rem,2vw,1.5rem);
     background-color: var(--dark-offset);
     padding:1rem;
     margin-top:1rem;
@@ -81,6 +99,10 @@ details > summary{
 
 details > p{
     padding: 1rem;
+}
+
+hr{
+    color:var(--primary-color);
 }
 
 pre{
@@ -126,13 +148,15 @@ code {
     border-radius: 3px;
     font-family: var(--mono-font);
     color: var(--secondary-color);
-    white-space:pre-wrap;
+    white-space:pre;
     word-wrap: break-word;
+    
 }
 
 pre > code{
     display:block;
     padding:1rem;
+    font-size:clamp(.7rem,2vw,1rem);
 }
 
 del{
@@ -222,4 +246,48 @@ u{
 var{
     font-style: italic;
     font-weight: 700;
+}
+
+
+
+
+/*lists*/
+
+dl, ol, ul{
+    margin-left:1.5rem;
+    font-family: var(--para-font);
+    line-height: 1.25rem;;
+    font-size: clamp(.9rem,2vw,1rem);
+}
+
+ol:last-child, ul:last-child{
+    margin-bottom: .5rem;;
+}
+
+dt{
+    font-style: italic;
+}
+
+ol > li{
+    list-style:decimal inside;
+}
+
+ol > li > ol > li{
+    list-style: upper-alpha inside;
+}
+
+ol > li > ol > li > ol > li{
+    list-style: lower-roman inside;
+}
+
+ul > li{
+    list-style: inside circle;
+}
+
+ul > li > ul > li{
+    list-style: square inside;
+}
+
+ul > li > ul > li > ul > li{
+    list-style: disc inside;
 }
