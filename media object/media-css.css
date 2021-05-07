@@ -19,7 +19,7 @@
     max-width: 520px;
     background-color: lightgray;
     position: relative;
-    margin: 3rem;
+    margin: 3rem auto;
     border-radius: 5px;
     overflow: hidden;
 }
@@ -116,4 +116,25 @@ button{
 
 button:hover{
     background-color: var(--bg-light-yellow);
+}
+
+/*flexbox card!!!*/
+
+.flexbox-container{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+}
+
+.flex-card-text{
+    padding:1rem;
+    width:60%;
+}
+
+.flex-caption{
+    font-size:clamp(12px,2vw,18px);
+}
+
+img{
+    object-fit: cover;
 }

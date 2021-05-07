@@ -1,17 +1,22 @@
 nav{
-    flex-direction: column;
-    max-width:275px;
-    position: sticky;
-    top:0;
+    width:275px;
 }
 
-nav > header{
+/*the sticky-nav class contains the nav content and sticks it to the top of the page on laptop screens*/
+.sticky-nav{
+    position:sticky;
+    top:0;
+    flex-direction: column;
+}
+
+nav  header{
     border:none;
 }
 
 .menu-content{
     border-bottom: none;
     border-top:solid 1px var(--light-offset);
+    border-bottom:solid 1px var(--light-offset);
 }
 
 .collapsible-menu label{
@@ -20,4 +25,12 @@ nav > header{
 
 .menu-content{
     max-height:100%;
+}
+
+.flex-container{
+    display:flex;
+}
+
+main{
+    max-width:70vw;
 }

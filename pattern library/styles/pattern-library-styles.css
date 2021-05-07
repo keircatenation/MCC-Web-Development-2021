@@ -107,7 +107,7 @@ hr{
 
 pre{
     font-family: var(--mono-font);
-    overflow: auto;
+    overflow:auto;
     margin:.5rem 0;
 }
 
@@ -261,7 +261,7 @@ dl, ol, ul{
 }
 
 ol:last-child, ul:last-child{
-    margin-bottom: .5rem;;
+    margin-bottom: .5rem;
 }
 
 dt{
@@ -281,13 +281,49 @@ ol > li > ol > li > ol > li{
 }
 
 ul > li{
-    list-style: inside circle;
+    list-style: url(bullet-star.png);
 }
 
-ul > li > ul > li{
-    list-style: square inside;
+dd{
+    margin-left:1rem;
+    margin-bottom:.5rem;
 }
 
-ul > li > ul > li > ul > li{
-    list-style: disc inside;
+
+
+/*tables*/
+
+table{
+    width:100%;
+    font-family: var(--para-font);
+    border:1px solid var(--secondary-color);
 }
+
+table caption{
+    margin: 1rem 0;
+    font-size: .9rem;
+}
+
+thead{
+    background-color: var(--secondary-color);
+    border:1px solid var(--secondary-color);
+    color:var(--light-offset);
+}
+
+th, td{
+    padding:1rem;
+}
+
+td{
+    border:1px solid var(--secondary-color);
+}
+
+tfoot{
+    background-color:var(--light-offset);
+    border:1px solid var(--secondary-color);
+}
+
+
+
+/*media elements*/
+

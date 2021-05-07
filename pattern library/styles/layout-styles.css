@@ -5,20 +5,24 @@ nav{
     background-color: var(--secondary-color);
     border:solid 2px var(--secondary-color);
     border-bottom-width:1px;
+}
+
+/*the sticky-nav class contains the nav content and sticks it to the top of the page on laptop screens*/
+.sticky-nav{
     display:flex;
     flex-direction: column-reverse;
     flex-wrap:wrap;
 }
 
-nav > header{
+nav  header{
     background-color: var(--secondary-color);
     padding:1rem 2rem 2rem;
     border-top: solid 1px var(--light-offset);
 }
 
-nav > header > h1{
+nav  header  h1{
     color:var(--light-offset);
-    border-bottom: none;
+    border-bottom: none; /*gets rid of the green border that's on every h1*/
 }
 
 /*get a hamburger menu in this thing!*/
