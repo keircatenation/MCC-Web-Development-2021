@@ -15,31 +15,8 @@
   padding: 0;
 }
 
-.card{
-    max-width: 520px;
-    background-color: lightgray;
-    position: relative;
-    margin: 3rem auto;
-    border-radius: 5px;
-    overflow: hidden;
-}
 
-.card > img{
-    max-width: 40%;
-}
-
-.card-text{
-    position:absolute;
-    right:0;
-    top:0;
-    max-width: 49%;
-    padding: 1rem;
-    /*font-size:calc(12px + .5vw);*/
-    font-size:clamp(12px,2vw,18px);
-}
-
-
-/*flexbox!!*/
+/*the navigation bar!!!!!*/
 
 header li, header a, header button, header p, button{
     font-family: "Montserrat", sans-serif;
@@ -118,7 +95,51 @@ button:hover{
     background-color: var(--bg-light-yellow);
 }
 
-/*flexbox card!!!*/
+/*teh flexbox aside!!!!*/
+
+main{
+    display:flex;
+}
+
+aside{
+    background:linear-gradient(120deg,lightgray,darkblue);
+    padding:5rem;
+    min-height:calc(100vh - 168px);
+}
+
+.main-content{
+    padding:2rem;
+    flex-basis:100%;
+}
+
+/*the cards!!!*/
+
+.card{
+    max-width: 520px;
+    background-color: lightgray;
+    position: relative;
+    margin: 1rem auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/*positioning-based card css*/
+
+.position-card > img{
+    max-width: 40%;
+}
+
+.card-text{
+    position:absolute;
+    right:0;
+    top:0;
+    max-width: 49%;
+    padding: 1rem;
+    /*font-size:calc(12px + .5vw);*/
+    font-size:clamp(12px,2vw,18px);
+}
+
+/*flex-based css*/
 
 .flexbox-container{
     display:flex;
@@ -131,10 +152,45 @@ button:hover{
     width:60%;
 }
 
-.flex-caption{
+.flex-caption, .grid-caption{
     font-size:clamp(12px,2vw,18px);
 }
 
-img{
+.flexbox-container > img{
     object-fit: cover;
+    max-width:40%;
+}
+
+/*grid-based css*/
+
+.grid-container{
+    display:grid;
+    grid-template-columns:150px auto;
+    grid-template-rows: 50px auto;
+}
+
+.grid-container > img{
+    object-fit:cover;
+    height:100%;
+    width:100%;
+    grid-row:1 / span 2;
+    grid-column:1;
+}
+
+.img-cap{
+    grid-row:2;
+    grid-column:1;
+    text-align: center;
+}
+
+.grid-title, .grid-caption{
+    padding:1rem;
+}
+
+.grid-title{
+    grid-row:1;
+}
+
+.grid-caption{
+    grid-row:2;
 }

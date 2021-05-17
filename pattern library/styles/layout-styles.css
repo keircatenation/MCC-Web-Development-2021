@@ -1,11 +1,12 @@
-
 /*Nav Bar element*/
 
 nav{
-    background-color: var(--secondary-color);
-    border:solid 2px var(--secondary-color);
+    background-color: var(--primary-color);
+    border:solid 2px var(--primary-color);
     border-bottom-width:1px;
 }
+
+
 
 /*the sticky-nav class contains the nav content and sticks it to the top of the page on laptop screens*/
 .sticky-nav{
@@ -15,7 +16,7 @@ nav{
 }
 
 nav  header{
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     padding:1rem 2rem 2rem;
     border-top: solid 1px var(--light-offset);
 }
@@ -64,29 +65,73 @@ input:checked +label{
 }
 
 .menu-content li{
-    border-bottom:solid 1px var(--dark-offset);
+    border-bottom:solid 1px var(--secondary-color);
     list-style: none;
-    padding:1rem 2rem;
+    text-align: center;
+    padding:1rem 0;
+    margin:0 2rem;
 }
 
 .menu-content li:last-child{
     border-bottom: none;
 }
 
+
+
 /*styling the menu links*/
 
 .nav-link{
-    color:var(--dark-offset);
+    color:var(--light-offset);
     font-family:var(--para-font);
     font-weight: 700;
     text-decoration: none;
 }
 
 .nav-link:hover{
-    color:var(--primary-color);
-    background-color: var(--secondary-color);
+    color:var(--secondary-color);
 }
+
+/*the main content & footer*/
 
 main{
     margin:0 2rem;
+    margin-bottom: 1rem;
+}
+
+footer{
+    font-size:.8rem;
+    font-family: var(--para-font);
+    color:var(--light-offset);
+    background-color: var(--primary-color);
+    padding:.5rem;
+}
+
+/*styling the areas of the form*/
+
+form{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.form-area{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border-bottom:1px solid var(--secondary-color);
+    padding:.5rem 0;
+}
+
+.form-area:last-of-type{
+    border:none;
+}
+
+.form-sub-area{
+    display:flex;
+    flex-direction: column;
+    width:50%;
+}
+
+output{
+    line-height: 3rem; /*this adequately spaces the output from the label on the page*/
 }

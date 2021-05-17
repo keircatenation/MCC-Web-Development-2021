@@ -5,32 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Email Form</title>
+    <title>Survey Form</title>
     <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
   </head>  
   
   <body>
-    <form action="https://mailthis.to/keircatenation" method="POST">
-      
-      <label for="yourName">Your Name: <input type="text" name="name" id="yourName"></label>
-      <label for="yourEmail">Your Email: <input type="email" name="email" id="yourEmail"></label>
-      <br/>
-      <label for="yourMessage">Your Message: <textarea name="message" id="yourMessage"></textarea></label>
-      <br/>
-      <label for="services">
-        <select name="services" id="services">
-          <option value="design">Design</option>
-          <option value="development">Development</option>
-          <option value="illustration">Illustration</option>
-          <option value="other">Other</option>
+    <h1 id="title">TITLE</h1>
+    <p id="description">short explanation</p>
+
+    <form id="survey-form" action="#" method="POST">
+      <label for="name" id="name-label">Name: <input type="text" id="name" name="name" required placeholder="Name"></label>
+
+      <label for="email" id="email-label">Email: <input type="email" id="email" name="email" required placeholder="Email@email.com"></label>
+
+      <label for="number" id="number-label">Enter a Number Between 1 and 10: <input type="number" id="number" name="number" min="1" max="10" placeholder="Number 1-10"></label>
+
+      <label for="dropdown">
+        <select id="dropdown" name="dropdown">
+          <option value="Option 1">Option 1</option>
+          <option value="Option 2">Option 2</option>
         </select>
       </label>
 
-      <input type="hidden" name="_subject" value="Contact form submitted">
-      <input type="hidden" name="_honeypot" value="">
-      <input type="hidden" name="_confirmation" value="">
+      <p>Radio Buttons:</p>
+      <label for="radio-1"><input type="radio" id="radio-1" name="radios" value="1" checked> Radio 1</label>
+      <label for="radio-2"><input type="radio" id="radio-2" name="radios" value="2"> Radio 2</label>
+      <label for="radio-3"><input type="radio" id="radio-3" name="radios" value="3"> Radio 3</label>
 
-      <input type="submit" value="Send">
+      <p>Checkboxes:</p>
+
+      <label for="checkbox-1"><input type="checkbox" id="checkbox-1" name="checkboxes" value="1" checked> Checkbox 1</label>
+
+      <label for="checkbox-2"><input type="checkbox" id="checkbox-2" name="checkboxes" value="2"> Checkbox 2</label>
+
+      <label for="checkbox-3"><input type="checkbox" id="checkbox-3" name="checkboxes" value="3"> Checkbox 3</label>
+
+
+      <label for="text-area">Additional Comments: <textarea id="text-area" name="text-area"></textarea></label>
+
+      <label for="submit"><input type="submit" id="submit" value="submit"> </label>
     </form>
 
 

@@ -9,9 +9,18 @@
         <link rel="stylesheet" href="styles/reset.css" type="text/css">
         <link rel="stylesheet" href="styles/pattern-library-styles.css" type="text/css">
         <link rel="stylesheet" href="styles/layout-styles.css" type="text/css">
+
+        <style>
+            @media print{
+                .collapsible-menu{
+                    display: none;
+                }
+                nav header{
+                    border:none;
+                }
+            }
+        </style>
         <link rel="stylesheet" media="screen and (min-width:1020px)" href="styles/layout-styles-large.css">
-        
-        <!--<script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>-->
     </head>
 
     <body>
@@ -35,9 +44,7 @@
                             <li><a href="#form_elements" class="nav-link">Form Elements</a></li>
                         </ul>
                     </div>
-
-                </div>
-                
+                </div> 
             </nav>
             
             <main id="main-doc">
@@ -287,7 +294,7 @@
                     </audio>
         
                     <h2>The Video Element:</h2>
-                    <video width="320" height="240" controls>
+                    <video controls>
                         <source src="https://www.html5rocks.com/en/tutorials/video/basics/devstories.webm" type='video/webm;codecs="vp8, vorbis"' />
                         <source src="https://www.html5rocks.com/en/tutorials/video/basics/devstories.mp4" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' />
                         <track src="https://www.html5rocks.com/en/tutorials/video/basics/devstories-en.vtt" label="English subtitles" kind="subtitles" srclang="en" default />
@@ -314,206 +321,168 @@
                         <p>The Form:</p>
         
                         <form>
-                            <p><label for="text-field">Text Field:</label><br />
-                            <input type="text" id="text-field" />
-                            </p>
-        
-                            <p><label for="text-field-disabled">Disabled Text Field:</label><br />
-                            <input type="text" id="text-field-disabled" disabled value="I'm disabled" />
-                            </p>
-        
-                            <p><label for="text-field-readonly">Readonly Text Field:</label><br />
-                            <input type="text" id="text-field-readonly" readonly value="I'm readonly" />
-                            </p>
-        
-                            <p><label for="text-area">Text Area:</label><br />
-                            <textarea id="text-area"></textarea>
-                            </p>
-        
-                            <p><label for="text-area-disabled">Disabled Text Area:</label><br />
-                            <textarea id="text-area-disabled" disabled>I'm disabled</textarea>
-                            </p>
-        
-                            <p><label for="text-area-readonly">Readonly Text Area:</label><br />
-                            <textarea id="text-area-readonly" readonly>I'm readonly</textarea>
-                            </p>
-        
-                            <p><label for="select-element">Select Element:</label><br />
-                            <select id="select-element">
-                                <optgroup label="Option Group 1">
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
-                                </optgroup>
-                                <optgroup label="Option Group 2">
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
-                                <option value="3" disabled>Disabled Option</option>
-                                </optgroup>
-                            </select>
-                            </p>
-        
-                            <p><label for="select-element-disabled">Disabled Select Element:</label><br/>
-                            <select id="select-element-disabled" disabled>
-                                <option value="1">Unselectable Option</option>
-                                <option value="2">This option should not even be seen</option>
-                            </select>
-                            </p>
-        
-                            <p><label for="select_multi">Select multiple</label><br/>
-                            <select
-                                id="select_multi"
-                                multiple="multiple"
-                                name="select_multi"
-                                >
-                                <optgroup label="Group 1">
-                                <option value="1">Some text goes here </option>
-                                <option value="2">Another choice could be here</option>
-                                <option value="3">Yet another item to be chosen</option>
-                                </optgroup>
-                                <optgroup label="Group 2">
-                                <option value="4">Some text goes here</option>
-                                <option value="5">Another choice could be here</option>
-                                <option value="6">Yet another item to be chosen</option>
-                                </optgroup>
-                                <optgroup label="Group 3">
-                                <option value="7">Some text goes here</option>
-                                <option value="8">Another choice could be here</option>
-                                <option value="9">Yet another item to be chosen</option>
-                                </optgroup>
-                            </select>
-                            </p>
-        
-                            <p><label for="select_size">Select multiple [size="2"]</label><br/>
-                            <select
-                                id="select_size"
-                                name="select_size"
-                                size="2"
-                            >
-                                <optgroup label="Group 1">
-                                <option value="1">Some text goes here </option>
-                                <option value="2">Another choice could be here</option>
-                                <option value="3">Yet another item to be chosen</option>
-                                </optgroup>
-                                <optgroup label="Group 2">
-                                <option value="4">Some text goes here</option>
-                                <option value="5">Another choice could be here</option>
-                                <option value="6">Yet another item to be chosen</option>
-                                </optgroup>
-                            </select>
-                            </p>
-        
-                            <p>Radio Buttons:</p>
-        
-                            <div>
-                            <input type="radio" id="radio-1" name="radios" value="1" checked />
-                            <label for="radio-1">Radio 1</label>
-                            </div>
-                            <div>
-                            <input type="radio" id="radio-2" name="radios" value="2" />
-                            <label for="radio-2">Radio 2</label>
-                            </div>
-                            <div>
-                            <input type="radio" id="radio-3" name="radios" value="3" />
-                            <label for="radio-3">Radio 3</label>
-                            </div>
-                            <div>
-                            <input type="radio" id="radio-4" name="radios" value="4" disabled />
-                            <label for="radio-4">Radio Disabled</label>
-                            </div>
-        
-                            <p>Checkboxes:</p>
-                            <div>
-                            <input type="checkbox" id="checkbox-1" name="checkboxes" value="1" checked />
-                            <label for="checkbox-1">Checkbox 1</label>
-                            </div>
-                            <div>
-                            <input type="checkbox" id="checkbox-2" name="checkboxes" value="2" />
-                            <label for="checkbox-2">Checkbox 2</label>
-                            </div>
-                            <div>
-                            <input type="checkbox" id="checkbox-3" name="checkboxes" value="3" />
-                            <label for="checkbox-3">Checkbox 3</label>
-                            </div>
-                            <div>
-                            <input type="checkbox" id="checkbox-4" name="checkboxes" value="4" disabled />
-                            <label for="checkbox-4">Checkbox Disabled</label>
-                            </div>
-        
-                            <p><label for="password">Password:</label><br />
-                            <input type="password" class="password" id="password" />
-                            </p>
-        
-                            <p><label for="file">File Input:</label><br />
-                            <input type="file" class="file" id="file" />
-                            </p>
-        
+                            <section class="form-area">
+                                <label for="text-field">Text Field: <br/><input type="text" id="text-field" /></label>
+                            
+                                <label for="text-field-disabled">Disabled Text Field:<br/><input type="text" id="text-field-disabled" disabled value="I'm disabled" /></label>
+                                
+                                <label for="text-field-readonly">Readonly Text Field:<br/><input type="text" id="text-field-readonly" readonly value="I'm readonly" /></label>
+                            </section>
+                            
+                            <section class="form-area">
+                                <label for="text-area">Text Area:<br/><textarea id="text-area"></textarea></label>
+                                <label for="text-area-disabled">Disabled Text Area:<br/><textarea id="text-area-disabled" disabled>I'm disabled</textarea></label>
+                                <label for="text-area-readonly">Readonly Text Area:<br/><textarea id="text-area-readonly" readonly>I'm readonly</textarea></label>
+                                
+                            </section>
+
+                            <section class="form-area">
+                                <label for="select-element">Select Element:<br>
+                                    <select id="select-element">
+                                        <optgroup label="Option Group 1">
+                                        <option value="1">Option 1</option>
+                                        <option value="2">Option 2</option>
+                                        </optgroup>
+                                        <optgroup label="Option Group 2">
+                                        <option value="1">Option 1</option>
+                                        <option value="2">Option 2</option>
+                                        <option value="3" disabled>Disabled Option</option>
+                                        </optgroup>
+                                    </select>
+                                </label>
+
+                                <label for="select-element-disabled">Disabled Select Element:<br/>
+                                    <select id="select-element-disabled" disabled>
+                                        <option value="1">Unselectable Option</option>
+                                        <option value="2">This option should not even be seen</option>
+                                    </select>
+                                </label>
+
+                                <label for="select_multi">Select multiple<br>
+                                    <select
+                                    id="select_multi"
+                                    multiple="multiple"
+                                    name="select_multi"
+                                    >
+                                    <optgroup label="Group 1">
+                                    <option value="1">Some text goes here </option>
+                                    <option value="2">Another choice could be here</option>
+                                    <option value="3">Yet another item to be chosen</option>
+                                    </optgroup>
+                                    <optgroup label="Group 2">
+                                    <option value="4">Some text goes here</option>
+                                    <option value="5">Another choice could be here</option>
+                                    <option value="6">Yet another item to be chosen</option>
+                                    </optgroup>
+                                    <optgroup label="Group 3">
+                                    <option value="7">Some text goes here</option>
+                                    <option value="8">Another choice could be here</option>
+                                    <option value="9">Yet another item to be chosen</option>
+                                    </optgroup>
+                                </select>
+                                </label>
+
+                                <label for="select_size">Select multiple [size="3"]<br/>
+                                    <select
+                                    id="select_size"
+                                    name="select_size"
+                                    size="3"
+                                    >
+                                    <optgroup label="Group 1">
+                                    <option value="1">Some text goes here </option>
+                                    <option value="2">Another choice could be here</option>
+                                    <option value="3">Yet another item to be chosen</option>
+                                    </optgroup>
+                                    <optgroup label="Group 2">
+                                    <option value="4">Some text goes here</option>
+                                    <option value="5">Another choice could be here</option>
+                                    <option value="6">Yet another item to be chosen</option>
+                                    </optgroup>
+                                    </select>
+                                </label>
+
+                            </section>
+
+                            <section class="form-area">
+                                <div class="form-sub-area">
+                                    <p>Radio Buttons:</p>
+                                    <label for="radio-1"><input type="radio" id="radio-1" name="radios" value="1" checked> Radio 1</label>
+                                    <label for="radio-2"><input type="radio" id="radio-2" name="radios" value="2"> Radio 2</label>
+                                    <label for="radio-3"><input type="radio" id="radio-3" name="radios" value="3"> Radio 3</label>
+                                    <label for="radio-4"><input type="radio" id="radio-4" name="radios" value="4" disabled /> Radio Disabled</label>
+                                </div>
+
+                                <div class="form-sub-area">
+                                    <p>Checkboxes:</p>
+
+                                    <label for="checkbox-1"><input type="checkbox" id="checkbox-1" name="checkboxes" value="1" checked> Checkbox 1</label>
+
+                                    <label for="checkbox-2"><input type="checkbox" id="checkbox-2" name="checkboxes" value="2"> Checkbox 2</label>
+
+                                    <label for="checkbox-3"><input type="checkbox" id="checkbox-3" name="checkboxes" value="3"> Checkbox 3</label>
+
+                                    <label for="checkbox-4"><input type="checkbox" id="checkbox-4" name="checkboxes" value="4" disabled> Checkbox Disabled</label>
+                                </div>
+
+                            </section>
+
+                            <section class="form-area">
+                                <label for="password">Password:<br>
+                                    <input type="password" class="password" id="password">
+                                </label>
+
+                                <label for="file">File Input:<br>
+                                    <input type="file" class="file" id="file">
+                                </label>
+                            </section>
+
                             <h3>HTML5-specific Form Elements</h3>
-        
-                            <p><label for="email">Email:</label><br />
-                            <input type="email" id="email" />
-                            </p>
-        
-                            <p><label for="url">URL:</label><br />
-                            <input type="url" id="url" />
-                            </p>
-        
-                            <p><label for="tel">Telephone:</label><br />
-                            <input type="tel" id="tel" />
-                            </p>
-        
-                            <p><label for="number">Number:</label><br />
-                            <input type="number" id="number" min="0" max="10" step="1" value="5" />
-                            </p>
-        
-                            <p><label for="search">Search:</label><br />
-                            <input type="search" id="search" />
-                            </p>
-        
-                            <p><label for="date">Date:</label><br />
-                            <input type="date" id="date" />
-                            </p>
-        
-                            <p><label for="time">Time:</label><br />
-                            <input type="time" id="time" />
-                            </p>
-        
-                            <p><label for="color">Color:</label><br />
-                            <input type="color" id="color" />
-                            </p>
-        
-                            <p><label for="datalist">Datalist:</label><br />
-                            <input list="browsers" name="browser" type="datalist" id="datalist" />
-                            <datalist id="browsers">
-                                <option value="Internet Explorer" />
-                                <option value="Firefox" />
-                                <option value="Chrome" />
-                                <option value="Opera" />
-                                <option value="Safari" />
-                            </datalist>
-                            </p>
-        
-                            <p><label for="range">Range:</label><br />
-                            <input type="range" id="range" name="points" min="1" max="10" />
-                            </p>
-        
-                            <p><label for="output">Output:</label><br />
-                            <output name="result" id="output">42</output>
-                            </p>
-        
-                            <p><label for="progress">Progress:</label><br />
-                            <progress id="progress" value="65" max="100"></progress>
-                            </p>
-        
-                            <p><label for="meter">Meter:</label><br />
-                            <meter id="meter" min="200" max="500" value="350">350 degrees</meter>
-                            </p>
-        
-                            <p>
-                            <button class="button">Button Element</button>
-                            <input type="button" value="Input button">
-                            <input class="button" type="reset" value="Clear" />
-                            <input class="button" type="submit" value="Submit" />
-                            </p>
+
+                            <section class="form-area">
+                                <label for="email">Email:<br><input type="email" id="email" placeholder="email@mail.com"></label>
+
+                                <label for="url">URL:<br><input type="url" id="url" placeholder="http://www.google.com"></label>
+
+                                <label for="tel">Telephone:<br><input type="tel" id="tel" placeholder="000-000-0000"></label>
+
+                                <label for="number">Number:<br><input type="number" id="number" min="0" max="10" step="1" value="5" placeholder="Number"></label>
+
+                                <label for="search">Search:<br><input type="search" id="search" placeholder="Search">
+                                </label>
+
+                                <label for="date">Date:<br><input type="date" id="date" ></label>
+
+                                <label for="time">Time:<br><input type="time" id="time" /></label>
+
+                                <label for="color">Color:<br><input type="color" id="color" /></label>
+
+                                <label for="datalist">Datalist:<br>
+                                    <input list="browsers" name="browser" type="datalist" id="datalist" placeholder="Type Browser">
+                                    <datalist id="browsers">
+                                        <option value="Internet Explorer">
+                                        <option value="Firefox">
+                                        <option value="Chrome">
+                                        <option value="Opera">
+                                        <option value="Safari">
+                                    </datalist>
+                                </label>
+
+                                <label for="range">Range:<br><input type="range" id="range" name="points" min="1" max="10" step="1"></label>
+
+                                <label for="output">Output:<br>
+                                    <output name="result" id="output">42</output></label>
+
+                                <label for="progress">Progress:<br><progress id="progress" value="65" max="100"></progress></label>
+
+                                <label for="meter">Meter:<br><meter id="meter" value=80 min=0 low=30 high=60 max=100 optimum=40>80</meter></label>
+                                <div>
+                                    <button class="button">Button Element</button>
+                                    <input class="button" type="reset" value="Clear" />
+                                    <input class="button" type="submit" value="Submit" />
+                                    <input type="button" value="Disabled button" class="button" disabled>
+                                </div>
+                                
+                            </section>
                         </form>
         
                     </fieldset>
@@ -523,7 +492,7 @@
         
         
         <footer>
-            <p>copyright Keiran Pillman 2021 i guess</p>
+            © 2021 Keiran Pillman
         </footer>
         
     </body>
