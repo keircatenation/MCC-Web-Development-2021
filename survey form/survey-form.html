@@ -5,18 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Survey Form</title>
+    <title>Craft Projects Survey Form</title>
     <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital@0;1&family=KoHo&display=swap" rel="stylesheet"> 
+
+    <style>
+      body{
+        font-family:'Karla',sans-serif;
+        max-width:800px;
+        margin:auto;
+        padding:1rem;
+      }
+      p{
+        margin-bottom:2rem;
+      }
+      h1{
+        font-family:'KoHo', sans-serif
+      }
+      hr{
+        color:white;
+      }
+
+      input{
+        font-family: 'Karla', sans-serif;
+        padding:.5rem;
+      }
+
+      [required] + label::after{
+        content: " *";
+        color:crimson;
+      }
+
+      label{
+        margin-right:2rem;
+      }
+
+      fieldset{
+        border-right:none;
+        border-left:none;
+        border-bottom:none;
+      }
+
+    </style>
   </head>  
   
   <body>
-    <h1 id="title">TITLE</h1>
-    <p id="description">short explanation</p>
+    <h1 id="title">What craft projects do you want to work on?</h1>
+    <p id="description">With all of the isolation brought on by the COVID-19 pandemic, many people turned to solitary activities such as craft-making in order to pass the time. This is a form designed to seek out information on what crafting hobbies people have, what projects they are currently working on, and how long they have been crafting.</p>
 
     <form id="survey-form" action="#" method="POST">
-      <label for="name" id="name-label">Name: <input type="text" id="name" name="name" required placeholder="Name"></label>
+      <fieldset>
+        <legend>Contact Information</legend>
+        <input type="text" id="name" name="name" required placeholder="Name"><label for="name" id="name-label"></label>
 
-      <label for="email" id="email-label">Email: <input type="email" id="email" name="email" required placeholder="Email@email.com"></label>
+        <input type="email" id="email" name="email" required placeholder="Email@email.com"><label for="email" id="email-label"></label>
+
+        <input type="text" id="instagram" name="instagram" placeholder="Instagram handle"><label for="instagram"></label>
+
+        <input type="text" id="socmed" name="socmed" placeholder="Other Social Media"><label for="socmed"></label>
+      </fieldset>
+      
 
       <label for="number" id="number-label">Enter a Number Between 1 and 10: <input type="number" id="number" name="number" min="1" max="10" placeholder="Number 1-10"></label>
 
