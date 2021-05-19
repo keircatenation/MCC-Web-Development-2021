@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Nunito:ital@0;1&display=swap');
+:root{
+    --primary-color:#f9c01f;
+    --secondary-color:#98b0a9;
+    --light-offset:#fff9f0;
+    --dark-offset:#402e32;
+    --cap-text:.8rem;
+    --heading:'Kaushan Script',serif;
+    --paragraph:'Nunito',sans-serif;
+}
+body{
+    background-color: var(--light-offset);
+    font-family: var(--paragraph);
+    margin:0;
+    padding:0;
+}
+header{
+    height:30px;
+    color:var(--dark-offset);
+    background-color: var(--secondary-color);
+}
+main{
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    grid-template-rows: 25vh 25vh 1fr;
+    gap: 1rem;
+    max-width:1000px;
+    padding:1rem;
+    margin:0 auto;
+}
+#title-text{
+    grid-row:2;
+    grid-column: 2;
+    order:1;
+    align-self:end;
+    text-align: center;
+    padding:1rem;
+    background-color: var(--light-offset);
+    border-top:3px solid var(--primary-color);
+    border-left:3px solid var(--primary-color);
+}
+#title-text > h1{
+    margin:0;
+    color:var(--dark-offset);
+    font-family: var(--heading);
+    font-size: 2.25rem;
+    line-height: 2.25rem;
+}
+#title-text > p{
+    padding:0;
+    margin:0;
+    font-size: var(--cap-text);
+    color:var(--dark-offset);
+    margin-top:.5rem;
+}
+#img-div{
+    grid-row: 1/span 2;
+    grid-column: 1/span 2;
+    overflow:hidden;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    border:2px solid var(--primary-color);
+}
+img{
+    max-width: 1376px;
+    object-fit: cover;
+    width:100%;
+    height:auto;
+    margin:auto;
+    grid-column: 1/-1;
+    grid-row:1;
+}
+#img-div > p{
+    margin:0;
+    padding:1rem;
+    font-size:var(--cap-text);
+    background-color:var(--secondary-color);
+    color: var(--dark-offset);
+    grid-column: 3;
+    grid-row:1;
+    align-self: start;
+    margin:.5rem;
+    text-align:right;
+}
+section{
+    grid-column: 1/-1;
+    grid-row:3/-1;
+    padding:0 1rem;
+}
+div.link{
+    grid-row:4;
+    grid-column: 1/-1;
+    margin-bottom:3rem;
+    justify-self: center;
+}
+a{
+    padding:1rem;
+    background-color: var(--primary-color);
+    color:var(--dark-offset);
+    display:block;
+    border:2px solid var(--primary-color);
+    text-decoration: none;
+    text-transform: capitalize;
+    text-align: center;
+    transition: background-color .5s;
+}
+@media (prefers-reduced-motion){
+    a{
+        transition:none;
+    }
+}
+a:hover{
+    background-color:var(--light-offset);
+}
+footer{
+    background-color:var(--secondary-color);
+    color:var(--dark-offset);
+    padding:.5rem;
+    font-size: var(--cap-text);
+}
+@media (min-width:561px){
+    main{
+        grid-template-columns:repeat(3,1fr);
+    }
+    #title-text{
+        grid-column:2/4;
+        border:none;
+        align-self: center;
+        padding:2rem;
+        border:3px solid var(--primary-color);
+    }
+    #title-text > h1{
+        font-size:clamp(2.25rem,6vw,3rem);
+        line-height: 3rem;
+    }
+}
