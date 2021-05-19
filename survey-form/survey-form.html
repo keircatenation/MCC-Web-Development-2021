@@ -6,94 +6,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Craft Projects Survey Form</title>
-    <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Karla:ital@0;1&family=KoHo&display=swap" rel="stylesheet"> 
-
-    <style>
-      body{
-        font-family:'Karla',sans-serif;
-        max-width:800px;
-        margin:auto;
-        padding:1rem;
-      }
-      p{
-        margin-bottom:2rem;
-      }
-      h1{
-        font-family:'KoHo', sans-serif
-      }
-      hr{
-        color:white;
-      }
-
-      input{
-        font-family: 'Karla', sans-serif;
-        padding:.5rem;
-      }
-
-      [required] + label::after{
-        content: " *";
-        color:crimson;
-      }
-
-      label{
-        margin-right:2rem;
-      }
-
-      fieldset{
-        border-right:none;
-        border-left:none;
-        border-bottom:none;
-      }
-
-    </style>
+    <link rel="stylesheet" href="survey-styles.css" type="text/css">
   </head>  
   
   <body>
-    <h1 id="title">What craft projects do you want to work on?</h1>
+    <figure>
+      <img src="https://images.unsplash.com/photo-1516783154360-123b392d0833?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80" alt="Photograph of a scrapbooking workplace, shot from the top">
+      <figcaption>Vladimir Proskurovskiy <a href="https://unsplash.com/@proskurovskiy" target="_blank">@proskurovskiy</a></figcaption>
+    </figure>
+    
+    <h1 id="title">Crafting in the time of COVID-19</h1>
     <p id="description">With all of the isolation brought on by the COVID-19 pandemic, many people turned to solitary activities such as craft-making in order to pass the time. This is a form designed to seek out information on what crafting hobbies people have, what projects they are currently working on, and how long they have been crafting.</p>
+    <p class="required-info">Required fields have a thicker outline.</p>
 
     <form id="survey-form" action="#" method="POST">
+      <!--the contact information block-->
       <fieldset>
         <legend>Contact Information</legend>
-        <input type="text" id="name" name="name" required placeholder="Name"><label for="name" id="name-label"></label>
-
-        <input type="email" id="email" name="email" required placeholder="Email@email.com"><label for="email" id="email-label"></label>
-
-        <input type="text" id="instagram" name="instagram" placeholder="Instagram handle"><label for="instagram"></label>
-
-        <input type="text" id="socmed" name="socmed" placeholder="Other Social Media"><label for="socmed"></label>
+        <div class="form-field">
+          <label for="name" id="name-label">Name: </label><input type="text" id="name" name="name" required placeholder="Name"></label>
+        </div>
+        <div class="form-field">
+          <label for="email" id="email-label">Email: </label><input type="email" id="email" name="email" required placeholder="Email@email.com"></label>
+        </div>
+        <div class="form-field">
+          <label for="instagram" id="instagram-label">Instagram handle: </label><input type="text" id="instagram" name="instagram" placeholder="Instagram handle"></label>
+        </div>
+        <div class="form-field">
+          <label for="socmed" id="socmed-label">Other Social Media: </label><input type="text" id="socmed" name="socmed" placeholder="Other Social Media"></label>
+        </div>
       </fieldset>
       
+      <!--current projects-->
+      <fieldset>
+        <legend>Current Projects</legend>
+        <div class="form-field">
+          <label for="number" id="number-label">How many craft projects are you currently working on?</label>
+          <input type="number" id="number" name="number" min="1" max="50" step="1" placeholder="Number of craft projects" required>
+        </div>
+        <div class="form-field">
+          <label for="current-project-description">What are your current projects?</label>
+          <textarea id="current-project-description" name="current-project-description"></textarea>
+        </div>
+        <div class="form-field">
+          <p>Do you have plans for future projects?</p>
+          <label for="radio-yes"><input type="radio" id="radio-yes" name="radios" value="yes"> Yes</label>
 
-      <label for="number" id="number-label">Enter a Number Between 1 and 10: <input type="number" id="number" name="number" min="1" max="10" placeholder="Number 1-10"></label>
+          <label for="radio-maybe"><input type="radio" id="radio-maybe" name="radios" value="sometimes"> Maybe</label>
 
-      <label for="dropdown">
-        <select id="dropdown" name="dropdown">
-          <option value="Option 1">Option 1</option>
-          <option value="Option 2">Option 2</option>
-        </select>
-      </label>
+          <label for="checkbox-no"><input type="radio" id="checkbox-no" name="radios" value="no"> No</label>
+        </div>
+        
+      </fieldset>
 
-      <p>Radio Buttons:</p>
-      <label for="radio-1"><input type="radio" id="radio-1" name="radios" value="1" checked> Radio 1</label>
-      <label for="radio-2"><input type="radio" id="radio-2" name="radios" value="2"> Radio 2</label>
-      <label for="radio-3"><input type="radio" id="radio-3" name="radios" value="3"> Radio 3</label>
+      <!--general craftmaking-->
+      <fieldset>
+        <legend>General Craftmaking</legend>
+        <div class="form-field">
+          <label for="dropdown">What types of craft do you enjoy?</label>
+          <p class="required-info">Select multiple by holding down <code>CTL</code>.</p>
+          <select id="dropdown" name="dropdown" multiple="multiple" size="7" required>
+            <optgroup label="Fabrics and textiles">
+              <option value="quilting">Quilting</option>
+              <option value="apparel">Sewing Apparel</option>
+              <option value="rug-making">Rug-making</option>
+              <option value="weaving">Weaving</option>
+              <option value="spinning">Spinning</option>
+            </optgroup>
+            <optgroup label="Food preparation">
+              <option value="baking">Baking</option>
+              <option value="cooking">Cooking</option>
+              <option value="wine-making">Wine-making</option>
+              <option value="beer-making">Beer-making</option>
+              <option value="cake-decoration">Cake Decoration</option>
+            </optgroup>
+            <optgroup label="Needle Work">
+              <option value="knitting">Knitting</option>
+              <option value="crochet">Crochet</option>
+              <option value="needlepoint">Needlepoint</option>
+              <option value="embroidery">Embroidery</option>
+              <option value="cross-stitch">Cross-stitch</option>
+            </optgroup>
+            <option value="pottery">Pottery</option>
+            <option value="carving">Wood Carving</option>
+            <option value="scrapbooking">Scrapbooking</option>
+            <option value="cardmaking">Card-making</option>
+            <option value="candles">Candle-making</option>
+            <option value="soaps">Soap-making</option>
+            <option value="painting">Painting</option>
+            <option value="drawing">Drawing</option>
+          </select>
+        </div>
 
-      <p>Checkboxes:</p>
+        <div class="form-field">
+          <p>Do you enjoy working on more than one project at once?</p>
+          <label for="radio-general-yes"><input type="radio" id="radio-general-yes" name="radios-general-projects" value="yes"> Yes</label>
 
-      <label for="checkbox-1"><input type="checkbox" id="checkbox-1" name="checkboxes" value="1" checked> Checkbox 1</label>
+          <label for="radio-general-sometimes"><input type="radio" id="checkbox-sometimes" name="radios-general-projects" value="sometimes"> Sometimes</label>
 
-      <label for="checkbox-2"><input type="checkbox" id="checkbox-2" name="checkboxes" value="2"> Checkbox 2</label>
+          <label for="radio-general-no"><input type="radio" id="radio-general-no" name="radios-general-projects" value="no"> No</label>
+        </div>
 
-      <label for="checkbox-3"><input type="checkbox" id="checkbox-3" name="checkboxes" value="3"> Checkbox 3</label>
+        <div class="form-field">
+          <p>When do you like to work on your crafts?</p>
+          <label for="mornings"><input type="checkbox" id="mornings" name="checkbox-time" value="mornings"> Mornings</label>
 
+          <label for="afternoons"><input type="checkbox" id="afternoons" name="checkbox-time" value="afternoons"> Afternoons</label>
 
-      <label for="text-area">Additional Comments: <textarea id="text-area" name="text-area"></textarea></label>
+          <label for="evenings"><input type="checkbox" id="evenings" name="checkbox-time" value="evenings"> Evenings</label>
 
-      <label for="submit"><input type="submit" id="submit" value="submit"> </label>
+          <label for="weekdays"><input type="checkbox" id="weekdays" name="checkbox-time" value="weekdays"> Weekdays</label>
+
+          <label for="weekends"><input type="checkbox" id="weekends" name="checkbox-time" value="weekends"> Weekends</label>
+        </div>
+
+        <div class="form-field">
+          <p>What impacts what time you work on your crats?</p>
+
+          <label for="work"><input type="checkbox" id="work" name="impacts-time" value="work"> Work</label>
+
+          <label for="school"><input type="checkbox" name="impacts-time" id="school" value="school"> School</label>
+
+          <label for="preference"><input type="checkbox" name="impacts-time" id="preference" value="personal preference"> Personal Preference</label>
+
+          <lable for="other"><input type="checkbox" id="other" name="impacts-time" value="other"> Other (Described in Additional Comments)</lable>
+        </div>
+      </fieldset>
+  
+      <label for="text-area">Additional Comments:</label>
+      <textarea id="text-area" name="text-area"></textarea>
+
+      <label for="submit"></label>
+      <input type="submit" id="submit" value="submit">
     </form>
 
 
