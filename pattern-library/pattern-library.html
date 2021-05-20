@@ -1,499 +1,499 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Keiran's Pattern Library</title>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Keiran's Pattern Library</title>
 
-        <link rel="stylesheet" href="styles/reset.css" type="text/css">
-        <link rel="stylesheet" href="styles/pattern-library-styles.css" type="text/css">
-        <link rel="stylesheet" href="styles/layout-styles.css" type="text/css">
+    <link rel="stylesheet" href="styles/reset.css" type="text/css">
+    <link rel="stylesheet" href="styles/pattern-library-styles.css" type="text/css">
+    <link rel="stylesheet" href="styles/layout-styles.css" type="text/css">
 
-        <style>
-            @media print{
-                .collapsible-menu{
-                    display: none;
-                }
-                nav header{
-                    border:none;
-                }
+    <style>
+        @media print{
+            .collapsible-menu{
+                display: none;
             }
-        </style>
-        <link rel="stylesheet" media="screen and (min-width:1020px)" href="styles/layout-styles-large.css">
-    </head>
+            nav header{
+                border:none;
+            }
+        }
+    </style>
+    <link rel="stylesheet" media="screen and (min-width:1020px)" href="styles/layout-styles-large.css">
+</head>
 
-    <body>
-        <div class="flex-container">
-            <nav id="navbar">
-                <div class="sticky-nav">
-                    <header>
-                        <h1>Pattern Library</h1>
-                    </header>
-                    <div class="collapsible-menu">
-                        <input type="checkbox" id="menu"><label for="menu">MENU</label>
-                        <ul class="menu-content">
-                            <li><a href="#headings" class="nav-link">Headings</a></li>
-                            <li><a href="#headings_with_text" class="nav-link">Headings with text</a></li>
-                            <li><a href="#block_elements" class="nav-link">Block Elements</a></li>
-                            <li><a href="#text_elements" class="nav-link">Text Elements</a></li>
-                            <li><a href="#monospace_and_preformatted" class="nav-link">Monospace and Preformatted</a></li>
-                            <li><a href="#list_types" class="nav-link">List Types</a></li>
-                            <li><a href="#tables" class="nav-link">Tables</a></li>
-                            <li><a href="#media_elements" class="nav-link">Media Elements</a></li>
-                            <li><a href="#form_elements" class="nav-link">Form Elements</a></li>
-                        </ul>
-                    </div>
-                </div> 
-            </nav>
-            
-            <main id="main-doc">
-                <section id="headings" class="main-section">
-                    <header>
-                        <h1>Headings</h1>
-                    </header>
-        
-                    <h1>Heading 1</h1>
-                    <pre><code> h1 { font-size:4rem; margin: 2rem 0 1rem; padding-bottom: 1rem; border-bottom: solid 1px #21c967;}</code></pre>
-                    
-                    <h2>Heading 2</h2>
-                    <pre><code> h2 { font-size: 3rem; margin: 1.5rem 0 .5rem; }</code></pre>
-                    
-                    <h3>Heading 3</h3>
-                    <pre><code> h3 { font-size: 2.5rem; margin: 1rem 0 .5rem; }</code></pre>
-                    
-                    <h4>Heading 4</h4>
-                    <pre><code> h4 { font-size: 2rem; margin: 1rem 0 .5rem; }</code></pre>
-                    
-                    <h5>Heading 5</h5>
-                    <pre><code>h5 { font-size: 1.5rem; margin: 1rem 0 .5rem; }</code></pre>
-                    
-                    <h6>Heading 6</h6>
-                    <pre><code>h6 { font-size: 1.25rem; margin:.75rem 0 .25rem; }</code></pre>
-                </section>
-        
-                <section id="headings_with_text" class="main-section">
-                    <header>
-                        <h1>Headings with Text</h1>
-                    </header>
-        
-                    <h1>Heading 1</h1>
-                    <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
-                    <h2>Heading 2</h2>
-                    <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
-                    <h3>Heading 3</h3>
-                    <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
-                    <h4>Heading 4</h4>
-                    <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
-                    <h5>Heading 5</h5>
-                    <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
-                    <h6>Heading 6</h6>
-                    <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
-                </section>
-        
-                <Section id="block_elements" class="main-section">
-                    <header>
-                        <h1>Block Elements</h1>
-                    </header>
-        
-                    <h2 id="paragraph">Paragraphs and Images</h2>
-        
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor.</p>
-                    <pre><code> p {
-                        font-family: 'Open Sans', sans-serif;
-                        font-size: 1rem; 
-                        max-width: 60rem;
-                        line-height: 1.5rem;
-                        margin-bottom: .5rem; margin-top:.25rem;
-                    </code></pre>
-    
-                    <p><img alt="Placeholder Image and Some Alt Text" src="http://placekitten.com/350/150" title="A title element for this placeholder image."></p>
-        
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem.</p>
-        
-                    <h2 id="blockquote">Blockquote</h2>
-        
-                    <p>This is a standard paragraph. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                    <blockquote>
-                        "<strong>This is a blockquote.</strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl."
-                    </blockquote>
-                    <p>This is a standard paragraph. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-        
-                    <h2 id="figure-caption">Figure-Caption</h2>
-        
-                    <figure>
-                        <img src="http://placekitten.com/350/150" alt="A placeholder figure image." />
-                        <figcaption>The figcaption element example.</figcaption>
-                    </figure>
-        
-                    <h2 id="details-summary">Details-Summary</h2>
-        
-                    <details>
-                    <summary>The summary element example</summary>
-                    <p>The details example text. It may be styled differently based on what browser or operating system you are using.</p>
-                    </details>
-        
-                </Section>
-                
-                <section id="text_elements" class="main-section">
-                    <header>
-                        <h1>Text Elements</h1>
-                    </header>
-        
-                    <p>The <a href="#">a element</a> and <a href="https://example.com" target="_blank">external a element</a> examples</p>
-                    <p>The <abbr>abbr element</abbr> and an <abbr title="Abbreviation">abbr</abbr> element with title examples</p>
-                    <p>The <acronym title="A Cowboy Ran One New York Marathon">ACRONYM</acronym> element example</p>
-                    <p>The <b>b element</b> example</p>
-                    <p><cite>The cite element example</cite></p>
-                    <p>The <code>code element</code> example</p>
-                    <p>The <data value="3967381398">data element</data> example</p>
-                    <p>The <del>del element</del> example</p>
-                    <p>The <dfn>dfn element</dfn> and <dfn title="Title text">dfn element with title</dfn> examples</p>
-                    <p>The <em>em element</em> example</p>
-                    <p>The <i>i element</i> example</p>
-                    <p>The <ins>ins element</ins> example</p>
-                    <p>The <kbd>kbd element</kbd> example</p>
-                    <p>The <mark>mark element</mark> example</p>
-                    <p>The <q>q element</q> example</p>
-                    <p>The <q>q element <q>inside</q> a q element</q> example</p>
-                    <p>The <s>s element</s> example</p>
-                    <p>The <samp>samp element</samp> example</p>
-                    <p>The <small>small element</small> example</p>
-                    <p>The <strong>strong element</strong> example</p>
-                    <p>The <sub>sub element</sub> example</p>
-                    <p>The <sup>sup element</sup> example</p>
-                    <p>The <time datetime="2005-05-15 19:00">time element</time> example</p>
-                    <p>The <u>u element</u> example</p>
-                    <p>The <var>var element</var> example</p>
-        
-                </section>
-        
-                <section id="monospace_and_preformatted" class="main-section">
-                    <header>
-                        <h1>Monospace and Preformatted</h1>
-                    </header>
-                    <p>Code block wrapped in "pre" and "code" tags</p>
-                    <pre><code>// Loop through Divs using Javascript.
-                    var divs = document.querySelectorAll('div'), i;
-        
-                    for (i = 0; i &lt; divs.length; ++i) {
-                    divs[i].style.color = "green";
-                    }</code></pre>
-                    <p>Monospace Text wrapped in "pre" tags</p>
-                    <pre><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p></pre>
-                </section>
-    
-                <section id="list_types" class="main-section">
-                    <header>
-                        <h1>List Types</h1>
-                    </header>
-        
-                    <h2 id="ordered_list">Ordered List</h2>
-                    <ol>
-                        <li>List Item 1
-                            <ol>
-                                <li>List Item 1.1</li>
-                            </ol>
-                        </li>
-                        <li>List Item 2</li>
-                        <li>List Item 3
-                            <ol>
-                            <li>List Item 3.1</li>
-                            <li>List Item 3.2
-                                <ol>
-                                <li>List Item 3.2.1</li>
-                                <li>List Item 3.2.2</li>
-                                </ol>
-                            </li>
-                            <li>List Item 3.3</li>
-                            </ol>
-                        </li>
-                        <li>List Item 4</li>
-                    </ol>
-        
-                    <h2 id="unordered_list">Unordered List</h2>
-                    <ul>
-                        <li>List Item 1
-                            <ul>
-                                <li>List Item 1.1</li>
-                            </ul>
-                        </li>
-                        <li>List Item 2</li>
-                        <li>List Item 3
-                            <ul>
-                            <li>List Item 3.1</li>
-                            <li>List Item 3.2
-                                <ul>
-                                <li>List Item 3.2.1</li>
-                                <li>List Item 3.2.2</li>
-                                </ul>
-                            </li>
-                            <li>List Item 3.3</li>
-                            </ul>
-                        </li>
-                        <li>List Item 4</li>
+<body>
+    <div class="flex-container">
+        <nav id="navbar">
+            <div class="sticky-nav">
+                <header>
+                    <h1>Pattern Library</h1>
+                </header>
+                <div class="collapsible-menu">
+                    <input type="checkbox" id="menu"><label for="menu">MENU</label>
+                    <ul class="menu-content">
+                        <li><a href="#headings" class="nav-link">Headings</a></li>
+                        <li><a href="#headings_with_text" class="nav-link">Headings with text</a></li>
+                        <li><a href="#block_elements" class="nav-link">Block Elements</a></li>
+                        <li><a href="#text_elements" class="nav-link">Text Elements</a></li>
+                        <li><a href="#monospace_and_preformatted" class="nav-link">Monospace and Preformatted</a></li>
+                        <li><a href="#list_types" class="nav-link">List Types</a></li>
+                        <li><a href="#tables" class="nav-link">Tables</a></li>
+                        <li><a href="#media_elements" class="nav-link">Media Elements</a></li>
+                        <li><a href="#form_elements" class="nav-link">Form Elements</a></li>
                     </ul>
+                </div>
+            </div> 
+        </nav>
         
-                    <h2 id="definition_list">Definition List</h2>
-                    <dl>
-                        <dt>Definition Term 1</dt>
-                        <dd>Definition Description 1</dd>
-                        <dt>Definition Term 2</dt>
-                        <dd>Definition Description 2</dd>
-                    </dl>
-        
-                </section>
-        
-                <section id="tables" class="main-section">
-        
-                    <header>
-                        <h1>Tables</h1>
-                    </header>
-        
-                    <table>
-                        <caption>This is a table caption.</caption>
-                        <thead>
-                            <tr>
-                            <th>Table Header 1</th><th>Table Header 2</th><th>Table Header 3</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                            <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-                            </tr>
-                            <tr class="even">
-                            <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-                            </tr>
-                            <tr>
-                            <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-                            </tr>
-                            <tr>
-                            <td colspan="3">A row with a cell spanning all 3 columns</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                            <th>Table Footer 1</th><th>Table Footer 2</th><th>Table Footer 3</th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </section>
-        
-                <section id="media_elements" class="main-section">
-                    <header>
-                        <h1>Media Elements</h1>
-                    </header>
-                    
-        
-                    <h2>The Audio Element:</h2>
-                    <audio controls>
-                        <source src="https://simpl.info/audio/audio/audio.mp3" type="audio/mp3" />
-                        <source src="https://simpl.info/audio/audio/audio.ogg" type="audio/ogg" />
-                        Your browser does not support the audio element.
-                    </audio>
-        
-                    <h2>The Video Element:</h2>
-                    <video controls>
-                        <source src="https://www.html5rocks.com/en/tutorials/video/basics/devstories.webm" type='video/webm;codecs="vp8, vorbis"' />
-                        <source src="https://www.html5rocks.com/en/tutorials/video/basics/devstories.mp4" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' />
-                        <track src="https://www.html5rocks.com/en/tutorials/video/basics/devstories-en.vtt" label="English subtitles" kind="subtitles" srclang="en" default />
-                        Your browser does not support the video tag.
-                    </video>
-        
-                    <h2>Embedded content:</h2>
-        
-                    <p>YouTube video (iframe):</p>
-        
-                    <iframe src="https://www.youtube.com/embed/l4f9QF0SGuQ" allowfullscreen></iframe>
-                </section>
-        
-                <section id="form_elements" class="main-section">
-                    <header>
-                        <h1>Form Elements</h1>
-                    </header>
-                    
-        
-                    <p>The Fieldset:</p>
-                    <fieldset>
-                        <legend>Legend</legend>
-        
-                        <p>The Form:</p>
-        
-                        <form>
-                            <section class="form-area">
-                                <label for="text-field">Text Field: <br/><input type="text" id="text-field" /></label>
+        <main id="main-doc">
+            <section id="headings" class="main-section">
+                <header>
+                    <h1>Headings</h1>
+                </header>
+    
+                <h1>Heading 1</h1>
+                <pre><code> h1 { font-size:4rem; margin: 2rem 0 1rem; padding-bottom: 1rem; border-bottom: solid 1px #21c967;}</code></pre>
+                
+                <h2>Heading 2</h2>
+                <pre><code> h2 { font-size: 3rem; margin: 1.5rem 0 .5rem; }</code></pre>
+                
+                <h3>Heading 3</h3>
+                <pre><code> h3 { font-size: 2.5rem; margin: 1rem 0 .5rem; }</code></pre>
+                
+                <h4>Heading 4</h4>
+                <pre><code> h4 { font-size: 2rem; margin: 1rem 0 .5rem; }</code></pre>
+                
+                <h5>Heading 5</h5>
+                <pre><code>h5 { font-size: 1.5rem; margin: 1rem 0 .5rem; }</code></pre>
+                
+                <h6>Heading 6</h6>
+                <pre><code>h6 { font-size: 1.25rem; margin:.75rem 0 .25rem; }</code></pre>
+            </section>
+    
+            <section id="headings_with_text" class="main-section">
+                <header>
+                    <h1>Headings with Text</h1>
+                </header>
+    
+                <h1>Heading 1</h1>
+                <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+                <h2>Heading 2</h2>
+                <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+                <h3>Heading 3</h3>
+                <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+                <h4>Heading 4</h4>
+                <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+                <h5>Heading 5</h5>
+                <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+                <h6>Heading 6</h6>
+                <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+            </section>
+    
+            <Section id="block_elements" class="main-section">
+                <header>
+                    <h1>Block Elements</h1>
+                </header>
+    
+                <h2 id="paragraph">Paragraphs and Images</h2>
+    
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor.</p>
+                <pre><code> p {
+                    font-family: 'Open Sans', sans-serif;
+                    font-size: 1rem; 
+                    max-width: 60rem;
+                    line-height: 1.5rem;
+                    margin-bottom: .5rem; margin-top:.25rem;
+                </code></pre>
+
+                <p><img alt="Placeholder Image and Some Alt Text" src="http://placekitten.com/350/150" title="A title element for this placeholder image."></p>
+    
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem.</p>
+    
+                <h2 id="blockquote">Blockquote</h2>
+    
+                <p>This is a standard paragraph. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                <blockquote>
+                    "<strong>This is a blockquote.</strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl."
+                </blockquote>
+                <p>This is a standard paragraph. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+    
+                <h2 id="figure-caption">Figure-Caption</h2>
+    
+                <figure>
+                    <img src="http://placekitten.com/350/150" alt="A placeholder figure image." />
+                    <figcaption>The figcaption element example.</figcaption>
+                </figure>
+    
+                <h2 id="details-summary">Details-Summary</h2>
+    
+                <details>
+                <summary>The summary element example</summary>
+                <p>The details example text. It may be styled differently based on what browser or operating system you are using.</p>
+                </details>
+    
+            </Section>
+            
+            <section id="text_elements" class="main-section">
+                <header>
+                    <h1>Text Elements</h1>
+                </header>
+    
+                <p>The <a href="#">a element</a> and <a href="https://example.com" target="_blank">external a element</a> examples</p>
+                <p>The <abbr>abbr element</abbr> and an <abbr title="Abbreviation">abbr</abbr> element with title examples</p>
+                <p>The <acronym title="A Cowboy Ran One New York Marathon">ACRONYM</acronym> element example</p>
+                <p>The <b>b element</b> example</p>
+                <p><cite>The cite element example</cite></p>
+                <p>The <code>code element</code> example</p>
+                <p>The <data value="3967381398">data element</data> example</p>
+                <p>The <del>del element</del> example</p>
+                <p>The <dfn>dfn element</dfn> and <dfn title="Title text">dfn element with title</dfn> examples</p>
+                <p>The <em>em element</em> example</p>
+                <p>The <i>i element</i> example</p>
+                <p>The <ins>ins element</ins> example</p>
+                <p>The <kbd>kbd element</kbd> example</p>
+                <p>The <mark>mark element</mark> example</p>
+                <p>The <q>q element</q> example</p>
+                <p>The <q>q element <q>inside</q> a q element</q> example</p>
+                <p>The <s>s element</s> example</p>
+                <p>The <samp>samp element</samp> example</p>
+                <p>The <small>small element</small> example</p>
+                <p>The <strong>strong element</strong> example</p>
+                <p>The <sub>sub element</sub> example</p>
+                <p>The <sup>sup element</sup> example</p>
+                <p>The <time datetime="2005-05-15 19:00">time element</time> example</p>
+                <p>The <u>u element</u> example</p>
+                <p>The <var>var element</var> example</p>
+    
+            </section>
+    
+            <section id="monospace_and_preformatted" class="main-section">
+                <header>
+                    <h1>Monospace and Preformatted</h1>
+                </header>
+                <p>Code block wrapped in "pre" and "code" tags</p>
+                <pre><code>// Loop through Divs using Javascript.
+                var divs = document.querySelectorAll('div'), i;
+    
+                for (i = 0; i &lt; divs.length; ++i) {
+                divs[i].style.color = "green";
+                }</code></pre>
+                <p>Monospace Text wrapped in "pre" tags</p>
+                <pre><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p></pre>
+            </section>
+
+            <section id="list_types" class="main-section">
+                <header>
+                    <h1>List Types</h1>
+                </header>
+    
+                <h2 id="ordered_list">Ordered List</h2>
+                <ol>
+                    <li>List Item 1
+                        <ol>
+                            <li>List Item 1.1</li>
+                        </ol>
+                    </li>
+                    <li>List Item 2</li>
+                    <li>List Item 3
+                        <ol>
+                        <li>List Item 3.1</li>
+                        <li>List Item 3.2
+                            <ol>
+                            <li>List Item 3.2.1</li>
+                            <li>List Item 3.2.2</li>
+                            </ol>
+                        </li>
+                        <li>List Item 3.3</li>
+                        </ol>
+                    </li>
+                    <li>List Item 4</li>
+                </ol>
+    
+                <h2 id="unordered_list">Unordered List</h2>
+                <ul>
+                    <li>List Item 1
+                        <ul>
+                            <li>List Item 1.1</li>
+                        </ul>
+                    </li>
+                    <li>List Item 2</li>
+                    <li>List Item 3
+                        <ul>
+                        <li>List Item 3.1</li>
+                        <li>List Item 3.2
+                            <ul>
+                            <li>List Item 3.2.1</li>
+                            <li>List Item 3.2.2</li>
+                            </ul>
+                        </li>
+                        <li>List Item 3.3</li>
+                        </ul>
+                    </li>
+                    <li>List Item 4</li>
+                </ul>
+    
+                <h2 id="definition_list">Definition List</h2>
+                <dl>
+                    <dt>Definition Term 1</dt>
+                    <dd>Definition Description 1</dd>
+                    <dt>Definition Term 2</dt>
+                    <dd>Definition Description 2</dd>
+                </dl>
+    
+            </section>
+    
+            <section id="tables" class="main-section">
+    
+                <header>
+                    <h1>Tables</h1>
+                </header>
+    
+                <table>
+                    <caption>This is a table caption.</caption>
+                    <thead>
+                        <tr>
+                        <th>Table Header 1</th><th>Table Header 2</th><th>Table Header 3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+                        </tr>
+                        <tr class="even">
+                        <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+                        </tr>
+                        <tr>
+                        <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+                        </tr>
+                        <tr>
+                        <td colspan="3">A row with a cell spanning all 3 columns</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                        <th>Table Footer 1</th><th>Table Footer 2</th><th>Table Footer 3</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+    
+            <section id="media_elements" class="main-section">
+                <header>
+                    <h1>Media Elements</h1>
+                </header>
+                
+    
+                <h2>The Audio Element:</h2>
+                <audio controls>
+                    <source src="https://simpl.info/audio/audio/audio.mp3" type="audio/mp3" />
+                    <source src="https://simpl.info/audio/audio/audio.ogg" type="audio/ogg" />
+                    Your browser does not support the audio element.
+                </audio>
+    
+                <h2>The Video Element:</h2>
+                <video controls>
+                    <source src="https://www.html5rocks.com/en/tutorials/video/basics/devstories.webm" type='video/webm;codecs="vp8, vorbis"' />
+                    <source src="https://www.html5rocks.com/en/tutorials/video/basics/devstories.mp4" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' />
+                    <track src="https://www.html5rocks.com/en/tutorials/video/basics/devstories-en.vtt" label="English subtitles" kind="subtitles" srclang="en" default />
+                    Your browser does not support the video tag.
+                </video>
+    
+                <h2>Embedded content:</h2>
+    
+                <p>YouTube video (iframe):</p>
+    
+                <iframe src="https://www.youtube.com/embed/l4f9QF0SGuQ" allowfullscreen></iframe>
+            </section>
+    
+            <section id="form_elements" class="main-section">
+                <header>
+                    <h1>Form Elements</h1>
+                </header>
+                
+    
+                <p>The Fieldset:</p>
+                <fieldset>
+                    <legend>Legend</legend>
+    
+                    <p>The Form:</p>
+    
+                    <form>
+                        <section class="form-area">
+                            <label for="text-field">Text Field: <br/><input type="text" id="text-field" /></label>
+                        
+                            <label for="text-field-disabled">Disabled Text Field:<br/><input type="text" id="text-field-disabled" disabled value="I'm disabled" /></label>
                             
-                                <label for="text-field-disabled">Disabled Text Field:<br/><input type="text" id="text-field-disabled" disabled value="I'm disabled" /></label>
-                                
-                                <label for="text-field-readonly">Readonly Text Field:<br/><input type="text" id="text-field-readonly" readonly value="I'm readonly" /></label>
-                            </section>
+                            <label for="text-field-readonly">Readonly Text Field:<br/><input type="text" id="text-field-readonly" readonly value="I'm readonly" /></label>
+                        </section>
+                        
+                        <section class="form-area">
+                            <label for="text-area">Text Area:<br/><textarea id="text-area"></textarea></label>
+                            <label for="text-area-disabled">Disabled Text Area:<br/><textarea id="text-area-disabled" disabled>I'm disabled</textarea></label>
+                            <label for="text-area-readonly">Readonly Text Area:<br/><textarea id="text-area-readonly" readonly>I'm readonly</textarea></label>
                             
-                            <section class="form-area">
-                                <label for="text-area">Text Area:<br/><textarea id="text-area"></textarea></label>
-                                <label for="text-area-disabled">Disabled Text Area:<br/><textarea id="text-area-disabled" disabled>I'm disabled</textarea></label>
-                                <label for="text-area-readonly">Readonly Text Area:<br/><textarea id="text-area-readonly" readonly>I'm readonly</textarea></label>
-                                
-                            </section>
+                        </section>
 
-                            <section class="form-area">
-                                <label for="select-element">Select Element:<br>
-                                    <select id="select-element">
-                                        <optgroup label="Option Group 1">
-                                        <option value="1">Option 1</option>
-                                        <option value="2">Option 2</option>
-                                        </optgroup>
-                                        <optgroup label="Option Group 2">
-                                        <option value="1">Option 1</option>
-                                        <option value="2">Option 2</option>
-                                        <option value="3" disabled>Disabled Option</option>
-                                        </optgroup>
-                                    </select>
-                                </label>
-
-                                <label for="select-element-disabled">Disabled Select Element:<br/>
-                                    <select id="select-element-disabled" disabled>
-                                        <option value="1">Unselectable Option</option>
-                                        <option value="2">This option should not even be seen</option>
-                                    </select>
-                                </label>
-
-                                <label for="select_multi">Select multiple<br>
-                                    <select
-                                    id="select_multi"
-                                    multiple="multiple"
-                                    name="select_multi"
-                                    >
-                                    <optgroup label="Group 1">
-                                    <option value="1">Some text goes here </option>
-                                    <option value="2">Another choice could be here</option>
-                                    <option value="3">Yet another item to be chosen</option>
+                        <section class="form-area">
+                            <label for="select-element">Select Element:<br>
+                                <select id="select-element">
+                                    <optgroup label="Option Group 1">
+                                    <option value="1">Option 1</option>
+                                    <option value="2">Option 2</option>
                                     </optgroup>
-                                    <optgroup label="Group 2">
-                                    <option value="4">Some text goes here</option>
-                                    <option value="5">Another choice could be here</option>
-                                    <option value="6">Yet another item to be chosen</option>
-                                    </optgroup>
-                                    <optgroup label="Group 3">
-                                    <option value="7">Some text goes here</option>
-                                    <option value="8">Another choice could be here</option>
-                                    <option value="9">Yet another item to be chosen</option>
+                                    <optgroup label="Option Group 2">
+                                    <option value="1">Option 1</option>
+                                    <option value="2">Option 2</option>
+                                    <option value="3" disabled>Disabled Option</option>
                                     </optgroup>
                                 </select>
-                                </label>
+                            </label>
 
-                                <label for="select_size">Select multiple [size="3"]<br/>
-                                    <select
-                                    id="select_size"
-                                    name="select_size"
-                                    size="3"
-                                    >
-                                    <optgroup label="Group 1">
-                                    <option value="1">Some text goes here </option>
-                                    <option value="2">Another choice could be here</option>
-                                    <option value="3">Yet another item to be chosen</option>
-                                    </optgroup>
-                                    <optgroup label="Group 2">
-                                    <option value="4">Some text goes here</option>
-                                    <option value="5">Another choice could be here</option>
-                                    <option value="6">Yet another item to be chosen</option>
-                                    </optgroup>
-                                    </select>
-                                </label>
+                            <label for="select-element-disabled">Disabled Select Element:<br/>
+                                <select id="select-element-disabled" disabled>
+                                    <option value="1">Unselectable Option</option>
+                                    <option value="2">This option should not even be seen</option>
+                                </select>
+                            </label>
 
-                            </section>
+                            <label for="select_multi">Select multiple<br>
+                                <select
+                                id="select_multi"
+                                multiple="multiple"
+                                name="select_multi"
+                                >
+                                <optgroup label="Group 1">
+                                <option value="1">Some text goes here </option>
+                                <option value="2">Another choice could be here</option>
+                                <option value="3">Yet another item to be chosen</option>
+                                </optgroup>
+                                <optgroup label="Group 2">
+                                <option value="4">Some text goes here</option>
+                                <option value="5">Another choice could be here</option>
+                                <option value="6">Yet another item to be chosen</option>
+                                </optgroup>
+                                <optgroup label="Group 3">
+                                <option value="7">Some text goes here</option>
+                                <option value="8">Another choice could be here</option>
+                                <option value="9">Yet another item to be chosen</option>
+                                </optgroup>
+                            </select>
+                            </label>
 
-                            <section class="form-area">
-                                <div class="form-sub-area">
-                                    <p>Radio Buttons:</p>
-                                    <label for="radio-1"><input type="radio" id="radio-1" name="radios" value="1" checked> Radio 1</label>
-                                    <label for="radio-2"><input type="radio" id="radio-2" name="radios" value="2"> Radio 2</label>
-                                    <label for="radio-3"><input type="radio" id="radio-3" name="radios" value="3"> Radio 3</label>
-                                    <label for="radio-4"><input type="radio" id="radio-4" name="radios" value="4" disabled /> Radio Disabled</label>
-                                </div>
+                            <label for="select_size">Select multiple [size="3"]<br/>
+                                <select
+                                id="select_size"
+                                name="select_size"
+                                size="3"
+                                >
+                                <optgroup label="Group 1">
+                                <option value="1">Some text goes here </option>
+                                <option value="2">Another choice could be here</option>
+                                <option value="3">Yet another item to be chosen</option>
+                                </optgroup>
+                                <optgroup label="Group 2">
+                                <option value="4">Some text goes here</option>
+                                <option value="5">Another choice could be here</option>
+                                <option value="6">Yet another item to be chosen</option>
+                                </optgroup>
+                                </select>
+                            </label>
 
-                                <div class="form-sub-area">
-                                    <p>Checkboxes:</p>
+                        </section>
 
-                                    <label for="checkbox-1"><input type="checkbox" id="checkbox-1" name="checkboxes" value="1" checked> Checkbox 1</label>
+                        <section class="form-area">
+                            <div class="form-sub-area">
+                                <p>Radio Buttons:</p>
+                                <label for="radio-1"><input type="radio" id="radio-1" name="radios" value="1" checked> Radio 1</label>
+                                <label for="radio-2"><input type="radio" id="radio-2" name="radios" value="2"> Radio 2</label>
+                                <label for="radio-3"><input type="radio" id="radio-3" name="radios" value="3"> Radio 3</label>
+                                <label for="radio-4"><input type="radio" id="radio-4" name="radios" value="4" disabled /> Radio Disabled</label>
+                            </div>
 
-                                    <label for="checkbox-2"><input type="checkbox" id="checkbox-2" name="checkboxes" value="2"> Checkbox 2</label>
+                            <div class="form-sub-area">
+                                <p>Checkboxes:</p>
 
-                                    <label for="checkbox-3"><input type="checkbox" id="checkbox-3" name="checkboxes" value="3"> Checkbox 3</label>
+                                <label for="checkbox-1"><input type="checkbox" id="checkbox-1" name="checkboxes" value="1" checked> Checkbox 1</label>
 
-                                    <label for="checkbox-4"><input type="checkbox" id="checkbox-4" name="checkboxes" value="4" disabled> Checkbox Disabled</label>
-                                </div>
+                                <label for="checkbox-2"><input type="checkbox" id="checkbox-2" name="checkboxes" value="2"> Checkbox 2</label>
 
-                            </section>
+                                <label for="checkbox-3"><input type="checkbox" id="checkbox-3" name="checkboxes" value="3"> Checkbox 3</label>
 
-                            <section class="form-area">
-                                <label for="password">Password:<br>
-                                    <input type="password" class="password" id="password">
-                                </label>
+                                <label for="checkbox-4"><input type="checkbox" id="checkbox-4" name="checkboxes" value="4" disabled> Checkbox Disabled</label>
+                            </div>
 
-                                <label for="file">File Input:<br>
-                                    <input type="file" class="file" id="file">
-                                </label>
-                            </section>
+                        </section>
 
-                            <h3>HTML5-specific Form Elements</h3>
+                        <section class="form-area">
+                            <label for="password">Password:<br>
+                                <input type="password" class="password" id="password">
+                            </label>
 
-                            <section class="form-area">
-                                <label for="email">Email:<br><input type="email" id="email" placeholder="email@mail.com"></label>
+                            <label for="file">File Input:<br>
+                                <input type="file" class="file" id="file">
+                            </label>
+                        </section>
 
-                                <label for="url">URL:<br><input type="url" id="url" placeholder="http://www.google.com"></label>
+                        <h3>HTML5-specific Form Elements</h3>
 
-                                <label for="tel">Telephone:<br><input type="tel" id="tel" placeholder="000-000-0000"></label>
+                        <section class="form-area">
+                            <label for="email">Email:<br><input type="email" id="email" placeholder="email@mail.com"></label>
 
-                                <label for="number">Number:<br><input type="number" id="number" min="0" max="10" step="1" value="5" placeholder="Number"></label>
+                            <label for="url">URL:<br><input type="url" id="url" placeholder="http://www.google.com"></label>
 
-                                <label for="search">Search:<br><input type="search" id="search" placeholder="Search">
-                                </label>
+                            <label for="tel">Telephone:<br><input type="tel" id="tel" placeholder="000-000-0000"></label>
 
-                                <label for="date">Date:<br><input type="date" id="date" ></label>
+                            <label for="number">Number:<br><input type="number" id="number" min="0" max="10" step="1" value="5" placeholder="Number"></label>
 
-                                <label for="time">Time:<br><input type="time" id="time" /></label>
+                            <label for="search">Search:<br><input type="search" id="search" placeholder="Search">
+                            </label>
 
-                                <label for="color">Color:<br><input type="color" id="color" /></label>
+                            <label for="date">Date:<br><input type="date" id="date" ></label>
 
-                                <label for="datalist">Datalist:<br>
-                                    <input list="browsers" name="browser" type="datalist" id="datalist" placeholder="Type Browser">
-                                    <datalist id="browsers">
-                                        <option value="Internet Explorer">
-                                        <option value="Firefox">
-                                        <option value="Chrome">
-                                        <option value="Opera">
-                                        <option value="Safari">
-                                    </datalist>
-                                </label>
+                            <label for="time">Time:<br><input type="time" id="time" /></label>
 
-                                <label for="range">Range:<br><input type="range" id="range" name="points" min="1" max="10" step="1"></label>
+                            <label for="color">Color:<br><input type="color" id="color" /></label>
 
-                                <label for="output">Output:<br>
-                                    <output name="result" id="output">42</output></label>
+                            <label for="datalist">Datalist:<br>
+                                <input list="browsers" name="browser" type="datalist" id="datalist" placeholder="Type Browser">
+                                <datalist id="browsers">
+                                    <option value="Internet Explorer">
+                                    <option value="Firefox">
+                                    <option value="Chrome">
+                                    <option value="Opera">
+                                    <option value="Safari">
+                                </datalist>
+                            </label>
 
-                                <label for="progress">Progress:<br><progress id="progress" value="65" max="100"></progress></label>
+                            <label for="range">Range:<br><input type="range" id="range" name="points" min="1" max="10" step="1"></label>
 
-                                <label for="meter">Meter:<br><meter id="meter" value=80 min=0 low=30 high=60 max=100 optimum=40>80</meter></label>
-                                <div>
-                                    <button class="button">Button Element</button>
-                                    <input class="button" type="reset" value="Clear" />
-                                    <input class="button" type="submit" value="Submit" />
-                                    <input type="button" value="Disabled button" class="button" disabled>
-                                </div>
-                                
-                            </section>
-                        </form>
-        
-                    </fieldset>
-                </section>
-            </main>
-        </div>
-        
-        
-        <footer>
-            © 2021 Keiran Pillman
-        </footer>
-        
-    </body>
+                            <label for="output">Output:<br>
+                                <output name="result" id="output">42</output></label>
+
+                            <label for="progress">Progress:<br><progress id="progress" value="65" max="100"></progress></label>
+
+                            <label for="meter">Meter:<br><meter id="meter" value=80 min=0 low=30 high=60 max=100 optimum=40>80</meter></label>
+                            <div>
+                                <button class="button">Button Element</button>
+                                <input class="button" type="reset" value="Clear" />
+                                <input class="button" type="submit" value="Submit" />
+                                <input type="button" value="Disabled button" class="button" disabled>
+                            </div>
+                            
+                        </section>
+                    </form>
+    
+                </fieldset>
+            </section>
+        </main>
+    </div>
+    
+    
+    <footer>
+        © 2021 Keiran Pillman
+    </footer>
+    
+</body>
 </html>
