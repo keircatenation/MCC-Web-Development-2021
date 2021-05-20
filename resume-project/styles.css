@@ -17,14 +17,25 @@ header{
     background-color: var(--primary-color);
     padding:1rem 2rem;
     color:white;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+#signature-header{
+    max-width: 600px;
+    margin:1rem;
+    fill: var(--secondary-color);
 }
 
 header ul{
     padding-left:0px;
+    display: grid;
+    justify-items: center;
 }
 
 header li{
     list-style-type: none;
+    padding:.25rem .75rem;
 }
 
 main{
@@ -39,7 +50,15 @@ main{
 }
 
 
-@media screen and (min-width:800px){
+@media screen and (min-width:720px){
+    header ul{
+        grid-template-columns: 1fr 1fr;
+        justify-items:start;
+    }
+    header li:nth-of-type(2n-1){
+        justify-self: end;
+        border-right:1px solid white;
+    }
     main{
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 300px auto 1fr;
