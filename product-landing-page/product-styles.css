@@ -1,0 +1,26 @@
+body{
+    margin:0;
+    padding:0;
+}
+header{
+    background: #009999;
+    position:sticky;
+    top:0;
+    padding:.5rem;
+    display:flex;
+    justify-content: space-between;
+}
+header img{
+    max-width:200px;
+    width:30vw;
+}
+header ul{
+    list-style: none;
+    display:flex;
+    flex-direction: row;
+}
+.nav-link{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+}
