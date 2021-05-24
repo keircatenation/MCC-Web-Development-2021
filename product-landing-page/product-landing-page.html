@@ -8,38 +8,62 @@
     <title>Chessex Selected Products</title>
 
     <link rel="stylesheet" href="product-styles.css" type="text/css">
-    <style>
-        @media (prefers-reduced-motion){
-            a{
-                transition:none;
-            }
-        })
-    </style>
     <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </head>
 
 <body>
     <header id="header">
-        <img id="header-img" src="logo_orig.png" alt="Chessex Logo">
+        <img id="header-img" src="https://keircatenation.github.io/MCC-Web-Development-2021/product-landing-page/logo_orig.png" alt="Chessex Logo">
         <nav id="nav-bar">
             <ul>
-                <li><a class="nav-link" href="#">link</a></li>
-                <li><a class="nav-link" href="#">link</a></li>
-                <li><a class="nav-link" href="#">link</a></li>
+                <li><a class="nav-link" href="#features">Features</a></li>
+                <li><a class="nav-link" href="#products">Products</a></li>
+                <li><a class="nav-link" href="#unboxing">Unboxing</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <iframe id="video" src="https://www.youtube.com/embed/l4f9QF0SGuQ" allowfullscreen></iframe>
-
         <form id="form" action="https://www.freecodecamp.com/email-submit" method="POST">
-            <label for="email">Email: <input type="email" id="email" placeholder="youremail@mail.com"
+            <div>
+                <p>Want to get in touch?</p>
+                <label for="email">Email: <input type="email" id="email" placeholder="youremail@mail.com"
                     name="email"></label>
-            <label for="submit"><input id="submit" type="submit" value="Submit"></label>
+                    <br/>
+                <label for="submit"><input id="submit" type="submit" value="Submit"></label>
+            </div>
+            
 
         </form>
+        <section id="features">
+            <h1>Features</h1>
+            <p>STUFF. AND THINGS.</p>
+        </section>
+        <section id="products">
+            <article class="product-box">
+                <img src="clear-dice-set.jpg" alt="product image of a clear dice box">
+                <p>name</p>
+                <p>price</p>
+                <button>ADD TO CART</button>
+            </article>
+            <article class="product-box">
+                <img src="polyhedral-set.jpg" alt="product image of a clear dice box">
+                <p>name</p>
+                <p>price</p>
+                <button>ADD TO CART</button>
+            </article>
+            <article class="product-box">
+                <img src="pound-o-dice.jpg" alt="product image of a clear dice box">
+                <p>name</p>
+                <p>price</p>
+                <button>ADD TO CART</button>
+            </article>
+        </section>
+        <figure id="unboxing">
+            <iframe id="video" src="https://www.youtube.com/embed/tUnrIhZlPig" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <figcaption>Unboxing the Pound-O-Dice by JadeKindGaming</figcaption>
+        </figure> 
     </main>
-    <footer>copyright idk</footer>
+    <footer>Copyright 2021 Chessex</footer>
 </body>
 
 </html>

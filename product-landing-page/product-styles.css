@@ -1,26 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap');
 body{
     margin:0;
     padding:0;
+    font-family: 'Roboto', sans-serif;
 }
 header{
     background: #009999;
     position:sticky;
     top:0;
-    padding:.5rem;
+    padding:.5rem 1rem;
     display:flex;
     justify-content: space-between;
+    align-content: center;
 }
 header img{
     max-width:200px;
     width:30vw;
 }
+nav{
+    display:flex;
+    align-items: center;
+}
 header ul{
     list-style: none;
     display:flex;
     flex-direction: row;
+    justify-content: space-between;
+}
+header ul > li{
+    padding-right:1rem;
 }
 .nav-link{
     text-decoration: none;
     text-transform: uppercase;
     color: white;
+    font-size: clamp(.85rem, 2vw,1rem);
+}
+.
+@media (prefers-reduced-motion){
+    a{
+        transition:none;
+    }
+}
+main{
+    max-width:1000px;
+    margin:0 auto;
+}
+form{
+    background-image: url(http://www.chessex.com/uploads/1/1/5/9/11598498/background-images/background-images/982989474.jpg);
+    height:300px;
+    max-height:50vh;
+    padding:3rem;
+}
+form > div{
+    background:rgba(0, 153, 153,.6);
+    padding:3rem;
+    text-align:center;
+    color:white;
+}
+form input{
+    padding:.25rem 1rem;
+}
+.product-box{
+    border: 1px solid #009999;
+}
+.product-box img{
+    width:100%;
+}
+iframe{
+    width:70vw;
+    max-width: 800px;
+    height:calc(.5625*70vw);
+    max-height:440px;
 }
