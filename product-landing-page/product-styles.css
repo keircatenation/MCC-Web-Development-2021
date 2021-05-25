@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap');
+:root{
+    --primary:#0aa8a8;
+    --secondary:#188;
+}
 body{
     margin:0;
     padding:0;
     font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
 }
 header{
-    background: #009999;
+    background: var(--primary);
     position:sticky;
     top:0;
     padding:.5rem 1rem;
@@ -33,43 +38,153 @@ header ul > li{
 .nav-link{
     text-decoration: none;
     text-transform: uppercase;
-    color: white;
+    color: black;
     font-size: clamp(.85rem, 2vw,1rem);
-}
-.
-@media (prefers-reduced-motion){
-    a{
-        transition:none;
-    }
 }
 main{
     max-width:1000px;
     margin:0 auto;
 }
 form{
-    background-image: url(http://www.chessex.com/uploads/1/1/5/9/11598498/background-images/background-images/982989474.jpg);
+    background-image: url(https://keircatenation.github.io/MCC-Web-Development-2021/product-landing-page/982989474.jpg);
     height:300px;
     max-height:50vh;
     padding:3rem;
 }
 form > div{
-    background:rgba(0, 153, 153,.6);
+    background:rgba(0, 153, 153,.8);
     padding:3rem;
     text-align:center;
     color:white;
+    max-width:500px;
+    margin:0 auto;
+    border-radius: 10px;
+}
+form > div > p{
+    font-size:2rem;
+    margin:0 0 1rem;
+    font-weight: 700;
 }
 form input{
-    padding:.25rem 1rem;
+    padding:.5rem .75rem;
+    margin-top:.5rem;
+    border:2px solid var(--primary);
+    border-radius: 10px;
+}
+input[type="email"]{
+    width:200px;
+}
+input[type="submit"]{
+    background: white;
+    color: var(--secondary);
+    cursor:pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all .2s;
+}
+input[type="submit"]:hover{
+    background:var(--primary);
+    color:white;
+    border: 2px solid white;
+}
+section{
+    border-top:1px solid var(--primary);
+    margin-top:2rem;
+    padding: 2rem 1rem 1rem;
+}
+section h1{
+    color:var(--secondary);
+}
+section#products{
+    display:grid;
+    grid-gap:1rem;
+}
+@media screen and (min-width:1000px) {
+    section#products{
+        grid-template-areas: "header header header" "block1 block2 block3";
+    }
+    section#products h1{
+        grid-area:header;
+    }
+    .clear{
+        grid-area:block1;
+    }
+    .polyhedral{
+        grid-area:block2;
+    }
+    .pound{
+        grid-area:block3;
+    }
 }
 .product-box{
-    border: 1px solid #009999;
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    overflow: hidden;
+    padding:1rem;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    grid-template-areas: "image image image" "title price cart";
+    grid-gap:.5rem;
+    align-items: center;
 }
 .product-box img{
     width:100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    grid-area:image;
+}
+.product-box h2{
+    grid-area:title;
+    margin:0;
+    color: var(--secondary);
+}
+.product-box p{
+    grid-area:price;
+    justify-self: center;
+}
+.product-box button{
+    grid-area:cart;
+    padding:.75rem;
+    color:var(--secondary);
+    border:2px solid var(--primary);
+    background-color: white;
+    border-radius: 10px;
+    max-width: 120px;
+    justify-self: end;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .2s;
+}
+.product-box button:hover{
+    background:var(--primary);
+    color:white;
+    border: 2px solid white;
+}
+figure{
+    text-align: center;
+    margin:0;
 }
 iframe{
-    width:70vw;
+    width:75vw;
     max-width: 800px;
-    height:calc(.5625*70vw);
+    height:calc(.5625*75vw);
     max-height:440px;
+}
+figcaption{
+    margin-top:1rem;
+    font-style: italic;
+}
+footer{
+    padding:.25rem;
+    background-color:var(--primary);
+    color:black;
+    font-size: .9rem;
+}
+
+@media (prefers-reduced-motion){
+    button{
+        transition:none;
+    }
 }

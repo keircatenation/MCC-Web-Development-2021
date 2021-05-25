@@ -16,7 +16,7 @@
         <img id="header-img" src="https://keircatenation.github.io/MCC-Web-Development-2021/product-landing-page/logo_orig.png" alt="Chessex Logo">
         <nav id="nav-bar">
             <ul>
-                <li><a class="nav-link" href="#features">Features</a></li>
+                <li><a class="nav-link" href="#intro">About</a></li>
                 <li><a class="nav-link" href="#products">Products</a></li>
                 <li><a class="nav-link" href="#unboxing">Unboxing</a></li>
             </ul>
@@ -26,42 +26,49 @@
         <form id="form" action="https://www.freecodecamp.com/email-submit" method="POST">
             <div>
                 <p>Want to get in touch?</p>
-                <label for="email">Email: <input type="email" id="email" placeholder="youremail@mail.com"
-                    name="email"></label>
+                <label for="email">Give us your Email: </label>
+                <input type="email" id="email" placeholder="email@mail.com" name="email" required>
                     <br/>
                 <label for="submit"><input id="submit" type="submit" value="Submit"></label>
             </div>
             
 
         </form>
-        <section id="features">
-            <h1>Features</h1>
-            <p>STUFF. AND THINGS.</p>
+        <section id="intro">
+            <h1>About Us</h1>
+            <p>Because you can never have too many dice…</p>
+            <p>Founded in 1987, Chessex® has had a long history of manufacturing gaming accessories with an emphasis on dice. Our goal is to provide high quality gaming accessories at an affordable price.</p>
+            <p>Chessex® strongly encourages consumers to buy from their local retail store whenever possible. Without distributors and retailers our industry would be quite different. Our success is due to the support and success of our hobby partners. We prefer that consumers buy anything they can locally or from their online retailers. However, we have many items that retailers and distributors do not find practical to stock, and those are the items that we encourage consumers to order from us. </p>
         </section>
         <section id="products">
-            <article class="product-box">
+            <h1>Selected Products</h1>
+            <article class="product-box clear">
                 <img src="clear-dice-set.jpg" alt="product image of a clear dice box">
-                <p>name</p>
-                <p>price</p>
+                <h2>Clear Dice Block</h2>
+                <p>$9.98</p>
                 <button>ADD TO CART</button>
             </article>
-            <article class="product-box">
+            <article class="product-box polyhedral">
                 <img src="polyhedral-set.jpg" alt="product image of a clear dice box">
-                <p>name</p>
-                <p>price</p>
+                <h2>Polyhedral Dice Block</h2>
+                <p>$9.98</p>
                 <button>ADD TO CART</button>
             </article>
-            <article class="product-box">
+            <article class="product-box pound">
                 <img src="pound-o-dice.jpg" alt="product image of a clear dice box">
-                <p>name</p>
-                <p>price</p>
+                <h2>Pound-O-Dice</h2>
+                <p>$34.98</p>
                 <button>ADD TO CART</button>
             </article>
         </section>
-        <figure id="unboxing">
-            <iframe id="video" src="https://www.youtube.com/embed/tUnrIhZlPig" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <figcaption>Unboxing the Pound-O-Dice by JadeKindGaming</figcaption>
-        </figure> 
+        <section id="unboxing">
+            <h1>Unboxing from our Fans</h1>
+            <figure id="unboxing">
+                <iframe id="video" src="https://www.youtube.com/embed/tUnrIhZlPig" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <figcaption>Unboxing the Pound-O-Dice by JadeKindGaming</figcaption>
+            </figure>
+        </section>
+         
     </main>
     <footer>Copyright 2021 Chessex</footer>
 </body>
