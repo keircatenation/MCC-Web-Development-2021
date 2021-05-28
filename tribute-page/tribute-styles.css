@@ -130,7 +130,8 @@ footer{
     }
     #img-div{
         grid-column: 1/4;
-        grid-row:1/4
+        grid-row:1/4;
+        align-self:center;
     }
     #img-div > p{
         grid-column: 1;

@@ -1,0 +1,275 @@
+:root{
+    --primary: rgb(153, 47, 96);
+    --secondary:rgb(254, 239, 143);
+    --dark-primary:rgb(112, 24, 53);
+    --dark-secondary:rgb(233, 147, 19);
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-size: 100%;
+    font-family:"Lato", sans-serif;
+}
+
+
+/*the header styles*/
+
+header{
+    position:fixed;
+    right:0;
+    left:0;
+    top:0;
+    background:rgba(153, 47, 96,.7);
+    display:flex;
+    flex-direction: column;
+    padding: 0 .75rem;
+}
+.scrolled{
+    box-shadow: 0px 0 .2rem 0 var(--dark-primary);
+    border-bottom:1px solid var(--dark-primary);
+    background-color: var(--primary);
+}
+header label{
+    display:block;
+    cursor: pointer;
+    background: url(assets/menu-icon.png) no-repeat center left;
+    color:var(--secondary);
+    flex-shrink:0;
+    padding:1rem 0 1rem 2.5rem;
+    font-weight: 700;
+}
+
+/*the collapsible menu bit*/
+input#menu{
+    display: none;
+}
+input:checked +label{
+    background-image:url(assets/close-icon-01.png);
+    border-bottom:1px solid var(--dark-secondary);
+}
+.collapsible-menu{
+    max-height:0;
+    overflow:hidden;
+    margin:0;
+}
+input:checked ~ .collapsible-menu{
+    max-height:100%;
+    padding-bottom:1rem;
+}
+#home-link{
+    display: none;
+}
+
+/*styling the menu*/
+header ul{
+    list-style: none;
+    display:flex;
+    padding:0;
+    justify-content: space-around;
+    margin-bottom:0;
+}
+header a{
+    text-decoration: none;
+    color:var(--secondary);
+    text-transform: uppercase;
+}
+header a:hover{
+    color:var(--dark-secondary);
+}
+
+
+/*the welcome section styles*/
+
+section#welcome-section{
+    background: center / cover no-repeat url(assets/walter_iznik.jpg);
+    height: 100vh;
+    text-align: center;
+    display:flex;
+    align-items: center;
+    margin:0;
+    max-width: 100%;
+}
+#welcome-section #welcome-text{
+    background:rgba(153, 47, 96, .9);
+    margin:0 auto;
+    padding:2rem;
+}
+section#welcome-section svg{
+    fill:var(--secondary);
+    width:60vw;
+    max-width:1000px;
+}
+section#welcome-section h1{
+    color:var(--secondary);
+    font-size: 1rem;
+    font-style: italic;
+}
+section#welcome-section p{
+    max-width:800px;
+    margin: 1rem auto 0;
+    color:white;
+    font-size:clamp(.8rem, 2vw, 1rem);
+    line-height: 1.5rem;
+}
+
+
+/*section detailing*/
+
+section{
+    margin:2.75rem 1rem 0;
+    display:grid;
+    grid-gap:1rem;
+    padding: 0;
+    border-top:1px solid var(--primary);
+}
+section h2{
+    margin:-1rem 0 .5rem;
+    color: var(--primary);
+    justify-self:center;
+    background: white;
+    padding:0 1rem;
+    text-transform:capitalize;
+}
+section p{
+    margin:0 0 .5rem;
+}
+section img{
+    object-fit:cover;
+    max-width: 100%;
+}
+
+/*the projects section*/
+
+.project-tile{
+    border:1px solid var(--primary);
+    border-radius: .5rem;
+    overflow: hidden;
+}
+.project-tile > img{
+    border-bottom:1px solid var(--primary);
+}
+.project-text{
+    margin:1rem;
+    display:grid;
+    grid-template-areas: "name link" "descrip descrip";
+    grid-gap:.5rem;
+    align-items: center;
+}
+.project-text h3{
+    grid-area:name;
+    margin:0;
+    font-size: 1.25rem;
+    color:var(--primary);
+}
+.project-text a{
+    grid-area:link;
+    text-decoration: none;
+    padding:.5rem 1rem;
+    background-color: var(--primary);
+    color:var(--secondary);
+    justify-self: end;
+    text-transform: uppercase;
+    border:1px solid var(--primary);
+    border-radius: .25rem;
+}
+.project-text a:hover{
+    background-color:var(--secondary);
+    color:var(--primary);
+}
+.project-text p{
+    grid-area:descrip;
+    margin:0;
+}
+
+
+/*about section styles*/
+
+#about{
+    grid-template-areas: "title" "text" "form" "icons";
+}
+#about h2{
+    grid-area:title;
+}
+.about-text{
+    grid-area:text;
+    line-height: 1.25rem;
+}
+#about form{
+    grid-area:form;
+}
+fieldset{
+    display: flex;
+    flex-direction: column;
+    border-radius: .5rem;
+    border:1px solid var(--primary);
+}
+legend{
+    color:var(--primary);
+    padding:0 .5rem;
+}
+input[type="text"], input[type="email"], textarea{
+    width:100%;
+    padding:.5rem;
+    border-radius: .25rem;
+    border:1px solid var(--primary);
+    margin-bottom: .5rem;
+    font-family: "Lato", sans-serif;
+    font-size: .9rem;
+}
+textarea{
+    height:5rem;
+}
+input[type="submit"]{
+    width:5rem;
+    text-align: center;
+    align-self: center;
+    padding:.5rem 0;
+    border-radius: .25rem;
+    border:1px solid var(--primary);
+    cursor: pointer;
+    font-family: "Lato", sans-serif;
+    text-transform: uppercase;
+    background-color: var(--primary);
+    color:var(--secondary);
+}
+input[type="submit"]:hover{
+    background-color:var(--secondary);
+    color:var(--primary);
+}
+.media-links{
+    display:flex;
+    justify-content: space-around;
+    align-content: center;
+    grid-area:icons;
+    align-self: center;
+}
+.media-links a{
+    color:var(--secondary);
+    background-color: var(--primary);
+    padding:.5rem 0;
+    text-align: center;
+    border-radius: .5rem;
+    width:3rem;
+    border:1px solid var(--primary);
+}
+.media-links a:hover{
+    color:var(--primary);
+    background: var(--secondary);
+}
+@media screen and (max-width:699px){
+    .avatar{
+        display:none;
+    }
+}
+
+footer{
+    background: var(--primary);
+    color:white;
+    padding:.5rem;
+    font-size: .8rem;
+    margin-top:1rem;
+}

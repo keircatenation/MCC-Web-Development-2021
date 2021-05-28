@@ -1,0 +1,90 @@
+/*collapsible menu styles*/
+
+header{
+    flex-direction: row;
+    padding:1rem 1.5rem;
+    align-content: center;
+    justify-content: space-between;
+}
+header label{
+    display:none;
+}
+#home-link{
+    display: block;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+.collapsible-menu{
+    max-height:100%;
+    width:50%;
+    justify-content: space-between;
+}
+.collapsible-menu ul{
+    margin:0;
+}
+
+
+/*main page styles*/
+
+section#welcome-section h1{
+    font-size: 1.5rem;
+}
+
+
+section{
+    max-width:1300px;
+}
+
+@media screen and (min-width:1333px){
+    section{
+        margin-right:auto;
+        margin-left:auto;
+    }
+}
+
+section#projects{
+    grid-template-columns: 1fr 1fr;
+}
+section#projects h2{
+    grid-column: span 2;
+}
+@media screen and (min-width:1330px) {
+    section#projects{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    section#projects h2{
+        grid-column: span 3;
+    }
+}
+
+
+/*about section*/
+
+#about{
+    grid-template-areas:"title title"
+                        "image text"
+                        "image icons"
+                        "form form";
+    /* grid-template-rows:auto 1fr .25fr auto; */
+}
+#about img{
+    grid-area:image;
+}
+.about-text{
+    align-self: end;
+}
+.media-links{
+    align-self: start;
+}
+
+@media screen and (min-width:1200px){
+    #about{
+        grid-template-areas: "title title"
+                             "image text"
+                             "image form"
+                             "image icons";
+    }
+    .about-text, .media-links, form{
+        align-self: center;
+    }
+}

@@ -4,17 +4,10 @@ nav{
     background-color: var(--primary-color);
     border:solid 2px var(--primary-color);
     border-bottom-width:1px;
-}
-
-
-
-/*the sticky-nav class contains the nav content and sticks it to the top of the page on laptop screens*/
-.sticky-nav{
     display:flex;
     flex-direction: column-reverse;
     flex-wrap:wrap;
 }
-
 nav  header{
     background-color: var(--primary-color);
     padding:1rem 2rem 2rem;

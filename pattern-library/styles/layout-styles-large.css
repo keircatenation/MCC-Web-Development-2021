@@ -1,45 +1,46 @@
 body{
     max-width:80rem;
+    display:grid;
+    grid-template-areas: "nav main" "nav footer";
 }
 
 nav{
     max-width:30vw;
-}
-
-/*the sticky-nav class contains the nav content and sticks it to the top of the page on laptop screens*/
-.sticky-nav{
     position:sticky;
     top:0;
     flex-direction: column;
+    height:100vh;
+    flex-wrap:nowrap;
+    grid-area:nav;
 }
-
+@media screen and (max-height:720px){
+    nav{
+        overflow:scroll;
+    }
+}
 nav  header{
     border:none;
 }
-
 .menu-content{
     border-bottom: none;
     border-top:solid 1px var(--light-offset);
     border-bottom:solid 1px var(--light-offset);
 }
-
 .menu-content li{
     text-align: left;
     padding-left:1rem;
 }
-
 .collapsible-menu label{
     display: none;
 }
-
 .menu-content{
     max-height:100%;
 }
 
-.flex-container{
-    display:flex;
-}
-
 main{
-    max-width:calc(100vw - 30vw);
+    max-width:70vw;
+    grid-area:main;
+}
+footer{
+    grid-area:footer;
 }
