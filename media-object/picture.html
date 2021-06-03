@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture Element testing</title>
+
+    <style>
+        .playing img{
+            width: 100%;
+            height:auto;
+        }
+        .class img{
+            max-width:100%;
+            height:auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- https://res.cloudinary.com/wjv-io/image/upload/v1622672553/respimg/small_pcrcr9.jpg
+    https://res.cloudinary.com/wjv-io/image/upload/v1622672555/respimg/medium_ckjasn.jpg
+    https://res.cloudinary.com/wjv-io/image/upload/v1622672553/respimg/large_kddiqy.jpg
+    https://res.cloudinary.com/wjv-io/image/upload/v1622672555/respimg/extralarge_vsjt19.jpg -->
+    <section class="class">
+        <picture>
+            <source srcset="https://res.cloudinary.com/wjv-io/image/upload/v1622672553/respimg/small_pcrcr9.jpg" media="(max-width:600px)">
+            <source srcset="https://res.cloudinary.com/wjv-io/image/upload/v1622672555/respimg/medium_ckjasn.jpg" media="(max-width:900px)">
+            <source srcset="https://res.cloudinary.com/wjv-io/image/upload/v1622672553/respimg/large_kddiqy.jpg" media="(max-width:1200px)">
+            <source srcset="https://res.cloudinary.com/wjv-io/image/upload/v1622672555/respimg/extralarge_vsjt19.jpg">
+            <img src="https://res.cloudinary.com/wjv-io/image/upload/v1622672553/respimg/small_pcrcr9.jpg" alt="Cherry Blossoms">
+        </picture>
+        
+        <img
+            srcset="https://res.cloudinary.com/wjv-io/image/upload/v1622672553/respimg/small_pcrcr9.jpg 600w, 
+            https://res.cloudinary.com/wjv-io/image/upload/v1622672555/respimg/medium_ckjasn.jpg 800w,
+            https://res.cloudinary.com/wjv-io/image/upload/v1622672553/respimg/large_kddiqy.jpg 1200w,
+            https://res.cloudinary.com/wjv-io/image/upload/v1622672555/respimg/extralarge_vsjt19.jpg 1600w"
+            sizes="(max-width: 600px) 450px, (max-width: 800px) 700px, (max-width: 1000px) 900px, 90vw"
+            src="https://res.cloudinary.com/wjv-io/image/upload/v1622672553/respimg/small_pcrcr9.jpg"
+            alt="Cherry Blossoms">
+
+        <!-- <img src="https://res.cloudinary.com/wjv-io/image/upload/v1622672553/respimg/small_pcrcr9.jpg" alt="Cherry Blossoms">
+        <img src="https://res.cloudinary.com/wjv-io/image/upload/v1622672555/respimg/medium_ckjasn.jpg" alt="Cherry Blossoms">
+        <img src="https://res.cloudinary.com/wjv-io/image/upload/v1622672553/respimg/large_kddiqy.jpg" alt="Cherry Blossoms">
+        <img src="https://res.cloudinary.com/wjv-io/image/upload/v1622672555/respimg/extralarge_vsjt19.jpg" alt="Cherry Blossoms"> -->
+    </section>
+    <section class="playing">
+
+        <p>IMG with SRCSET that does responsive sizing with SIZES</p>
+        <img srcset="img_600x400.png 600w, img_900x600.png 900w, img_1200x800.png 1200w, img_3000x2000.png 3000w" sizes="75vw" alt="colored image with text">
+    
+        <p>using the PICTURE element to wrap image info</p>
+        <picture>
+            <source srcset="img_900x600.png" media="(min-width: 601px) and (max-width:900px)">
+            <source srcset="img_1200x800.png" media="(min-width: 901px) and (max-width:1200px)">
+            <source srcset="img_3000x2000.png" media="(min-width: 1201px)">
+    
+            <img src="img_600x400.png" alt="600 x 400 px image" width="600" height="400">
+        </picture>
+    </section>
+</body>
+</html>

@@ -194,3 +194,10 @@ aside{
 .grid-caption{
     grid-row:2;
 }
+
+
+/*any and all styles regarding teh image experiments*/
+#image-experiments img{
+    max-width: 100%;
+    height:auto;
+}
