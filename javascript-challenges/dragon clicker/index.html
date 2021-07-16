@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Clicker</title>
+    <style>
+        button{
+            font-size: 52px;
+            background-color: white;
+            border:none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click some 🐉!</h1>
+    <button id="dragon">🐉</button>
+    <p>Clicks: <output>0</output></p>
+    <!--application displays a dragon emoji and a number of clicks!
+    the number of clicks increments when the dragon is clicked-->
+
+    <script>
+        let dragon = document.querySelector("#dragon");
+        let output = document.querySelector("output");
+        let value = 0;
+
+        dragon.addEventListener("click", (e) => {
+            value++;
+            output.innerText = value;
+        })
+    </script>
+</body>
+</html>

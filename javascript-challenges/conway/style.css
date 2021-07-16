@@ -1,0 +1,29 @@
+:root{
+    --cols: 10;
+    --rows: 10;
+    --side:20px;
+    --gap:2px
+}
+
+.conway{
+    width:calc( calc(var(--side) + var(--gap)) * var(--cols));
+    border: 1px solid purple;
+    display:grid;
+    grid-template-columns: repeat(var(--cols),var(--side));
+    grid-template-rows: repeat(var(--rows),var(--side));
+    grid-gap:var(--gap);
+    padding: 2px 0 2px 2px;
+}
+
+.conway > div{
+    width: var(--side);
+    height: var(--side);
+}
+
+.dead{
+    background-color: #f1f1f1;
+}
+
+.live{
+    background-color: purple;
+}
