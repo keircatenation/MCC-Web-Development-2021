@@ -1,0 +1,51 @@
+body{
+    font-family: "Bebas Neue", sans-serif;
+}
+main{
+    max-width:800px;
+    margin:0 auto;
+}
+h1{
+    text-align: center;
+    font-size: 60pt;
+}
+.arena{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.dragon{
+    padding:20px;
+    min-width:145px;
+    width: 15%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin:5px;
+}
+.fire{
+    background-color: #ff8989;
+}
+.water{
+    background-color: #9ac6ff;
+}
+.earth{
+    background-color: #e1ab65;
+}
+.air{
+    background-color: #f9f990;
+}
+button{
+    font-size: 52px;
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
+}
+.dragon p{
+    margin-left:10px;
+    font-size: 24pt;
+    text-align: center;
+    margin:5px 0;
+}

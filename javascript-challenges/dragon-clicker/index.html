@@ -4,22 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dragon Clicker</title>
-    <style>
-        button{
-            font-size: 52px;
-            background-color: white;
-            border:none;
-            cursor: pointer;
-        }
-    </style>
+    <title>Dragon Duo</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <h1>Click some 🐉!</h1>
-    <button id="dragon">🐉</button>
-    <p>Clicks: <output>0</output></p>
-    <!--application displays a dragon emoji and a number of clicks!
-    the number of clicks increments when the dragon is clicked-->
+    <main>
+        <h1>Make these 🐉 fight!</h1>
+        <div class="arena">
+            <div class="dragon fire">
+                <button onclick="dragonAddClick(1,'fire')">🐉</button>
+                <p>Clicks: <output>0</output></p>
+            </div>
+    
+            <div class="dragon water">
+                <button onclick="dragonAddClick(1,'water')">🐉</button>
+                <p>Clicks: <output>0</output></p>
+            </div>
+    
+            <!-- <div class="dragon earth">
+                <button onclick="dragonAddClick(1,'earth')">🐉</button>
+                <p>Clicks: <output>0</output></p>
+            </div>
+    
+            <div class="dragon air">
+                <button onclick="dragonAddClick(1,'air')">🐉</button>
+                <p>Clicks: <output>0</output></p>
+            </div> -->
+
+        </div>
+    </main>
 
     <script src="./index.js"></script>
 </body>
