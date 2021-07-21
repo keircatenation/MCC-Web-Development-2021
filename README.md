@@ -10,6 +10,8 @@
   - Resume Project: Recreating a print design with HTML and CSS
   - Product Landing Page: A one-page product page fr Chessex dice, done for the FreeCodeCamp certificate
   - Personal Portfolio: A personal portfolio done for the FreeCodeCamp certificate
+ 
+  - Dragon Clicker: an app currently counting how many times a user clicks a dragon button.
 
 ---
 
@@ -17,3 +19,4 @@
  - Calculator: a class exercise in CSS Grid and basic Javascript
  - Image Gallery: class exercises in CSS Flexbox and Grid
  - Media Object: class exercises in CSS Flexbox and Grid
+ - Javascript Challenges: class exercises in basic JS
