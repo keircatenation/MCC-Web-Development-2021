@@ -1,6 +1,6 @@
 function dragonAddClick(value,element){
     //creates the selector with the onclick function on the dragon
-    let selector = "#" + element + " output";
+    let selector = `#${element} output`;
 
     //gets the initial value IN THE FORM OF A STRING, then coerced into a number to add
     let clicks = Number(document.querySelector(selector).innerText);

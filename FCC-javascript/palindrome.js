@@ -1,5 +1,6 @@
 function palindrome(str) {
     let strLC = str.toLowerCase();
+    let alphanumeric = strLC.match(/[a-zA-Z0-9]/gi);
     return true;
   }
   
