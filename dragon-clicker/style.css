@@ -9,6 +9,10 @@ h1{
     text-align: center;
     font-size: 60pt;
 }
+h2{
+    font-size: 30pt;
+    margin:0;
+}
 .arena{
     display: flex;
     flex-direction: row;
@@ -19,10 +23,16 @@ h1{
     padding:20px;
     min-width:145px;
     width: 15%;
-    display:flex;
+    /* display:flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; */
+    display: grid;
+    grid-template-areas: "header header" "dragon clicks";
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
+    align-content: center;
+    align-items: center;
     margin:5px;
 }
 .red{
@@ -37,15 +47,21 @@ h1{
 .yellow{
     background-color: #f9f990;
 }
-button{
-    font-size: 52px;
+.dragon h2{
+    grid-area: header;
+    text-align: center;
+}
+.dragon button{
+    font-size: 50px;
     background-color: transparent;
     border:none;
     cursor: pointer;
+    grid-area: dragon;
 }
-.dragon p{
-    margin-left:10px;
-    font-size: 24pt;
+.dragon output{
+    font-size: 30pt;
     text-align: center;
     margin:5px 0;
+    grid-area: clicks;
+    padding:0;
 }
