@@ -8,58 +8,93 @@ main{
 h1{
     text-align: center;
     font-size: 60pt;
+    margin: 20px auto 10px;
 }
 h2{
     font-size: 30pt;
     margin:0;
+    text-align: center;
 }
-.arena{
-    display: flex;
+nav{
+    display:flex;
     flex-direction: row;
     justify-content: center;
-    flex-wrap: wrap;
 }
+nav button{
+    border-radius: 10px;
+    cursor: pointer;
+    padding:15px 15px 10px 15px;
+    font-size: 20pt;
+    font-family: "Bebas Neue", sans-serif;
+    line-height: 20pt;
+    border:2px solid black;
+    margin:0 5px 10px;
+}
+nav button:hover{
+    filter: saturate(2);
+}
+/* .arena{
+    padding:10px;
+    border:2px dashed black;
+    border-radius: 20px;
+    height:74vh;
+    overflow: hidden;
+} */
 .dragon{
     padding:20px;
-    min-width:145px;
-    width: 15%;
-    /* display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
     display: grid;
-    grid-template-areas: "header header" "dragon clicks";
-    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "header header header" "element dragon clicks";
+    grid-template-columns: 15px 2fr 1fr;
     justify-content: center;
     align-content: center;
     align-items: center;
-    margin:5px;
+    margin:auto;
+    cursor: pointer;
+    max-width:300px;
+    border-radius: 10px;
 }
 .red{
     background-color: #ff8989;
+    border: 2px solid rgb(83, 10, 10);
+    color:rgb(83,10,10);
 }
 .blue{
     background-color: #9ac6ff;
+    border: 2px solid rgb(17, 10, 83);
+    color:rgb(17, 10, 83);
 }
 .brown{
     background-color: #e1ab65;
+    border: 2px solid rgb(65, 34, 17);
+    color:rgb(65, 34, 17);
 }
 .yellow{
     background-color: #f9f990;
+    border: 2px solid rgb(92, 50, 10);
+    color:rgb(92, 50, 10);
+}
+.purple{
+    background-color: #cf90f9;
+    border: 2px solid rgb(45, 14, 70);
+    color:rgb(45, 14, 70);
 }
 .dragon h2{
     grid-area: header;
-    text-align: center;
+}
+.dragon p{
+    grid-area: element;
+    font-size: 20pt;
+    margin-top:0;
 }
 .dragon button{
-    font-size: 50px;
+    font-size: 100px;
     background-color: transparent;
     border:none;
-    cursor: pointer;
     grid-area: dragon;
+    cursor: pointer;
 }
 .dragon output{
-    font-size: 30pt;
+    font-size: 60pt;
     text-align: center;
     margin:5px 0;
     grid-area: clicks;
