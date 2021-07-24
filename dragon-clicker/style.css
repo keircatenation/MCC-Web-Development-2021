@@ -1,3 +1,15 @@
+:root{
+    --fire:#ff8989;
+    --fire-dark:rgb(83, 10, 10);
+    --water:#9ac6ff;
+    --water-dark:rgb(17, 10, 83);
+    --earth:#e1ab65;
+    --earth-dark:rgb(65, 34, 17);
+    --air:#f9f990;
+    --air-dark:rgb(92, 50, 10);
+    --heart:#cf90f9;
+    --heart-dark:rgb(45, 14, 70);
+}
 body{
     font-family: "Bebas Neue", sans-serif;
 }
@@ -24,7 +36,7 @@ nav button{
     border-radius: 10px;
     cursor: pointer;
     padding:15px 15px 10px 15px;
-    font-size: 20pt;
+    font-size: clamp(10pt,3vw,20pt);
     font-family: "Bebas Neue", sans-serif;
     line-height: 20pt;
     border:2px solid black;
@@ -54,29 +66,29 @@ nav button:hover{
     border-radius: 10px;
 }
 .red{
-    background-color: #ff8989;
-    border: 2px solid rgb(83, 10, 10);
-    color:rgb(83,10,10);
+    background-color: var(--fire);
+    border: 2px solid var(--fire-dark);
+    color:var(--fire-dark);
 }
 .blue{
-    background-color: #9ac6ff;
-    border: 2px solid rgb(17, 10, 83);
-    color:rgb(17, 10, 83);
+    background-color: var(--water);
+    border: 2px solid VAR(--water-dark);
+    color:VAR(--water-dark);
 }
 .brown{
-    background-color: #e1ab65;
-    border: 2px solid rgb(65, 34, 17);
-    color:rgb(65, 34, 17);
+    background-color: var(--earth);
+    border: 2px solid var(--earth-dark);
+    color:var(--earth-dark);
 }
 .yellow{
-    background-color: #f9f990;
-    border: 2px solid rgb(92, 50, 10);
-    color:rgb(92, 50, 10);
+    background-color: var(--air);
+    border: 2px solid var(--air-dark);
+    color:var(--air-dark);
 }
 .purple{
-    background-color: #cf90f9;
-    border: 2px solid rgb(45, 14, 70);
-    color:rgb(45, 14, 70);
+    background-color: var(--heart);
+    border: 2px solid var(--heart-dark);
+    color:var(--heart-dark);
 }
 .dragon h2{
     grid-area: header;
