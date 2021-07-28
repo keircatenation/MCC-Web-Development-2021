@@ -1,14 +1,19 @@
 :root{
     --fire:#ff8989;
     --fire-dark:rgb(83, 10, 10);
+    --fire-sat:rgb(209, 12, 12);
     --water:#9ac6ff;
     --water-dark:rgb(17, 10, 83);
+    --water-sat:#0e60cc;
     --earth:#e1ab65;
     --earth-dark:rgb(65, 34, 17);
+    --earth-sat:#6e350f;
     --air:#f9f990;
     --air-dark:rgb(92, 50, 10);
+    --air-sat:#d1a30d;
     --heart:#cf90f9;
     --heart-dark:rgb(45, 14, 70);
+    --heart-sat:#7515b4;
 }
 body{
     font-family: "Bebas Neue", sans-serif;
@@ -70,25 +75,100 @@ nav button:hover{
     border: 2px solid var(--fire-dark);
     color:var(--fire-dark);
 }
+.red .st1{
+    fill:var(--fire-dark);
+}
+.red .st2{
+    fill:var(--fire);
+}
+.red .st3{
+    fill:var(--fire-dark);
+}
+.red .st4{
+    fill:var(--fire-dark);
+}
+.red .st5{
+    fill:var(--fire-sat);
+}
 .blue{
     background-color: var(--water);
     border: 2px solid VAR(--water-dark);
     color:VAR(--water-dark);
+}
+.blue .st1{
+    fill:var(--water-dark);
+}
+.blue .st2{
+    fill:var(--water);
+}
+.blue .st3{
+    fill:var(--water-dark);
+}
+.blue .st4{
+    fill:var(--water-dark);
+}
+.blue .st5{
+    fill:var(--water-sat);
 }
 .brown{
     background-color: var(--earth);
     border: 2px solid var(--earth-dark);
     color:var(--earth-dark);
 }
+.brown .st1{
+    fill:var(--earth-dark);
+}
+.brown .st2{
+    fill:var(--earth);
+}
+.brown .st3{
+    fill:var(--earth-dark);
+}
+.brown .st4{
+    fill:var(--earth-dark);
+}
+.brown .st5{
+    fill:var(--earth-sat);
+}
 .yellow{
     background-color: var(--air);
     border: 2px solid var(--air-dark);
     color:var(--air-dark);
 }
+.yellow .st1{
+    fill:var(--air-dark);
+}
+.yellow .st2{
+    fill:var(--air);
+}
+.yellow .st3{
+    fill:var(--air-dark);
+}
+.yellow .st4{
+    fill:var(--air-dark);
+}
+.yellow .st5{
+    fill:var(--air-sat);
+}
 .purple{
     background-color: var(--heart);
     border: 2px solid var(--heart-dark);
     color:var(--heart-dark);
+}
+.purple .st1{
+    fill:var(--heart-dark);
+}
+.purple .st2{
+    fill:var(--heart);
+}
+.purple .st3{
+    fill:var(--heart-dark);
+}
+.purple .st4{
+    fill:var(--heart-dark);
+}
+.purple .st5{
+    fill:var(--heart-sat);
 }
 .dragon h2{
     grid-area: header;
