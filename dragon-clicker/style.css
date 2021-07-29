@@ -70,104 +70,104 @@ nav button:hover{
     max-width:300px;
     border-radius: 10px;
 }
-.red{
+.fire{
     background-color: var(--fire);
     border: 2px solid var(--fire-dark);
     color:var(--fire-dark);
 }
-.red .st1{
+.fire .st1{
     fill:var(--fire-dark);
 }
-.red .st2{
+.fire .st2{
     fill:var(--fire);
 }
-.red .st3{
+.fire .st3{
     fill:var(--fire-dark);
 }
-.red .st4{
+.fire .st4{
     fill:var(--fire-dark);
 }
-.red .st5{
+.fire .st5{
     fill:var(--fire-sat);
 }
-.blue{
+.water{
     background-color: var(--water);
     border: 2px solid VAR(--water-dark);
     color:VAR(--water-dark);
 }
-.blue .st1{
+.water .st1{
     fill:var(--water-dark);
 }
-.blue .st2{
+.water .st2{
     fill:var(--water);
 }
-.blue .st3{
+.water .st3{
     fill:var(--water-dark);
 }
-.blue .st4{
+.water .st4{
     fill:var(--water-dark);
 }
-.blue .st5{
+.water .st5{
     fill:var(--water-sat);
 }
-.brown{
+.earth{
     background-color: var(--earth);
     border: 2px solid var(--earth-dark);
     color:var(--earth-dark);
 }
-.brown .st1{
+.earth .st1{
     fill:var(--earth-dark);
 }
-.brown .st2{
+.earth .st2{
     fill:var(--earth);
 }
-.brown .st3{
+.earth .st3{
     fill:var(--earth-dark);
 }
-.brown .st4{
+.earth .st4{
     fill:var(--earth-dark);
 }
-.brown .st5{
+.earth .st5{
     fill:var(--earth-sat);
 }
-.yellow{
+.air{
     background-color: var(--air);
     border: 2px solid var(--air-dark);
     color:var(--air-dark);
 }
-.yellow .st1{
+.air .st1{
     fill:var(--air-dark);
 }
-.yellow .st2{
+.air .st2{
     fill:var(--air);
 }
-.yellow .st3{
+.air .st3{
     fill:var(--air-dark);
 }
-.yellow .st4{
+.air .st4{
     fill:var(--air-dark);
 }
-.yellow .st5{
+.air .st5{
     fill:var(--air-sat);
 }
-.purple{
+.heart{
     background-color: var(--heart);
     border: 2px solid var(--heart-dark);
     color:var(--heart-dark);
 }
-.purple .st1{
+.heart .st1{
     fill:var(--heart-dark);
 }
-.purple .st2{
+.heart .st2{
     fill:var(--heart);
 }
-.purple .st3{
+.heart .st3{
     fill:var(--heart-dark);
 }
-.purple .st4{
+.heart .st4{
     fill:var(--heart-dark);
 }
-.purple .st5{
+.heart .st5{
     fill:var(--heart-sat);
 }
 .dragon h2{

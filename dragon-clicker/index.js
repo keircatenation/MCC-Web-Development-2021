@@ -1,6 +1,50 @@
-let dragonSVG = `<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 25.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+// creating an array of the elements we have and an array to contain all the dragon objects
+let elements = ["fire", "water", "earth", "air", "heart"]
+let stable = [];
+
+// for each element, create a dragon and create a button in the nav to show the dragon
+elements.forEach(element => stable.push(dragonFactory(element)))
+elements.forEach(element => addButton(element))
+
+
+//add a nav button to the screen to access the dragons
+function addButton(elem){
+	// get the index of the element in the elements array, which is where the dragon will be in the stable array
+	let index = elements.indexOf(elem);
+	
+	//set up the button
+	let button = document.createElement("button");
+	button.setAttribute("class", `${elem}`);
+	button.setAttribute("onclick", `stable[${index}].showDragon()`)
+	button.innerText = `${elem}`;
+
+	document.querySelector("nav").append(button);
+}
+
+//factory function to create the dragons
+function dragonFactory(elem) {
+    return {
+        selector: `#${elem} output`,
+        clicks:0,
+		// get the index of the element in the elements array, which is where the dragon will be in the stable array
+		index:elements.indexOf(elem),
+        addClick: function(value) {
+            this.clicks += value;
+            document.querySelector(this.selector).innerText = this.clicks;
+        },
+        showDragon: function() {
+            document.querySelector(".arena").innerHTML = "";
+            document.querySelector(".arena").innerHTML += `<div class="dragon ${elem}" id="${elem}" onclick="stable[${this.index}].addClick(1)">
+                <h2>${elem}</h2>
+                <button>${dragonSVG}</button>
+                <output>${this.clicks}</output>
+            </div>`
+        }
+    }
+}
+
+
+var dragonSVG = `<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 74 68.44" style="enable-background:new 0 0 74 68.44;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#FFFFFF;}
@@ -40,30 +84,4 @@ let dragonSVG = `<?xml version="1.0" encoding="utf-8"?>
 <path class="st3" d="M44.79,50.61v3.57h-3.33c0,0,0.89-1.46,1.33-2.07C43.24,51.5,44.79,50.61,44.79,50.61z"/>
 <path class="st4" d="M23.94,13.61c0,0-0.44-4.06,1.78-5.78S30,5.94,32.78,5.94s3.78,0.22,2.83,1.5c-0.94,1.28-2,1.5-4.11,1.61
 	c-2.11,0.11-2.72,0.78-2.56,2.11S28.61,13.61,23.94,13.61z"/>
-</svg>
-`
-
-function dragonFactory(elem, color) {
-    return {
-        selector: `#${elem} output`,
-        clicks:0,
-        addClick: function(value) {
-            this.clicks += value;
-            document.querySelector(this.selector).innerText = this.clicks;
-        },
-        showDragon: function() {
-            document.querySelector(".arena").innerHTML = "";
-            document.querySelector(".arena").innerHTML += `<div class="dragon ${color}" id="${elem}" onclick="${elem}Dragon.addClick(1)">
-                <h2>${elem}</h2>
-                <button>${dragonSVG}</button>
-                <output>${this.clicks}</output>
-            </div>`
-        }
-    }
-}
-
-let fireDragon = dragonFactory("fire", "red");
-let waterDragon = dragonFactory("water", "blue");
-let earthDragon = dragonFactory("earth", "brown");
-let airDragon = dragonFactory("air", "yellow");
-let heartDragon = dragonFactory("heart", "purple");
+</svg>`
