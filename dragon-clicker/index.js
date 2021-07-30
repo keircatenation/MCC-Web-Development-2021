@@ -1,3 +1,20 @@
+const model = {
+
+}
+
+const controller = {
+
+
+}
+
+const view = {
+
+	
+}
+
+
+
+
 // creating an array of the elements we have and an array to contain all the dragon objects
 let elements = ["fire", "water", "earth", "air", "heart"]
 let stable = [];
