@@ -1,97 +1,3 @@
-const model = {
-	init:function(){
-		this.elements.forEach(element => {
-			let i = this.elements.indexOf(element);
-			this.stable.push(controller.dragonFactory(element, i));
-			console.log(this.stable)
-		})
-	},
-	elements: ["fire", "water", "earth", "air", "heart"],
-	stable:[],
-	addClick: function(){
-		// adds to the clicks
-		// and then hands back to the controller who directs the view to render
-	}
-}
-
-const controller = {
-	init: function(){
-		model.init();
-	},
-	dragonFactory:function(elem, id){
-		return {
-			id,
-			clicks:0,
-			type:elem,
-			level:1
-		}
-	},
-	increment:function(){
-		//calling an Addclick n the model to make it manipulate itself
-	}
-
-}
-
-const view = {
-	showDragon: function(){
-		//show the dragon on the page!
-	},
-	addButton: function(){
-		//adds a button for each dragon on the screen
-	}
-}
-
-
-
-
-// creating an array of the elements we have and an array to contain all the dragon objects
-// let elements = ["fire", "water", "earth", "air", "heart"]
-// let stable = [];
-
-// for each element, create a dragon and create a button in the nav to show the dragon
-// elements.forEach(element => stable.push(dragonFactory(element)))
-// elements.forEach(element => addButton(element))
-
-
-//add a nav button to the screen to access the dragons
-function addButton(elem){
-	// get the index of the element in the elements array, which is where the dragon will be in the stable array
-	let index = elements.indexOf(elem);
-	
-	//set up the button
-	let button = document.createElement("button");
-	button.setAttribute("class", `${elem}`);
-	button.setAttribute("onclick", `model.stable[${index}].showDragon()`)
-	button.innerText = `${elem}`;
-
-	document.querySelector("nav").append(button);
-}
-
-controller.init()
-
-//factory function to create the dragons
-// function dragonFactory(elem) {
-//     return {
-//         selector: `#${elem} output`,
-//         clicks:0,
-// 		// get the index of the element in the elements array, which is where the dragon will be in the stable array
-// 		index:elements.indexOf(elem),
-//         addClick: function(value) {
-//             this.clicks += value;
-//             document.querySelector(this.selector).innerText = this.clicks;
-//         },
-//         showDragon: function() {
-//             document.querySelector(".arena").innerHTML = "";
-//             document.querySelector(".arena").innerHTML += `<div class="dragon ${elem}" id="${elem}" onclick="stable[${this.index}].addClick(1)">
-//                 <h2>${elem}</h2>
-//                 <button>${dragonSVG}</button>
-//                 <output>${this.clicks}</output>
-//             </div>`
-//         }
-//     }
-// }
-
-
 const dragonSVG = `<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 viewBox="0 0 74 68.44" style="enable-background:new 0 0 74 68.44;" xml:space="preserve">
 <style type="text/css">
@@ -133,3 +39,105 @@ c-0.89,0-1.61-0.72-1.61-1.61v-1.56c0-0.89,0.72-1.61,1.61-1.61c0.89,0,1.61,0.72,1
 <path class="st4" d="M23.94,13.61c0,0-0.44-4.06,1.78-5.78S30,5.94,32.78,5.94s3.78,0.22,2.83,1.5c-0.94,1.28-2,1.5-4.11,1.61
 c-2.11,0.11-2.72,0.78-2.56,2.11S28.61,13.61,23.94,13.61z"/>
 </svg>`
+
+
+const model = {
+	init:function(){
+		this.elements.forEach(element => {
+			let i = this.elements.indexOf(element);
+			this.stable.push(controller.dragonFactory(element, i+1));
+			// console.log(this.stable)
+		})
+	},
+	elements: ["fire", "water", "earth", "air", "heart"],
+	stable:[],
+	addClick: function(dragonID){
+		let dragon = this.stable[dragonID-1];
+		dragon.clicks += 1;
+		if(dragon.clicks >= (dragon.level*10)){
+			dragon.level++;
+		}
+		console.log(dragon.type,dragon.clicks, dragon.level)
+		view.render()
+	}
+}
+
+const controller = {
+	init: function(){
+		model.init();
+		view.init();
+	},
+	dragonFactory:function(elem, id){
+		return {
+			id,
+			clicks:0,
+			type:elem,
+			level:1
+		}
+	},
+	getDragons: function(){
+		return model.stable;
+	},
+	increment:function(id){
+		model.addClick(id);
+	}
+}
+
+const view = {
+	init: function(){
+		this.arena = document.querySelector(".arena");
+		this.nav = document.querySelector("nav");
+		this.render();
+	},
+	addDragon: function(dragon){
+		let newDragon = document.createElement("div");
+		newDragon.setAttribute("class", `dragon ${dragon.type}`);
+		newDragon.setAttribute("id", `${dragon.id}`)
+		newDragon.setAttribute("onclick", `controller.increment(${dragon.id})`)
+		newDragon.innerHTML = `<h2>${dragon.type}</h2>
+		<button>${dragonSVG}</button>
+		<output>Clicks: ${dragon.clicks}
+				Level: ${dragon.level}</output>`
+		this.arena.appendChild(newDragon)
+	},
+	addButton: function(dragon){
+		let button = document.createElement("button");
+		button.setAttribute("class", `${dragon.type}`);
+		button.innerText = `${dragon.type}`;
+		this.nav.append(button);
+	},
+	render: function(){
+		this.arena.innerHTML = ""
+		this.nav.innerHTML = ""
+		controller.getDragons().forEach(dragon => {
+			view.addDragon(dragon);
+			view.addButton(dragon)
+		})
+	},
+}
+
+controller.init()
+
+//factory function to create the dragons
+// function dragonFactory(elem) {
+//     return {
+//         selector: `#${elem} output`,
+//         clicks:0,
+// 		// get the index of the element in the elements array, which is where the dragon will be in the stable array
+// 		index:elements.indexOf(elem),
+//         addClick: function(value) {
+//             this.clicks += value;
+//             document.querySelector(this.selector).innerText = this.clicks;
+//         },
+//         showDragon: function() {
+//             document.querySelector(".arena").innerHTML = "";
+//             document.querySelector(".arena").innerHTML += `<div class="dragon ${elem}" id="${elem}" onclick="stable[${this.index}].addClick(1)">
+//                 <h2>${elem}</h2>
+//                 <button>${dragonSVG}</button>
+//                 <output>${this.clicks}</output>
+//             </div>`
+//         }
+//     }
+// }
+
+

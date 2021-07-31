@@ -19,7 +19,7 @@ body{
     font-family: "Bebas Neue", sans-serif;
 }
 main{
-    max-width:800px;
+    max-width:80vw;
     margin:0 auto;
 }
 h1{
@@ -50,18 +50,16 @@ nav button{
 nav button:hover{
     filter: saturate(2);
 }
-/* .arena{
-    padding:10px;
-    border:2px dashed black;
-    border-radius: 20px;
-    height:74vh;
-    overflow: hidden;
-} */
+.arena{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 .dragon{
     padding:20px;
     display: grid;
     grid-template-areas: "header header" "dragon clicks";
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-content: center;
     align-items: center;
@@ -69,6 +67,7 @@ nav button:hover{
     cursor: pointer;
     max-width:300px;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 .fire{
     background-color: var(--fire);
@@ -186,7 +185,7 @@ nav button:hover{
     cursor: pointer;
 }
 .dragon output{
-    font-size: 60pt;
+    font-size: 30pt;
     text-align: center;
     margin:5px 0;
     grid-area: clicks;
