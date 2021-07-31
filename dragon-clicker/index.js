@@ -57,7 +57,6 @@ const model = {
 		if(dragon.clicks >= (dragon.level*10)){
 			dragon.level++;
 		}
-		console.log(dragon.type,dragon.clicks, dragon.level)
 		view.render()
 	}
 }
@@ -78,8 +77,15 @@ const controller = {
 	getDragons: function(){
 		return model.stable;
 	},
-	increment:function(id){
-		model.addClick(id);
+	dispatch:function(event, id){
+		switch(event){
+			case "click":
+				model.addClick(id);
+				break
+			case "dlbclick":
+				//something else
+		}
+		
 	}
 }
 
@@ -93,7 +99,7 @@ const view = {
 		let newDragon = document.createElement("div");
 		newDragon.setAttribute("class", `dragon ${dragon.type}`);
 		newDragon.setAttribute("id", `${dragon.id}`)
-		newDragon.setAttribute("onclick", `controller.increment(${dragon.id})`)
+		newDragon.setAttribute("onclick", `controller.dispatch("click", ${dragon.id})`)
 		newDragon.innerHTML = `<h2>${dragon.type}</h2>
 		<button>${dragonSVG}</button>
 		<output>Clicks: ${dragon.clicks}
@@ -111,33 +117,9 @@ const view = {
 		this.nav.innerHTML = ""
 		controller.getDragons().forEach(dragon => {
 			view.addDragon(dragon);
-			view.addButton(dragon)
+			//view.addButton(dragon)
 		})
 	},
 }
 
 controller.init()
-
-//factory function to create the dragons
-// function dragonFactory(elem) {
-//     return {
-//         selector: `#${elem} output`,
-//         clicks:0,
-// 		// get the index of the element in the elements array, which is where the dragon will be in the stable array
-// 		index:elements.indexOf(elem),
-//         addClick: function(value) {
-//             this.clicks += value;
-//             document.querySelector(this.selector).innerText = this.clicks;
-//         },
-//         showDragon: function() {
-//             document.querySelector(".arena").innerHTML = "";
-//             document.querySelector(".arena").innerHTML += `<div class="dragon ${elem}" id="${elem}" onclick="stable[${this.index}].addClick(1)">
-//                 <h2>${elem}</h2>
-//                 <button>${dragonSVG}</button>
-//                 <output>${this.clicks}</output>
-//             </div>`
-//         }
-//     }
-// }
-
-
