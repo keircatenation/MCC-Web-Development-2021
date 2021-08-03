@@ -40,65 +40,12 @@ c-0.89,0-1.61-0.72-1.61-1.61v-1.56c0-0.89,0.72-1.61,1.61-1.61c0.89,0,1.61,0.72,1
 c-2.11,0.11-2.72,0.78-2.56,2.11S28.61,13.61,23.94,13.61z"/>
 </svg>`
 
-
-const model = {
-	init:function(){
-		this.elements.forEach(element => {
-			let i = this.elements.indexOf(element);
-			this.stable.push(controller.dragonFactory(element, i));
-			// console.log(this.stable)
-		})
-	},
-	elements: ["all", "fire", "water", "earth", "air", "heart"],
-	stable:[],
-	addClick: function(dragonID){
-		let dragon = this.stable[dragonID];
-		dragon.clicks += 1;
-		if(dragon.clicks >= (dragon.level*10)){
-			dragon.level++;
-		}
-		controller.renderViews()
-	}
-}
-
-const controller = {
-	init: function(){
-		model.init();
-		viewList.init();
-		viewCards.init();
-	},
-	dragonFactory:function(elem, id){
-		return {
-			id,
-			clicks:0,
-			type:elem,
-			level:1
-		}
-	},
-	getDragons: function(){
-		return model.stable;
-	},
-	dispatch:function(event, id){
-		switch(event){
-			case "click":
-				model.addClick(id);
-				break
-			case "dlbclick":
-				//something else
-		}
-	},
-	renderViews: function(){
-		viewCards.render();
-		viewList.render()
-	}
-}
-
 const viewCards = {
 	init: function(){
 		this.arena = document.querySelector(".arena");
 		this.render();
 	},
-	addDragon: function(dragon){
+	addDragonToScreen: function(dragon){
 		let newDragon = document.createElement("div");
 		newDragon.setAttribute("class", `dragon ${dragon.type}`);
 		newDragon.setAttribute("id", `${dragon.id}`)
@@ -111,15 +58,9 @@ const viewCards = {
 	},
 	render: function(){
 		this.arena.innerHTML = ""
-		let dragons = controller.getDragons().slice(1);
-		dragons.forEach(dragon => {
-			this.addDragon(dragon);
+		controller.getDragons().forEach(dragon => {
+			this.addDragonToScreen(dragon);
 		})
-	},
-	showOneDragon: function(dragonID){
-		this.arena.innerHTML = ""
-		let dragon = controller.getDragons()[dragonID]
-		this.addDragon(dragon);
 	}
 }
 
@@ -128,25 +69,19 @@ const viewList = {
 		this.nav = document.querySelector("nav");
 		this.render();
 	},
-	addButton: function(dragon){
+	addButton: function(element){
 		let button = document.createElement("button");
-		button.setAttribute("class", `${dragon.type}`);
-		button.innerText = `${dragon.type}`;
-		if(dragon.id === 0) {
-			button.setAttribute("onclick", `viewCards.render()`)
-		} else {
-			button.setAttribute("onclick", `viewCards.showOneDragon(${dragon.id})`)
-		}
+		button.setAttribute("class", `${element}`);
+		button.innerText = `${element}`;
+		button.setAttribute("onclick", `controller.addToStable("${element}")`)
 		
 		this.nav.append(button);
 	},
 	render: function(){
 		this.nav.innerHTML = ""
-		let navList = controller.getDragons().concat([])
-		navList.forEach(dragon => {
-			this.addButton(dragon)
+		let navList = controller.getElements()
+		navList.forEach(element => {
+			this.addButton(element)
 		})
 	},
 }
-
-controller.init()
