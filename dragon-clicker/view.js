@@ -85,3 +85,10 @@ const viewList = {
 		})
 	},
 }
+
+const viewAdmin = {
+	//opens on ctl+click, opens a form that's displayed in tabs, where it's the basic type of editing the dragon and another view that is about adding a new type of dragon
+	// with adding a new type of dragon, we need another button up top as well -> adding to the elements array!
+	// the form submission should update the model of the currently selected dragon & the view should reflect the changes
+	// can close the window with or without submitting
+}

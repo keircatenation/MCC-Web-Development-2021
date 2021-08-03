@@ -4,7 +4,7 @@ const model = {
 	addClick: function(dragonID){
 		let dragon = this.stable[dragonID];
 		dragon.clicks += 1;
-		if(dragon.clicks >= (dragon.level*10)){
+		if(dragon.clicks > (dragon.level**2)){
 			dragon.level++;
 		}
 	},
