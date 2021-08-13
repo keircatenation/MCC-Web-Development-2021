@@ -1,19 +1,31 @@
 :root{
-    --fire:#ff8989;
-    --fire-dark:rgb(83, 10, 10);
-    --fire-sat:rgb(209, 12, 12);
-    --water:#9ac6ff;
-    --water-dark:rgb(17, 10, 83);
-    --water-sat:#0e60cc;
-    --earth:#e1ab65;
-    --earth-dark:rgb(65, 34, 17);
-    --earth-sat:#6e350f;
-    --air:#f9f990;
-    --air-dark:rgb(92, 50, 10);
-    --air-sat:#d1a30d;
-    --heart:#cf90f9;
-    --heart-dark:rgb(45, 14, 70);
-    --heart-sat:#7515b4;
+    --red:#ff8989;
+    --red-dark:rgb(83, 10, 10);
+    --red-sat:rgb(209, 12, 12);
+
+    --orange:rgb(255, 117, 75);
+    --orange-dark:rgb(126, 48, 25);
+    --orange-sat:rgb(240, 56, 0);
+
+    --yellow:#f9f990;
+    --yellow-dark:rgb(92, 50, 10);
+    --yellow-sat:#d1a30d;
+
+    --brown:#e1ab65;
+    --brown-dark:rgb(65, 34, 17);
+    --brown-sat:#6e350f;
+
+    --green:#bfff9a;
+    --green-dark:#355026;
+    --green-sat:#60c426;
+
+    --blue:#9ac6ff;
+    --blue-dark:rgb(17, 10, 83);
+    --blue-sat:#0e60cc;
+
+    --purple:#cf90f9;
+    --purple-dark:rgb(45, 14, 70);
+    --purple-sat:#7515b4;
 }
 body{
     font-family: "Bebas Neue", sans-serif;
@@ -31,6 +43,45 @@ h2{
     font-size: 30pt;
     margin:0;
     text-align: center;
+}
+.modal{
+    position: fixed;
+    top:0;
+    left:0;
+    height:100vh;
+    width:100vw;
+    background:rgba(80, 75, 75, 0.85);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.brandModal{
+    margin:1.5rem;
+    padding:3rem;
+    border:solid 2px black;
+    border-radius: 1rem;
+    font-size: 18px;
+    line-height: 2rem;
+    position: relative;
+}
+.close{
+    font-size: 45px;
+    color:black;
+    position:absolute;
+    right:-1rem;
+    top:-1rem;
+    padding:10px;
+    border-radius: 35px;
+    cursor: pointer;
+    user-select: none;
+    border:2px solid black;
+}
+.brandModal main{
+    display:flex;
+    flex-direction: column;
+}
+.brandModal main label,.brandModal main button{
+    margin-top:5px;
 }
 p{
     text-align: center;
@@ -75,106 +126,6 @@ nav button:hover{
     border-radius: 10px;
     margin-bottom: 10px;
 }
-.fire{
-    background-color: var(--fire);
-    border: 2px solid var(--fire-dark);
-    color:var(--fire-dark);
-}
-.fire .st1{
-    fill:var(--fire-dark);
-}
-.fire .st2{
-    fill:var(--fire);
-}
-.fire .st3{
-    fill:var(--fire-dark);
-}
-.fire .st4{
-    fill:var(--fire-dark);
-}
-.fire .st5{
-    fill:var(--fire-sat);
-}
-.water{
-    background-color: var(--water);
-    border: 2px solid VAR(--water-dark);
-    color:VAR(--water-dark);
-}
-.water .st1{
-    fill:var(--water-dark);
-}
-.water .st2{
-    fill:var(--water);
-}
-.water .st3{
-    fill:var(--water-dark);
-}
-.water .st4{
-    fill:var(--water-dark);
-}
-.water .st5{
-    fill:var(--water-sat);
-}
-.earth{
-    background-color: var(--earth);
-    border: 2px solid var(--earth-dark);
-    color:var(--earth-dark);
-}
-.earth .st1{
-    fill:var(--earth-dark);
-}
-.earth .st2{
-    fill:var(--earth);
-}
-.earth .st3{
-    fill:var(--earth-dark);
-}
-.earth .st4{
-    fill:var(--earth-dark);
-}
-.earth .st5{
-    fill:var(--earth-sat);
-}
-.air{
-    background-color: var(--air);
-    border: 2px solid var(--air-dark);
-    color:var(--air-dark);
-}
-.air .st1{
-    fill:var(--air-dark);
-}
-.air .st2{
-    fill:var(--air);
-}
-.air .st3{
-    fill:var(--air-dark);
-}
-.air .st4{
-    fill:var(--air-dark);
-}
-.air .st5{
-    fill:var(--air-sat);
-}
-.heart{
-    background-color: var(--heart);
-    border: 2px solid var(--heart-dark);
-    color:var(--heart-dark);
-}
-.heart .st1{
-    fill:var(--heart-dark);
-}
-.heart .st2{
-    fill:var(--heart);
-}
-.heart .st3{
-    fill:var(--heart-dark);
-}
-.heart .st4{
-    fill:var(--heart-dark);
-}
-.heart .st5{
-    fill:var(--heart-sat);
-}
 .dragon h2{
     grid-area: header;
 }
@@ -196,4 +147,160 @@ nav button:hover{
     margin:5px 0;
     grid-area: clicks;
     padding:0;
+}
+
+
+/*colors for dragons!*/
+
+.red{
+    background-color: var(--red);
+    border: 2px solid var(--red-dark);
+    color:var(--red-dark);
+}
+.red .st1{
+    fill:var(--red-dark);
+}
+.red .st2{
+    fill:var(--red);
+}
+.red .st3{
+    fill:var(--red-dark);
+}
+.red .st4{
+    fill:var(--red-dark);
+}
+.red .st5{
+    fill:var(--red-sat);
+}
+
+.orange{
+    background-color: var(--orange);
+    border: 2px solid var(--orange-dark);
+    color:var(--orange-dark);
+}
+.orange .st1{
+    fill:var(--orange-dark);
+}
+.orange .st2{
+    fill:var(--orange);
+}
+.orange .st3{
+    fill:var(--orange-dark);
+}
+.orange .st4{
+    fill:var(--orange-dark);
+}
+.orange .st5{
+    fill:var(--orange-sat);
+}
+
+.yellow{
+    background-color: var(--yellow);
+    border: 2px solid var(--yellow-dark);
+    color:var(--yellow-dark);
+}
+.yellow .st1{
+    fill:var(--yellow-dark);
+}
+.yellow .st2{
+    fill:var(--yellow);
+}
+.yellow .st3{
+    fill:var(--yellow-dark);
+}
+.yellow .st4{
+    fill:var(--yellow-dark);
+}
+.yellow .st5{
+    fill:var(--yellow-sat);
+}
+
+.brown{
+    background-color: var(--brown);
+    border: 2px solid var(--brown-dark);
+    color:var(--brown-dark);
+}
+.brown .st1{
+    fill:var(--brown-dark);
+}
+.brown .st2{
+    fill:var(--brown);
+}
+.brown .st3{
+    fill:var(--brown-dark);
+}
+.brown .st4{
+    fill:var(--brown-dark);
+}
+.brown .st5{
+    fill:var(--brown-sat);
+}
+
+.green{
+    background-color: var(--green);
+    border: 2px solid var(--green-dark);
+    color:var(--green-dark);
+}
+.green .st1{
+    fill:var(--green-dark);
+}
+.green .st2{
+    fill:var(--green);
+}
+.green .st3{
+    fill:var(--green-dark);
+}
+.green .st4{
+    fill:var(--green-dark);
+}
+.green .st5{
+    fill:var(--green-sat);
+}
+
+.blue{
+    background-color: var(--blue);
+    border: 2px solid VAR(--blue-dark);
+    color:VAR(--blue-dark);
+}
+.blue .st1{
+    fill:var(--blue-dark);
+}
+.blue .st2{
+    fill:var(--blue);
+}
+.blue .st3{
+    fill:var(--blue-dark);
+}
+.blue .st4{
+    fill:var(--blue-dark);
+}
+.blue .st5{
+    fill:var(--blue-sat);
+}
+
+.purple{
+    background-color: var(--purple);
+    border: 2px solid var(--purple-dark);
+    color:var(--purple-dark);
+}
+.purple .st1{
+    fill:var(--purple-dark);
+}
+.purple .st2{
+    fill:var(--purple);
+}
+.purple .st3{
+    fill:var(--purple-dark);
+}
+.purple .st4{
+    fill:var(--purple-dark);
+}
+.purple .st5{
+    fill:var(--purple-sat);
+}
+
+.white{
+    background-color: white;
+    border: 2px solid black;
+    color:black;
 }
