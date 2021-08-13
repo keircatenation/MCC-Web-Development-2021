@@ -128,7 +128,7 @@ const viewAdmin = {
 					<label for="dragon-level" id="dragon-level-label">Level:
 						<input type="number" id="dragon-level" value="${dragon.level}">
 					</label>
-					<button id="submit-dragon-edits">Submit changes</button>
+					<button id="submit-dragon-edits" onclick="viewAdmin.submitDragonEditor(${dragon.id})">Submit changes</button>
 					<button id="close-modal" onclick="viewAdmin.closeModal()">Close Without Submitting</button>
 				</main>
 			</div>
@@ -148,7 +148,20 @@ const viewAdmin = {
 				<div class="close white" onclick="viewAdmin.closeModal()">⨯</div>
 				<main>
 					<h2>ADD DRAGON TYPE</h2>
-					<button id="submit-new-dragon">Submit changes</button>
+					<label for="dragon-type" id="dragon-type-label">Type:
+						<input type="text" id="dragon-type" placeholder="Name your dragon type!">
+					</label>
+					<label for="dragon-color" id="dragon-color-label">Color:
+						<select id="dragon-color">
+							<option value="red">Red</option>
+							<option value="orange">orange</option>
+							<option value="yellow">yellow</option>
+							<option value="green">green</option>
+							<option value="blue">blue</option>
+							<option value="purple">purple</option>
+						</select>
+					</label>
+					<button id="submit-new-dragon" onclick="viewAdmin.submitDragonType()">Submit changes</button>
 					<button id="close-modal" onclick="viewAdmin.closeModal()">Close Without Submitting</button>
 				</main>
 			</div>
@@ -159,13 +172,26 @@ const viewAdmin = {
 		//close the admin screen
 		document.querySelector("#modal").remove()
 	},
-	submitAdmin: function(){
+	submitDragonEditor: function(id){
 		//close the admin after submitting the data
 		//this updates the model of the currently selected dragon & the view reflects the changes
-		console.log(document.querySelector("#dragon-type"))
+		let newDragonType = document.querySelector("#dragon-type").value;
+		let newDragonColor = document.querySelector("#dragon-color").value;
+		let newDragonClicks = document.querySelector("#dragon-clicks").value;
+		let newDragonLevel = document.querySelector("#dragon-level").value;
+		
+		controller.submitDragonEdits(id,newDragonType, newDragonColor, newDragonClicks, newDragonLevel);
+		this.closeModal()
+		viewCards.render();
 	},
 	submitDragonType: function(){
 		//adds a new dragon type to the nav bar, where users can add dragons to the screen - renders the nav bar
+		let newElem = document.querySelector("#dragon-type").value;
+		let newColor = document.querySelector("#dragon-color").value;
+		console.log(newElem, newColor)
+
+		controller.submitDragonType(newElem, newColor)
+		this.closeModal()
 		viewList.render()
 	},
 	elementSelectTemplate: function(dragonType){

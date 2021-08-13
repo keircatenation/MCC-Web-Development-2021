@@ -30,6 +30,12 @@ const controller = {
 	addToStable(element, color){
 		model.addDragonToStable(element, color);
 		viewCards.render()
+	},
+	submitDragonEdits: function(id,newType,newColor, newClicks, newLevel){
+		model.editDragon(id,newType,newColor, newClicks, newLevel)
+	},
+	submitDragonType: function(name, color){
+		model.newElement(name, color)
 	}
 }
 
