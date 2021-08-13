@@ -22,9 +22,12 @@ const viewCards = {
 	},
 	render: function(){
 		this.arena.innerHTML = ""
-		controller.getDragons().forEach(dragon => {
-			this.addDragonToScreen(dragon);
-		})
+		let dragonArray = controller.getDragons();
+		
+		for (let i = dragonArray.length-1; i>= 0; i--){
+			console.log(dragonArray[i])
+			this.addDragonToScreen(dragonArray[i])
+		}
 	}
 }
 

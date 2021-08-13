@@ -15,7 +15,7 @@ const model = {
 	},
 	addDragonToStable(element,fill, fillDark, fillSat){
 		let i = this.stable.length;
-		this.stable.unshift(this.dragonFactory(element, i, fill, fillDark, fillSat))
+		this.stable.push(this.dragonFactory(element, i, fill, fillDark, fillSat))
 	},
 	dragonFactory:function(elem, id, fill, fillDark, fillSat){
 		return {
