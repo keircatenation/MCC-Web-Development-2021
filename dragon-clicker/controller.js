@@ -27,8 +27,8 @@ const controller = {
 	renderCards: function(){
 		viewCards.render();
 	},
-	addToStable(element, color){
-		model.addDragonToStable(element, color);
+	addToStable(element, fill, fillDark, fillSat){
+		model.addDragonToStable(element, fill, fillDark, fillSat);
 		viewCards.render()
 	},
 	submitDragonEdits: function(id,newType,newColor, newClicks, newLevel){

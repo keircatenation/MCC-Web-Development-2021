@@ -92,12 +92,13 @@ nav{
     display:flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
 }
 nav button{
     border-radius: 10px;
     cursor: pointer;
     padding:15px 15px 10px 15px;
-    font-size: clamp(10pt,3vw,20pt);
+    font-size: clamp(14pt,3vw,20pt);
     font-family: "Bebas Neue", sans-serif;
     line-height: 20pt;
     border:2px solid black;
@@ -151,154 +152,6 @@ nav button:hover{
 
 
 /*colors for dragons!*/
-
-.red{
-    background-color: var(--red);
-    border: 2px solid var(--red-dark);
-    color:var(--red-dark);
-}
-.red .st1{
-    fill:var(--red-dark);
-}
-.red .st2{
-    fill:var(--red);
-}
-.red .st3{
-    fill:var(--red-dark);
-}
-.red .st4{
-    fill:var(--red-dark);
-}
-.red .st5{
-    fill:var(--red-sat);
-}
-
-.orange{
-    background-color: var(--orange);
-    border: 2px solid var(--orange-dark);
-    color:var(--orange-dark);
-}
-.orange .st1{
-    fill:var(--orange-dark);
-}
-.orange .st2{
-    fill:var(--orange);
-}
-.orange .st3{
-    fill:var(--orange-dark);
-}
-.orange .st4{
-    fill:var(--orange-dark);
-}
-.orange .st5{
-    fill:var(--orange-sat);
-}
-
-.yellow{
-    background-color: var(--yellow);
-    border: 2px solid var(--yellow-dark);
-    color:var(--yellow-dark);
-}
-.yellow .st1{
-    fill:var(--yellow-dark);
-}
-.yellow .st2{
-    fill:var(--yellow);
-}
-.yellow .st3{
-    fill:var(--yellow-dark);
-}
-.yellow .st4{
-    fill:var(--yellow-dark);
-}
-.yellow .st5{
-    fill:var(--yellow-sat);
-}
-
-.brown{
-    background-color: var(--brown);
-    border: 2px solid var(--brown-dark);
-    color:var(--brown-dark);
-}
-.brown .st1{
-    fill:var(--brown-dark);
-}
-.brown .st2{
-    fill:var(--brown);
-}
-.brown .st3{
-    fill:var(--brown-dark);
-}
-.brown .st4{
-    fill:var(--brown-dark);
-}
-.brown .st5{
-    fill:var(--brown-sat);
-}
-
-.green{
-    background-color: var(--green);
-    border: 2px solid var(--green-dark);
-    color:var(--green-dark);
-}
-.green .st1{
-    fill:var(--green-dark);
-}
-.green .st2{
-    fill:var(--green);
-}
-.green .st3{
-    fill:var(--green-dark);
-}
-.green .st4{
-    fill:var(--green-dark);
-}
-.green .st5{
-    fill:var(--green-sat);
-}
-
-.blue{
-    background-color: var(--blue);
-    border: 2px solid VAR(--blue-dark);
-    color:VAR(--blue-dark);
-}
-.blue .st1{
-    fill:var(--blue-dark);
-}
-.blue .st2{
-    fill:var(--blue);
-}
-.blue .st3{
-    fill:var(--blue-dark);
-}
-.blue .st4{
-    fill:var(--blue-dark);
-}
-.blue .st5{
-    fill:var(--blue-sat);
-}
-
-.purple{
-    background-color: var(--purple);
-    border: 2px solid var(--purple-dark);
-    color:var(--purple-dark);
-}
-.purple .st1{
-    fill:var(--purple-dark);
-}
-.purple .st2{
-    fill:var(--purple);
-}
-.purple .st3{
-    fill:var(--purple-dark);
-}
-.purple .st4{
-    fill:var(--purple-dark);
-}
-.purple .st5{
-    fill:var(--purple-sat);
-}
-
 .white{
     background-color: white;
     border: 2px solid black;
