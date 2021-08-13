@@ -15,7 +15,7 @@ const viewCards = {
 		newDragon.style.color = `${dragon.fillDark}`
 
 		newDragon.innerHTML = `<h2>${dragon.type}</h2>
-		<button>${dragon.icon}</button>
+		<button>${controller.getIcon(dragon.id, dragon.fill, dragon.fillDark, dragon.fillSat)}</button>
 		<output>Clicks: ${dragon.clicks}
 				Level: ${dragon.level}</output>`
 		this.arena.appendChild(newDragon)

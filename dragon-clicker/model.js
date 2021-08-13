@@ -26,8 +26,7 @@ const model = {
 			scale:1,
 			fill,
 			fillDark,
-			fillSat,
-			icon:model.dragonSVG(id, fill, fillDark, fillSat)
+			fillSat
 		}
 	},
 	editDragon: function(id, type, color, clicks, level){

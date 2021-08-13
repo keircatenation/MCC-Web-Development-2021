@@ -12,6 +12,9 @@ const controller = {
 	getOneDragon: function(id){
 		return model.stable[id]
 	},
+	getIcon: function(id, fill, fillDark, fillSat){
+		return model.dragonSVG(id, fill, fillDark, fillSat);
+	},
 	getElements: function(){
 		return model.elements;
 	},
