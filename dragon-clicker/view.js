@@ -10,6 +10,11 @@ const viewCards = {
 		newDragon.addEventListener("click", e=>{
 			controller.dispatch(e, dragon.id)
 		})
+		newDragon.addEventListener("touchstart", e =>{
+			if (e.targetTouches.length == 2){
+				viewAdmin.viewDragonEditor(dragon.id);
+			}
+		})
 		newDragon.style.backgroundColor = `${dragon.fill}`;
 		newDragon.style.border = `2px solid ${dragon.fillDark}`;
 		newDragon.style.color = `${dragon.fillDark}`
@@ -25,7 +30,6 @@ const viewCards = {
 		let dragonArray = controller.getDragons();
 		
 		for (let i = dragonArray.length-1; i>= 0; i--){
-			console.log(dragonArray[i])
 			this.addDragonToScreen(dragonArray[i])
 		}
 	}
