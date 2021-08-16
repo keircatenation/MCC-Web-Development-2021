@@ -6,7 +6,7 @@ const controller = {
 		viewAdmin.init();
 	},
 	getDragons: function(){
-		return model.stable.filter(dragon => (dragon.clicks >= model.filterClicks) && (dragon.level >= model.filterLevel));
+		return model.stable.filter(dragon => (dragon.clicks >= model.filterClicks) && (dragon.level >= model.filterLevel) && (model.filterType ? dragon.type == model.filterType : dragon.type));
 		// can add a filter function in order to get certain dragons!
 	},
 	getOneDragon: function(id){
@@ -40,8 +40,11 @@ const controller = {
 	submitDragonType: function(name, color){
 		model.newElement(name, color)
 	},
-	submitFilter: function(clicks, level){
-		model.editFilters(clicks, level)
+	submitFilter: function(clicks, level, type){
+		model.editFilters(clicks, level, type)
+	},
+	getFilterValues: function(){
+		return {clicks: model.filterClicks, level: model.filterLevel, type: model.filterType}
 	}
 }
 

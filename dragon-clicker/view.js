@@ -110,7 +110,6 @@ const viewAdmin = {
 					<input type="number" id="dragon-level" value="${dragon.level}">
 				</label>
 				<button id="submit-dragon-edits" onclick="viewAdmin.submitDragonEditor(${dragon.id})">Submit changes</button>
-				<button id="close-modal" onclick="viewAdmin.closeModal()">Close Without Submitting</button>
 			</main>
 		</div>`
 		
@@ -139,12 +138,12 @@ const viewAdmin = {
 					<input type="color" id="dragon-fill-sat" value="#717171">
 				</label>
 				<button id="submit-new-dragon" onclick="viewAdmin.submitDragonType()">Submit changes</button>
-				<button id="close-modal" onclick="viewAdmin.closeModal()">Close Without Submitting</button>
 			</main>
 		</div>`
 		this.body.append(modal);
 	},
 	viewFilter: function(){
+		let filters = controller.getFilterValues();
 		let modal = document.createElement("div");
 		modal.setAttribute("class", "modal");
 		modal.setAttribute("id", "modal");
@@ -152,14 +151,20 @@ const viewAdmin = {
 			<div class="close white" onclick="viewAdmin.closeModal()">⨯</div>
 			<main>
 				<h2>filter dragons</h2>
+				<label for="dragon-type" id="dragon-type-label">Show dragons with this element:
+					<select id="dragon-type">
+					<option value="" selected>all elements</option>
+					${this.elementSelectTemplate()}
+					</select>
+				</label>
 				<label for="dragon-clicks" id="dragon-clicks-label">Show Dragons with Clicks higher than:
-					<input type="number" id="dragon-clicks" value="0">
+					<input type="number" id="dragon-clicks" value="${filters.clicks}">
 				</label>
 				<label for="dragon-level" id="dragon-level-label">Show Dragons with a Level higher than:
-					<input type="number" id="dragon-level" value="1">
+					<input type="number" id="dragon-level" value="${filters.level}">
 				</label>
-				<button id="submit-filter" onclick="viewAdmin.submitFilter()">Submit changes</button>
-				<button id="close-modal" onclick="viewAdmin.closeModal()">Close Without Submitting</button>
+				<button id="submit-filter" onclick="viewAdmin.submitFilters()">Submit changes</button>
+				<button id="clear-filter" onclick="viewAdmin.clearFilters()">Clear filters</button>
 			</main>
 		</div>`
 		this.body.append(modal);
@@ -189,14 +194,20 @@ const viewAdmin = {
 		this.closeModal()
 		viewList.render()
 	},
-	submitFilter: function(){
+	submitFilters: function(){
 		let level = document.querySelector("#dragon-level").value;
 		let clicks = document.querySelector("#dragon-clicks").value;
-		controller.submitFilter(clicks, level)
+		let type = document.querySelector("#dragon-type").value;
+		controller.submitFilter(clicks, level, type)
 		viewCards.render();
 		this.closeModal()
 	},
-	elementSelectTemplate: function(dragonType){
+	clearFilters: function(){
+		controller.submitFilter(0,1,"");
+		viewCards.render();
+		this.closeModal();
+	},
+	elementSelectTemplate: function(dragonType = "none"){
 		//creates a string literal for the Dragon Editor modal
 		let template;
 		controller.getElements().forEach(elem => {

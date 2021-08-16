@@ -7,6 +7,7 @@ const model = {
 	stable:[],
 	filterClicks:0,
 	filterLevel:1,
+	filterType:"",
 	addClick: function(dragonID){
 		let dragon = this.stable[dragonID];
 		dragon.clicks += 1;
@@ -56,9 +57,10 @@ const model = {
 	newElement(name, color){
 		this.elements.push([name, color])
 	},
-	editFilters(clicks, level){
+	editFilters(clicks, level, type){
 		this.filterLevel = level;
 		this.filterClicks = clicks;
+		this.filterType = type;
 	},
 	dragonSVG: function(id,light="#ffffff", dark="#000000", saturated="#717171"){
 		return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
