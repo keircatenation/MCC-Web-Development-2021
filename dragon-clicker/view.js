@@ -126,7 +126,7 @@ const viewAdmin = {
 			<main>
 				<h2>ADD DRAGON TYPE</h2>
 				<label for="dragon-type" id="dragon-type-label">Type:
-					<input type="text" id="dragon-type" placeholder="Name your dragon type!">
+					<input type="text" id="dragon-type" placeholder="Name your dragon type!" required>
 				</label>
 				<label for="dragon-fill" id="dragon-fill-label">Main Color:
 					<input type="color" id="dragon-fill" value="#ffffff">
@@ -190,9 +190,14 @@ const viewAdmin = {
 		let newElem = document.querySelector("#dragon-type").value;
 		let newColor = [document.querySelector("#dragon-fill").value, document.querySelector("#dragon-fill-dark").value, document.querySelector("#dragon-fill-sat").value];
 
-		controller.submitDragonType(newElem, newColor)
-		this.closeModal()
-		viewList.render()
+		if (newElem){
+			controller.submitDragonType(newElem, newColor)
+			this.closeModal()
+			viewList.render()
+		} else {
+			alert("Please enter an Element for your Dragon Type!")
+		}
+		
 	},
 	submitFilters: function(){
 		let level = document.querySelector("#dragon-level").value;
