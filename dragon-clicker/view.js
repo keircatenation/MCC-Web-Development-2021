@@ -1,3 +1,4 @@
+// everything about the dragon cards themselves
 const viewCards = {
 	init: function(){
 		this.arena = document.querySelector(".arena");
@@ -25,9 +26,9 @@ const viewCards = {
 				Level: ${dragon.level}</output>`
 		this.arena.appendChild(newDragon)
 	},
-	render: function(){
+	render: function(clicks = 0, level = 1){
 		this.arena.innerHTML = ""
-		let dragonArray = controller.getDragons();
+		let dragonArray = controller.getDragons(clicks, level);
 		
 		for (let i = dragonArray.length-1; i>= 0; i--){
 			this.addDragonToScreen(dragonArray[i])
@@ -35,6 +36,7 @@ const viewCards = {
 	}
 }
 
+// the nav bar of dragon type buttons
 const viewList = {
 	init: function(){
 		this.nav = document.querySelector("nav");
@@ -62,89 +64,108 @@ const viewList = {
 		addElementButton.innerText = "Add Dragon Type!";
 		addElementButton.setAttribute("onclick", "viewAdmin.viewAddDragonType()");
 		addElementButton.setAttribute("class", "white")
-		this.nav.append(addElementButton);
+		let addFilterButton = document.createElement("button");
+		addFilterButton.innerText = "Filter Dragons!";
+		addFilterButton.setAttribute("onclick", "viewAdmin.viewFilter()");
+		addFilterButton.setAttribute("class", "white")
+		this.nav.append(addElementButton, addFilterButton);
 	},
 }
 
+// the modal windows: Dragon Editor, Add Dragon Type, and Filter
 const viewAdmin = {
 	init: function(){
 		this.nav = document.querySelector("nav");
-		this.body = document.querySelector("body")
+		this.body = document.querySelector("body");
 	},
 	viewDragonEditor: function(id){
 		//opens the admin screen to edit the dragon
 		let dragon = controller.getOneDragon(id);
-		//console.log(dragon)
 
 		let modal = document.createElement("div");
 		modal.setAttribute("class", "modal");
 		modal.setAttribute("id", "modal")
-		modal.innerHTML = `<div>
-			<div class="brandModal" style="background-color: ${dragon.fill}; border: 2px solid ${dragon.fillDark}; color: ${dragon.fillDark};">
-				<div class="close" onclick="viewAdmin.closeModal()" style="background-color: ${dragon.fill}; border: 2px solid ${dragon.fillDark}; color: ${dragon.fillDark};">⨯</div>
-				<main>
-					<h2>DRAGON EDITOR</h2>
-					<label for="dragon-type" id="dragon-type-label">Type:
-						<select id="dragon-type">
-						${this.elementSelectTemplate(dragon.type)}
-						</select>
-					</label>
-					<label for="dragon-fill" id="dragon-fill-label">Main Color:
-						<input type="color" id="dragon-fill" value=${dragon.fill}>
-					</label>
-					<label for="dragon-fill-dark" id="dragon-fill-dark-label">Dark Color:
-						<input type="color" id="dragon-fill-dark" value=${dragon.fillDark}>
-					</label>
-					<label for="dragon-fill-sat" id="dragon-fill-sat-label">Saturated Color:
-						<input type="color" id="dragon-fill-sat" value=${dragon.fillSat}>
-					</label>
-					<label for="dragon-clicks" id="dragon-clicks-label">Clicks:
-						<input type="number" id="dragon-clicks" value="${dragon.clicks}">
-					</label>
-					<label for="dragon-level" id="dragon-level-label">Level:
-						<input type="number" id="dragon-level" value="${dragon.level}">
-					</label>
-					<button id="submit-dragon-edits" onclick="viewAdmin.submitDragonEditor(${dragon.id})">Submit changes</button>
-					<button id="close-modal" onclick="viewAdmin.closeModal()">Close Without Submitting</button>
-				</main>
-			</div>
+		modal.innerHTML = `<div class="brandModal" style="background-color: ${dragon.fill}; border: 2px solid ${dragon.fillDark}; color: ${dragon.fillDark};">
+			<div class="close" onclick="viewAdmin.closeModal()" style="background-color: ${dragon.fill}; border: 2px solid ${dragon.fillDark}; color: ${dragon.fillDark};">⨯</div>
+			<main>
+				<h2>DRAGON EDITOR</h2>
+				<label for="dragon-type" id="dragon-type-label">Type:
+					<select id="dragon-type">
+					${this.elementSelectTemplate(dragon.type)}
+					</select>
+				</label>
+				<label for="dragon-fill" id="dragon-fill-label">Main Color:
+					<input type="color" id="dragon-fill" value=${dragon.fill}>
+				</label>
+				<label for="dragon-fill-dark" id="dragon-fill-dark-label">Dark Color:
+					<input type="color" id="dragon-fill-dark" value=${dragon.fillDark}>
+				</label>
+				<label for="dragon-fill-sat" id="dragon-fill-sat-label">Saturated Color:
+					<input type="color" id="dragon-fill-sat" value=${dragon.fillSat}>
+				</label>
+				<label for="dragon-clicks" id="dragon-clicks-label">Clicks:
+					<input type="number" id="dragon-clicks" value="${dragon.clicks}">
+				</label>
+				<label for="dragon-level" id="dragon-level-label">Level:
+					<input type="number" id="dragon-level" value="${dragon.level}">
+				</label>
+				<button id="submit-dragon-edits" onclick="viewAdmin.submitDragonEditor(${dragon.id})">Submit changes</button>
+				<button id="close-modal" onclick="viewAdmin.closeModal()">Close Without Submitting</button>
+			</main>
 		</div>`
 		
 		this.body.append(modal);
 	},
 	viewAddDragonType: function(){
 		//view the screen to add a dragon type
-		// adding to the elements array
 		
 		let modal = document.createElement("div");
 		modal.setAttribute("class", "modal");
 		modal.setAttribute("id", "modal")
-		modal.innerHTML = `<div>
-			<div class="brandModal white">
-				<div class="close white" onclick="viewAdmin.closeModal()">⨯</div>
-				<main>
-					<h2>ADD DRAGON TYPE</h2>
-					<label for="dragon-type" id="dragon-type-label">Type:
-						<input type="text" id="dragon-type" placeholder="Name your dragon type!">
-					</label>
-					<label for="dragon-fill" id="dragon-fill-label">Main Color:
-						<input type="color" id="dragon-fill" value="#ffffff">
-					</label>
-					<label for="dragon-fill-dark" id="dragon-fill-dark-label">Dark Color:
-						<input type="color" id="dragon-fill-dark" value="#000000">
-					</label>
-					<label for="dragon-fill-sat" id="dragon-fill-sat-label">Saturated Color:
-						<input type="color" id="dragon-fill-sat" value="#717171">
-					</label>
-					<button id="submit-new-dragon" onclick="viewAdmin.submitDragonType()">Submit changes</button>
-					<button id="close-modal" onclick="viewAdmin.closeModal()">Close Without Submitting</button>
-				</main>
-			</div>
+		modal.innerHTML = `<div class="brandModal white">
+			<div class="close white" onclick="viewAdmin.closeModal()">⨯</div>
+			<main>
+				<h2>ADD DRAGON TYPE</h2>
+				<label for="dragon-type" id="dragon-type-label">Type:
+					<input type="text" id="dragon-type" placeholder="Name your dragon type!">
+				</label>
+				<label for="dragon-fill" id="dragon-fill-label">Main Color:
+					<input type="color" id="dragon-fill" value="#ffffff">
+				</label>
+				<label for="dragon-fill-dark" id="dragon-fill-dark-label">Dark Color:
+					<input type="color" id="dragon-fill-dark" value="#000000">
+				</label>
+				<label for="dragon-fill-sat" id="dragon-fill-sat-label">Saturated Color:
+					<input type="color" id="dragon-fill-sat" value="#717171">
+				</label>
+				<button id="submit-new-dragon" onclick="viewAdmin.submitDragonType()">Submit changes</button>
+				<button id="close-modal" onclick="viewAdmin.closeModal()">Close Without Submitting</button>
+			</main>
+		</div>`
+		this.body.append(modal);
+	},
+	viewFilter: function(){
+		let modal = document.createElement("div");
+		modal.setAttribute("class", "modal");
+		modal.setAttribute("id", "modal");
+		modal.innerHTML = `<div class="brandModal white">
+			<div class="close white" onclick="viewAdmin.closeModal()">⨯</div>
+			<main>
+				<h2>filter dragons</h2>
+				<label for="dragon-clicks" id="dragon-clicks-label">Show Dragons with Clicks higher than:
+					<input type="number" id="dragon-clicks" value="0">
+				</label>
+				<label for="dragon-level" id="dragon-level-label">Show Dragons with a Level higher than:
+					<input type="number" id="dragon-level" value="1">
+				</label>
+				<button id="submit-filter" onclick="viewAdmin.submitFilter()">Submit changes</button>
+				<button id="close-modal" onclick="viewAdmin.closeModal()">Close Without Submitting</button>
+			</main>
 		</div>`
 		this.body.append(modal);
 	},
 	closeModal: function(){
-		//close the admin screen
+		//close the admin modal
 		document.querySelector("#modal").remove()
 	},
 	submitDragonEditor: function(id){
@@ -160,7 +181,7 @@ const viewAdmin = {
 		viewCards.render();
 	},
 	submitDragonType: function(){
-		//adds a new dragon type to the nav bar, where users can add dragons to the screen - renders the nav bar
+		//adds a new dragon type to the elements array and nav bar, where users can add dragons to the screen - renders the nav bar
 		let newElem = document.querySelector("#dragon-type").value;
 		let newColor = [document.querySelector("#dragon-fill").value, document.querySelector("#dragon-fill-dark").value, document.querySelector("#dragon-fill-sat").value];
 
@@ -168,7 +189,14 @@ const viewAdmin = {
 		this.closeModal()
 		viewList.render()
 	},
+	submitFilter: function(){
+		let level = document.querySelector("#dragon-level").value;
+		let clicks = document.querySelector("#dragon-clicks").value;
+		viewCards.render(clicks, level);
+		this.closeModal()
+	},
 	elementSelectTemplate: function(dragonType){
+		//creates a string literal for the Dragon Editor modal
 		let template;
 		controller.getElements().forEach(elem => {
 			if (elem[0] == dragonType){

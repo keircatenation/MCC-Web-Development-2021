@@ -5,8 +5,8 @@ const controller = {
 		viewCards.init();
 		viewAdmin.init();
 	},
-	getDragons: function(){
-		return model.stable;
+	getDragons: function(clicks = 0, level = 1){
+		return model.stable.filter(dragon => (dragon.clicks >= clicks) && (dragon.level >= level));
 		// can add a filter function in order to get certain dragons!
 	},
 	getOneDragon: function(id){

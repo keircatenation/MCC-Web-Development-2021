@@ -84,8 +84,9 @@ h2{
     margin-top:5px;
 }
 p{
+    font-family: sans-serif;
     text-align: center;
-    font-size: 20pt;
+    font-size: 16pt;
     margin-top:0;
 }
 nav{
