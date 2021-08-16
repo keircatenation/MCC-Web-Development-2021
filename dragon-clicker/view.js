@@ -26,9 +26,9 @@ const viewCards = {
 				Level: ${dragon.level}</output>`
 		this.arena.appendChild(newDragon)
 	},
-	render: function(clicks = 0, level = 1){
+	render: function(){
 		this.arena.innerHTML = ""
-		let dragonArray = controller.getDragons(clicks, level);
+		let dragonArray = controller.getDragons();
 		
 		for (let i = dragonArray.length-1; i>= 0; i--){
 			this.addDragonToScreen(dragonArray[i])
@@ -192,7 +192,8 @@ const viewAdmin = {
 	submitFilter: function(){
 		let level = document.querySelector("#dragon-level").value;
 		let clicks = document.querySelector("#dragon-clicks").value;
-		viewCards.render(clicks, level);
+		controller.submitFilter(clicks, level)
+		viewCards.render();
 		this.closeModal()
 	},
 	elementSelectTemplate: function(dragonType){
