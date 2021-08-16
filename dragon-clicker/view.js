@@ -9,9 +9,11 @@ const viewCards = {
 		newDragon.setAttribute("class", `dragon`);
 		newDragon.setAttribute("id", `${dragon.id}`)
 		newDragon.addEventListener("click", e=>{
+			e.preventDefault();
 			controller.dispatch(e, dragon.id)
 		})
 		newDragon.addEventListener("touchstart", e =>{
+			e.preventDefault();
 			if (e.targetTouches.length == 2){
 				viewAdmin.viewDragonEditor(dragon.id);
 			}
@@ -154,7 +156,7 @@ const viewAdmin = {
 				<label for="dragon-type" id="dragon-type-label">Show dragons with this element:
 					<select id="dragon-type">
 					<option value="" selected>all elements</option>
-					${this.elementSelectTemplate()}
+					${this.elementSelectTemplate(filters.type)}
 					</select>
 				</label>
 				<label for="dragon-clicks" id="dragon-clicks-label">Show Dragons with Clicks higher than:
