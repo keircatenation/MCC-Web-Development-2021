@@ -14,4 +14,4 @@
   - Personal Portfolio: A personal portfolio done for the FreeCodeCamp certificate
  
  #### JavaScript:
-  - Dragon Clicker: an app currently counting how many times a user clicks a dragon button.
+  - Dragon Clicker: an app that keps track of elemental dragons and how many times a user clicks them, with options for adding dragon types, filtering the display, and editing the values of the dragons
