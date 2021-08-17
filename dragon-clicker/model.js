@@ -35,24 +35,12 @@ const model = {
 	editDragon: function(id, type, color, clicks, level){
 		//edit the dragons with values passed from the dragon editor modal
 		let dragon = this.stable[id];
-		if (dragon.type !== type){
-			dragon.type = type;
-		}
-		if (dragon.fill !== color[0]){
-			dragon.fill = color[0];
-		}
-		if (dragon.fillDark !== color[1]){
-			dragon.fillDark = color[1];
-		}
-		if (dragon.fillSat !== color[2]){
-			dragon.fillSat = color[2];
-		}
-		if (dragon.clicks !== clicks){
-			dragon.clicks = Number(clicks);
-		}
-		if (dragon.level !== level){
-			dragon.level = Number(level);
-		}
+		(dragon.type !== type)? dragon.type = type: dragon.type;
+		(dragon.fill !== color[0])? dragon.fill = color[0]: dragon.fill;
+		(dragon.fillDark !== color[1])? dragon.fillDark = color[1]: dragon.fillDark;
+		(dragon.fillSat !== color[2])? dragon.fillSat = color[2]: dragon.fillSat;
+		(dragon.clicks !== clicks)? dragon.clicks = Number(clicks): dragon.clicks;
+		(dragon.level !== level)? dragon.level = Number(level): dragon.level;
 	},
 	newElement(name, color){
 		this.elements.push([name, color])

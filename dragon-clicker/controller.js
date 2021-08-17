@@ -24,11 +24,8 @@ const controller = {
 			
 		} else {
 			model.addClick(id);
-			this.renderCards()
+			viewCards.render()
 		}
-	},
-	renderCards: function(){
-		viewCards.render();
 	},
 	addToStable(element, fill, fillDark, fillSat){
 		model.addDragonToStable(element, fill, fillDark, fillSat);
