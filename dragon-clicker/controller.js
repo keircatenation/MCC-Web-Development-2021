@@ -21,7 +21,6 @@ const controller = {
 	dispatch:function(event,id){
 		if (event.ctrlKey) {
 			viewAdmin.viewDragonEditor(id)
-			
 		} else {
 			model.addClick(id);
 			viewCards.render()

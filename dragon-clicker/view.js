@@ -9,12 +9,11 @@ const viewCards = {
 		newDragon.setAttribute("class", `dragon`);
 		newDragon.setAttribute("id", `${dragon.id}`)
 		newDragon.addEventListener("click", e=>{
-			e.preventDefault();
 			controller.dispatch(e, dragon.id)
 		})
 		newDragon.addEventListener("touchstart", e =>{
-			e.preventDefault();
 			if (e.targetTouches.length == 2){
+				e.preventDefault();
 				viewAdmin.viewDragonEditor(dragon.id);
 			}
 		})
