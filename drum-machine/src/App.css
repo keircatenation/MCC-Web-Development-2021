@@ -1,0 +1,22 @@
+#drum-machine{
+    display:flex;
+    flex-direction: column;
+    padding:1rem;
+}
+
+#display{
+    height: 10vh;
+    border:2px solid black;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    padding:1rem;
+}
+#display p{
+    margin:0;
+}
+
+#drum-pads{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
