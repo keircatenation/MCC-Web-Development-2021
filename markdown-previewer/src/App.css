@@ -6,6 +6,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  height:15vh;
 }
 
 main{
@@ -23,13 +24,13 @@ section{
 }
 
 textarea{
-  max-height: 650px;
+  height:clamp(300px, 75vh, 700px);
   overflow-y:auto;
 }
 
 output{
   display: inline-block;
-  max-height: 650px;
+  height:clamp(300px, 75vh, 700px);
   overflow:auto;
   border: 1px solid black;
   padding:5px 15px;

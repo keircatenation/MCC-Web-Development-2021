@@ -12,8 +12,6 @@ const extension = {
 }
 marked.use(extension)
 
-// console.log(marked.Renderer)
-
 const startingText = `# Header text!
 ## A sub-heading!
 Here is a list:
@@ -23,8 +21,11 @@ Here is a list:
 
 Some code: \`<p>Doing some markdown</p>\`, with **emphasis**.
 
-\`\`\`javascript
-code block\`\`\`
+\`\`\`
+let js = () => {
+  console.log("hello!")
+}
+\`\`\`
 
 > And finally, an image:
 
