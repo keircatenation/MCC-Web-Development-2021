@@ -12,7 +12,7 @@ const extension = {
 }
 marked.use(extension)
 
-console.log(marked.Renderer)
+// console.log(marked.Renderer)
 
 const startingText = `# Header text!
 ## A sub-heading!
@@ -34,6 +34,7 @@ function App() {
   const [text, setText] = useState(startingText)
 
   let cleanHTML = DOMPurify.sanitize(marked(text));
+  console.log(cleanHTML)
 
   return (
     <div className="App">
@@ -48,7 +49,8 @@ function App() {
 
         <section>
           <h3>Output:</h3>
-          <output id="preview" dangerouslySetInnerHTML={{__html: cleanHTML}}></output>
+          <output id="preview" dangerouslySetInnerHTML={{__html: marked(text)}}>
+          </output>
         </section>
         
       </main>

@@ -9,7 +9,7 @@ function DrumPad(props) {
           {/* onClick -> the audio clip in the child element plays */}
           {/* on LETTER button press -> the audio clip in the child element plays */}
           <audio controls className="clip" id={props.description}>
-              <source src="../../resources/Civil-War-Drummer-SoundBible.com-700036269.mp3" type="audio/mpeg"/>
+              <source src="./resources/Civil-War-Drummer-SoundBible.com-700036269.mp3" type="audio/mpeg"/>
           </audio>
       </div>
     )

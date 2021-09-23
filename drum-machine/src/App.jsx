@@ -2,7 +2,7 @@ import { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
 import DrumPad from './components/DrumPad/DrumPad'
-import { drumClips } from './resources/drumpad-data'
+import { drumClips } from './drumpad-data'
 
 function App() {
   const [playing, setPlaying] = useState({description: "Description of the drum clip currently playing."})
