@@ -1,13 +1,17 @@
 {
   "name": "markdown-previewer",
+  "homepage": "https://keircatenation.github.io/MCC-Web-Development-2021/markdown-previewer/",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "dompurify": "^2.3.3",
+    "gh-pages": "^3.2.3",
     "marked": "^3.0.4",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
