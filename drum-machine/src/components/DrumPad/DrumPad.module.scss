@@ -1,8 +1,15 @@
 .root{
-    font-size: 5rem;
     padding:1rem;
+    border: 1px solid black;
+    cursor: pointer;
+    text-align: center;
+    width: 50px;
+    height:50px;
+    margin-bottom: 1rem;
+    h2{
+        margin:0;
+    }
     p{
         margin:0;
-        line-height: 5rem;
     }
 }

@@ -1,3 +1,7 @@
+header{
+    text-align: center;
+}
+
 #drum-machine{
     display:flex;
     flex-direction: column;
@@ -5,11 +9,11 @@
 }
 
 #display{
-    height: 10vh;
     border:2px solid black;
     border-radius: 10px;
     margin-bottom: 1rem;
     padding:1rem;
+    text-align: center;
 }
 #display p{
     margin:0;
