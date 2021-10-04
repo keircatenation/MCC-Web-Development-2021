@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import styles from "./DrumPad.module.scss"
 
 function DrumPad(props) {
