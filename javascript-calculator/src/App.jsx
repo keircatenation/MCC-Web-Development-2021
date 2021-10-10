@@ -1,34 +1,34 @@
 import { useState } from 'react'
 import './App.css'
-import {compile, evaluate, create, all} from 'mathjs'
-
-const config = {
-  number:"BigNumber"
-}
-
-const math = create(all, config)
+import {evaluate} from 'mathjs'
 
 function App() {
   const [input, setInput] = useState("");
-  const [evalString, setEvalString] = useState("0");
+  const [evalArray, setEvalArray] = useState([]);
   const [output, setOutput] = useState("0");
   const [negative, setNegative] = useState(false);
 
   const handleClear = () => {
-    console.log("clear")
+    // console.log("clear")
     setInput("")
     setOutput("0");
-    setEvalString("0");
+    setEvalArray([]);
   }
 
+
   const handleEquals = e => {
-    console.log("equals!")
-    // console.log(math)
-    setEvalString(prev => `${prev}` + `${input}`)
-    let ev = math.evaluate(evalString)
-    console.log(String(ev))
-    setOutput("answer")
-    setEvalString("answer");
+    console.log(`equals! input: ${input}, and evalArray: ${evalArray}`)
+    let evSt = evalArray.join("") + input;
+    console.log("evSt " + evSt)
+
+    try {
+      let ev = String(evaluate(evSt));
+      setOutput(ev);
+      setEvalArray([ev])
+    } catch (err) {
+      alert(err)
+    }
+
     setInput("");
   }
 
@@ -37,8 +37,6 @@ function App() {
       if (input) {
         if (input=="0" && e.target.innerText=="0"){
           return prev
-        } else if (input =="0"){
-          return e.target.innerText
         }
         return prev + e.target.innerText
       } else {
@@ -57,39 +55,50 @@ function App() {
   }
 
   const operatorPress = e => {
-    console.log(e.target.innerText)
-    if (evalString && (evalString != "0")) {
-      let regex = /[+-/*]$/
-      if (evalString.match(regex) && input=="0"){
-        setEvalString(prev => `${prev.replace(regex, e.target.innerText)}`)
-      } else {
-        setEvalString(prev => `${prev}` + `${input}` + e.target.innerText)
-      }
-    } else if (evalString=="0") {
-      setEvalString(`${input}` + e.target.innerText)
+    let lastIndex = evalArray.length-1;
+    console.log("lastnum:" + lastIndex, "operator:" + e.target.innerText)
+
+    let regex = /[+-/*]/
+
+    if (lastIndex < 0) {
+      console.log("no evalArray! " + [input, e.target.innerText])
+      setEvalArray([input, e.target.innerText])
+    } else if(evalArray.length == 1 && input == 0) {
+      console.log(`evalArray is answer is what we operate on`)
+      setEvalArray(prev => [...prev, e.target.innerText])
+      setOutput("0")
+    } else if(evalArray.length == 1) {
+      console.log(`replacing the answer in evalArray to start new op`)
+      setEvalArray([input, e.target.innerText])
+      setOutput("0")
+    } else if (evalArray[lastIndex].match(regex) && !input) {
+      console.log(`replacing the last operator! ${evalArray.slice(0, lastIndex)}`)
+      setEvalArray(prev => [...prev.slice(0, lastIndex), e.target.innerText])
     } else {
-      setEvalString(`${input}` + e.target.innerText)
+      console.log("just string new number and operation")
+      setEvalArray(prev => [...prev, input, e.target.innerText])
     }
+
     setNegative(false)
-    setInput("0");
+    setInput("");
   }
 
   const negativePress = e => {
     if (negative) {
       setInput(prev =>{
-        let regex = /[-()]/g
+        let regex = /[-]/g
         return prev.replace(regex, "")
       })
       setNegative(false)
     } else {
-      setInput(prev => `(-${prev})`)
+      setInput(prev => `-${prev}`)
       setNegative(true)
     }
   }
 
   return (
     <div id="calculator">
-      <div id="evaluation">{evalString? evalString : "0"}</div>
+      <div id="evaluation">{evalArray[0]? evalArray.length >= 2? evalArray.join("") : evalArray[0] : "0"}</div>
       <div id="display">{input? input : output}</div>
       <div className="buttons">
         <div className="left-side">
