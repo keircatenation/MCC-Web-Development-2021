@@ -121,7 +121,7 @@ function App() {
           <button id="multiply" className="operator" onClick={operatorPress}>*</button>
           <button id="divide" className="operator" onClick={operatorPress}>/</button>
           <button id="clear" onClick={handleClear} className="operator">CE</button>
-          <button id="equals" className="operator" onClick={handleEquals}>=</button>
+          <button id="equals" className="operator" onClick={(e) => {if (input) { handleEquals(e) }}}>=</button>
         </div>
       </div>
     </div>
