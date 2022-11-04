@@ -1,0 +1,29 @@
+@layer designSystem, special;
+@import url(theme.css) layer(designSystem);
+@import url(mobile.css) layer(special) (max-width:699px);
+@import url(tablet.css) layer(special) (min-width:700px);
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    color: black;
+    background-color: white;
+}
+
+@layer special {
+    h2 {
+        font-size: 2.5rem;
+        color:red;
+    }
+}
+
+/* @layer theme{
+    h2 {
+        font-size: 1.5rem;
+    }
+} */
+
