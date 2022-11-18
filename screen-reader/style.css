@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin:0;
+    padding:0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: 'nav content'
+                         'nav footer';
+    min-height: 100vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+}
+.main-menu {
+    width: clamp( 250px, 20vw, 400px );
+    border-right: 2px solid brown;
+    padding: 1rem;
+    grid-area: nav;
+}
+.menu-container {
+    position: sticky;
+    top:1rem;
+}
+.logo {
+    background-color: brown;
+    height:50px;
+    width: 100px;
+}
+.main-menu .nav-menu ul {
+    margin:1rem 0 0;
+    padding:0;
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+}
+.main-menu .nav-menu li {
+    list-style: none;
+    position: relative;
+    font-size: 1.5rem;
+}
+.main-menu .nav-menu button {
+    font-size: 1.5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    cursor: pointer;
+}
+.main-menu a {
+    text-decoration: none;
+}
+.main-menu .nav-menu > ul > li > button:hover,
+.main-menu .nav-menu > ul > li > a:hover,
+.main-menu .nav-menu > ul > li > button.selected {
+    border-left: 10px solid brown;
+    padding-left: .5rem;
+}
+.main-menu nav > ul > li > a {
+    color: black;
+}
+.main-menu .nav-menu li > ul {
+    position: absolute;
+    top:-1rem;
+    left:calc( clamp( 250px, 20vw, 400px ) - 1.5rem );
+    background-color: brown;
+    display: none;
+    width: clamp( 250px, 20vw, 400px );
+    padding: 1rem;
+}
+.main-menu .nav-menu li > ul a {
+    color: white;
+}
+.main-menu .nav-menu ul.shown {
+    display: flex;
+}
+.main {
+    grid-area: content;
+    padding:0 1rem;
+}
+.footer {
+    grid-area: footer;
+    padding:0 1rem;
+    border-top: 2px solid brown;
+}
