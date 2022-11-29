@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible tabs</title>
+    <link href="./style.css" rel="stylesheet"/>
+    <script src="./main.js" defer></script>
+    <script src="./menu.js" defer></script>
+</head>
+<body>
+    <aside role="banner" class="main-menu">
+        <div class="menu-container">
+            <div class="logo" aria-label="logo"></div>
+            <nav aria-label="primary" class="nav-menu">
+                <ul role="menubar">
+                    <li role="none">
+                        <button role="menuitem" aria-haspopup="true" aria-expanded="false">Plan Your Visit</button>
+                        <ul role="menu" aria-label="Plan Your Visit">
+                            <li role="none"><a role="menuitem" href="#">Page</a></li>
+                            <li role="none"><a role="menuitem" href="#">Page</a></li>
+                            <li role="none"><a role="menuitem" href="#">Page</a></li>
+                        </ul>
+                    </li>
+                    <li role="none"><a role="menuitem" href="#">Events</a></li>
+                    <li role="none">
+                        <button role="menuitem" aria-haspopup="true" aria-expanded="false">Art</button>
+                        <ul role="menu" aria-label="Art">
+                            <li role="none"><a role="menuitem" href="#">Page</a></li>
+                            <li role="none"><a role="menuitem" href="#">Page</a></li>
+                            <li role="none"><a role="menuitem" href="#">Page</a></li>
+                        </ul>
+                    </li>
+                    <li role="none">
+                        <button role="menuitem" aria-haspopup="true" aria-expanded="false">Learn</button>
+                        <ul role="menu" aria-label="Learn">
+                            <li role="none"><a role="menuitem" href="#">Page</a></li>
+                            <li role="none"><a role="menuitem" href="#">Page</a></li>
+                            <li role="none"><a role="menuitem" href="#">Page</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <main class="main">
+        <header>
+            <h1>Accessible Tabs</h1>
+        </header>
+        <section class="tabs">
+            <h2 id="tablist-1">Your Set of Tabs</h2>
+            <div role="tablist" aria-labelledby="tablist-1">
+                <button id="tab-1" type="button" role="tab" aria-selected="true" aria-controls="tabpanel-1">First Tab</button>
+                <button id="tab-2" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-2">Second Tab</button>
+                <button id="tab-3" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-3">Third Tab</button>
+                <button id="tab-4" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-4">Fourth Tab</button>
+            </div>
+            <div id="tabpanel-1" role="tabpanel" aria-labelledby="tab-1">
+                <p>Attack feet behind the couch destroy couch flop over give attitude hide when guests come over, hopped up on goofballs hunt anything that moves bag stretch leave dead animals as gifts shake treat  chew ipad power cord ,  claw drapes make muffins why must they do that lick butt. Hopped up on goofballs  claw drapes chase mice attack feet chew ipad power cord  behind the couch  stand in front of the computer screen  give attitude make muffins destroy couch why must they do that hunt anything that moves chase imaginary bugs, swat at dog shake treat  leave dead animals as gifts hide when guests come over bag stretch sweet beast under the bed lick butt  rub face on everything flop over chase imaginary bugs.</p>
+            </div>
+            <div id="tabpanel-2" role="tabpanel" aria-labelledby="tab-2" class="is-hidden">
+                <p>Chase mice swat at dog hide when guests come over chase imaginary bugs shake treat  flop over leave dead animals as gifts destroy couch chew ipad power cord  lick butt, hopped up on goofballs make muffins bag stretch attack feet sweet beast under the bed  stand in front of the computer screen   rub face on everything behind the couch give attitude, hunt anything that moves  claw drapes why must they do that flop over hopped up on goofballs  stand in front of the computer screen  attack feet sweet beast under the bed.</p>
+            </div>
+            <div id="tabpanel-3" role="tabpanel" aria-labelledby="tab-3" class="is-hidden">
+                <p>Cat ipsum dolor sit amet, nya nya nyan, see brother cat receive pets, attack out of jealousy i like fish. Plop down in the middle where everybody walks kitten is playing with dead mouse plan your travel, and what the heck just happened, something feels fishy or sleep all day whilst slave is at work, play all night whilst slave is sleeping sit in box but freak human out make funny noise mow mow mow mow mow mow success now attack human. A nice warm laptop for me to sit on i do no work yet get food, shelter, and lots of stuff just like man who lives with us and steal the warm chair right after you get up. Present belly, scratch hand when stroked mrow or claw at curtains stretch and yawn nibble on tuna ignore human bite human hand fish i must find my red catnip fishy fish but the door is opening! how exciting oh, it's you, meh so cry louder at reflection drool. Scoot butt on the rug. Car rides are evil meow. Do doodoo in the litter-box, clickityclack on the piano, be frumpygrumpy destroy couch, but i just saw other cats inside the house and nobody ask me before using my litter box and i just saw other cats inside the house and nobody ask me before using my litter box or find box a little too small and curl up with fur hanging out .</p>
+            </div>
+            <div id="tabpanel-4" role="tabpanel" aria-labelledby="tab-4" class="is-hidden">
+                <p>Meow to be let out. Scratch me now! stop scratching me! paw your face to wake you up in the morning so meow meow you are my owner so here is a dead rat and eat prawns daintily with a claw then lick paws clean wash down prawns with a lap of carnation milk then retire to the warmest spot on the couch to claw at the fabric before taking a catnap hunt by meowing loudly at 5am next to human slave food dispenser or stare at guinea pigs or sit on human they not getting up ever. The dog smells bad attempt to leap between furniture but woefully miscalibrate and bellyflop onto the floor; what's your problem? i meant to do that now i shall wash myself intently attack the child growl at dogs in my sleep. Cat dog hate mouse eat string barf pillow no baths hate everything. Touch water with paw then recoil in horror scratch love you, then bite you for mewl for food at 4am purrr purr littel cat, little cat purr purr or fooled again thinking the dog likes me for lick the curtain just to be annoying. Tweeting a baseball present belly, scratch hand when stroked for fight own tail yet my slave human didn't give me any food so i pooped on the floor. Meowzer ask to go outside and ask to come inside and ask to go outside and ask to come inside munch, munch, chomp, chomp yet meoooow so lick butt. Bleghbleghvomit my furball really tie the room together find box a little too small and curl up with fur hanging out , for meow for annoy kitten brother with poking, or meowing non stop for food. Mew freak human out make funny noise mow mow mow mow mow mow success now attack human. Shake treat bag. Chew the plant play riveting piece on synthesizer keyboard, and i will be pet i will be pet and then i will hiss my left donut is missing, as is my right. Asdflkjaertvlkjasntvkjn (sits on keyboard) push your water glass on the floor, or rub face on everything. Love vommit food and eat it again.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <nav aria-label="footer">
+            <ul>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+        </nav>
+        <p>Copyright</p>
+    </footer>
+</body>
+</html>
