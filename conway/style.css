@@ -1,0 +1,68 @@
+:root {
+    --cols: 50;
+    --rows: 50;
+    --side: 8px;
+    --gap: 1px;
+    --dark:rgb(15, 76, 87);
+    --main:rgb(98, 219, 219);
+}
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin:0;
+    padding:0;
+}
+main {
+    padding:1rem;
+}
+header {
+    background-color: var(--main);
+    padding:1.5rem 1rem;
+}
+h1 {
+    text-transform: uppercase;
+}
+section[aria-label='game controls']{
+    margin-bottom:1rem;
+    display: flex;
+    gap:1rem;
+}
+button {
+    border: none;
+    background-color: var(--main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding:1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.conway {
+    width: calc( calc(var(--side) + var(--gap)) * var(--cols) );
+    border: 3px solid rgb(15, 76, 87);
+    display: grid;
+    grid-template-columns: repeat(var(--cols), var(--side));
+    grid-template-rows: repeat(var(--rows), var(--side));
+    grid-gap: var(--gap);
+    background-color: var(--dark);
+}
+
+.conway > div {
+    width: var(--side);
+    height: var(--side);
+}
+
+.dead.neveralive {
+    background-color: white;
+}
+
+.dead {
+    background-color: var(--main);
+}
+
+.live {
+    background-color: var(--dark);
+}
+
+/* .live {
+    background-color: linear-gradient(crimson, cyan, darkorchid);
+} */
