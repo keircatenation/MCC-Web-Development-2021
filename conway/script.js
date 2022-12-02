@@ -1,8 +1,8 @@
 // declare setup variables
-const cols = 50
-const limit = 50;
-var iter = Infinity
-var stopState = iter
+const cols = 10
+const limit = 100;
+var iter = Infinity;
+var stopState = iter;
 
 // Save important DOM nodes
 const grid = document.querySelector('.conway')
@@ -97,4 +97,27 @@ reset.addEventListener('click', () => {
     cells.forEach(cell => {
         cell.setAttribute('class', Math.random() > .25 ? 'dead neveralive' : 'live')
     })
+})
+
+// PRE-SET CODE ADD-ONS
+const preset1Button = document.querySelector('.preset1')
+
+// the pre-set ones
+const preset1 = [
+  'alive', , , , , , , , , ,
+  'alive', , , , , , , , , ,
+  'alive', , , , , , , , , ,
+  'alive', , , , , , , , , ,
+  'alive', , , , , , , , , ,
+  'alive', , , , , , , , , ,
+  'alive', , , , , , , , , ,
+  'alive', , , , , , , , , ,
+  'alive', , , , , , , , , ,
+  'alive', , , , , , , , , ,
+]
+
+preset1Button.addEventListener('click', () => {
+  cells.forEach( (cell, i) => {
+    cell.setAttribute('class', preset1[i] ? 'live' : 'dead neveralive');
+  } )
 })
