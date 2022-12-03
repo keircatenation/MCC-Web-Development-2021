@@ -1,6 +1,6 @@
 :root {
-    --cols: 10;
-    --rows: 10;
+    --cols: 20;
+    --rows: 20;
     --side: 8px;
     --gap: 1px;
     --dark:rgb(15, 76, 87);
