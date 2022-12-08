@@ -1,7 +1,7 @@
 :root {
     --cols: 20;
     --rows: 20;
-    --side: 8px;
+    --side: 16px;
     --gap: 1px;
     --dark:rgb(15, 76, 87);
     --main:rgb(98, 219, 219);
@@ -36,7 +36,7 @@ button {
     font-weight: bold;
 }
 
-.conway {
+#conway {
     width: calc( calc(var(--side) + var(--gap)) * var(--cols) );
     border: 3px solid rgb(15, 76, 87);
     display: grid;
@@ -46,7 +46,7 @@ button {
     background-color: var(--dark);
 }
 
-.conway > div {
+#conway > div {
     width: var(--side);
     height: var(--side);
 }
