@@ -86,10 +86,69 @@ function stepForward() {
   } )
 }
 
-
-
-
 start.addEventListener( 'click', (e) => {
   iter = stopState;
   go();
 } )
+
+stopBtn.addEventListener( 'click', e => {
+  stopState = iter;
+  iter = limit + 1;
+} )
+
+resume.addEventListener( 'click', e => {
+  iter = stopState;
+  go();
+} )
+
+reset.addEventListener( 'click', e => {
+  stopState = 0;
+  iter = limit + 1;
+  showIter.innerText = 'Iteration: 0';
+  cells.forEach(cell => {
+    cell.setAttribute('class', Math.random() > .15 ? 'dead neveralive' : 'live');
+  })
+} )
+
+step.addEventListener( 'click', e => {
+  if ( iter > limit ) {
+    iter = stopState
+  }
+  stepForward();
+} )
+
+
+// PRE-SET CODE ADD-ONS
+const preset1Button = document.querySelector('#preset1')
+// const preset1 = [
+//   '', '', '', '', '.', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 
+//   '', '', '', '', '', '', '', '', '', '', '', '', '', '', '.', '', '', '', '', '', 
+//   '', '', '', '', '', '', '', '', '', '', '', '', '', '.', '', '', '', '', '', '', 
+//   '', '', '', '', '.', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 
+//   '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 
+//   '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 
+//   '', '', '', '', '', '', '.', '', '', '', '.', '', '', '', '', '', '', '', '', '', 
+//   '', '', '.', '', '', '', '', '', '', '', '', '', '', '', '', '', '.', '', '', '', 
+//   '', '', '', '', '', '.', '', '', '', '', '', '', '.', '', '', '', '', '', '', '', 
+//   '', '', '', '', '', '.', '', '', '.', '', '', '', '', '', '', '.', '.', '', '', '', 
+//   '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 
+//   '', '', '', '', '', '', '', '', '', '.', '', '', '', '', '', '', '', '', '', '', 
+//   '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '.', '', '', '', '', 
+//   '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 
+//   '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 
+// ];
+
+const preset2 = [1, 2 ,3, 4, 5, 50, 100, 101, 120, 60, 40, 45, 65];
+
+preset1Button.addEventListener('click', () => {
+  cells.forEach( (cell, i) => {
+    cell.setAttribute('class', preset2.includes(i) ? 'live' : 'dead neveralive');
+  } )
+})
+
+grid.addEventListener('mouseover', e => {
+  // console.log(e.target, e.relatedTarget, e.originalTarget);
+  if ( e.target.classList.contains('dead') ) {
+    e.target.setAttribute('class', 'live');
+  }
+})
