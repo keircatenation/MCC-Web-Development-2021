@@ -1,4 +1,5 @@
-import { increment } from "./clicks.mjs";
+import { increment as modIncr1 } from "./clicks1.mjs";
+import { increment as modIncr2 } from "./clicks2.mjs";
 
 const closures1 = document.getElementById('closures1')
 const closures2 = document.getElementById('closures2')
@@ -10,10 +11,10 @@ const classes2 = document.getElementById('classes2')
 
 // Modules
 modules1.addEventListener( 'click', (e) => {
-    e.target.innerText = increment();
+    e.target.innerText = modIncr1();
 } )
 modules2.addEventListener( 'click', (e) => {
-    e.target.innerText = increment();
+    e.target.innerText = modIncr2();
 } )
 
 // Closures
