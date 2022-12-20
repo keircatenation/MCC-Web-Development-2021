@@ -2,12 +2,12 @@ import {users as userData} from "./users.js";
 
 class UserManager {
     #users = [];
-    output;
-    button;
+    #output;
+    #button;
     constructor(parentNode) {
-        this.button = parentNode.querySelector('form button')
-        this.output = parentNode.querySelector('.users')
-        this.button.addEventListener('click', e => {
+        this.#button = parentNode.querySelector('form button')
+        this.#output = parentNode.querySelector('.users')
+        this.#button.addEventListener('click', e => {
             e.preventDefault();
             let userId = Number(parentNode.querySelector('input').value);
             this.addUser = userId;
@@ -82,10 +82,10 @@ class UserManager {
         content.appendChild(img);
         content.appendChild(info);
         userDiv.appendChild(content);
-        this.output.appendChild(userDiv);
+        this.#output.appendChild(userDiv);
     }
     renderUsers() {
-        this.output.innerHTML = ''
+        this.#output.innerHTML = ''
         this.#users.forEach(user => {
             this.addUserToDash(user);
         })
