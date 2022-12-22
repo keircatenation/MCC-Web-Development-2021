@@ -12,21 +12,21 @@ class UserManager {
             let userId = Number(parentNode.querySelector('input').value);
             this.addUser = userId;
         })
-        this.#users.push({
-            id: 13,
-            name: 'Keiran',
-            address: {
-                "street": "Kulas Light",
-                "suite": "Apt. 556",
-                "city": "Gwenborough",
-                "zipcode": "92998-3874",
-                "geo": {
-                    "lat": "-37.3159",
-                    "lng": "81.1496"
-                }
-            },
-            email: 'me@me.com'
-        })
+        // this.#users.push({
+        //     id: 13,
+        //     name: 'Keiran',
+        //     address: {
+        //         "street": "Kulas Light",
+        //         "suite": "Apt. 556",
+        //         "city": "Gwenborough",
+        //         "zipcode": "92998-3874",
+        //         "geo": {
+        //             "lat": "-37.3159",
+        //             "lng": "81.1496"
+        //         }
+        //     },
+        //     email: 'me@me.com'
+        // })
         this.renderUsers();
     }
     get getUsers() {
