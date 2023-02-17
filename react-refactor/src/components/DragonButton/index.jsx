@@ -1,13 +1,11 @@
-import { useState } from "react";
-
-export default function Dragon(props) {
-    const { fill1, fill2, fill3, key, name } = props;
-    const [clicks, setClicks] = useState(0);
+export default function DragonButton(props) {
+    const { fill1, fill2, fill3, key, name, addDragon, dragonIndex } = props;
+    // console.log(key, name)
     return (
-        <button onClick={() => setClicks(prev => prev+1)} className='dragon'>
-            <p>{name} | clicks: {clicks}</p>
-            <svg key={key} version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 74 68.44" xmlSpace="preserve">
+        <button key={key} className='dragon-button' onClick={() => addDragon(dragonIndex)}>
+            
+            <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        viewBox="0 0 74 68.44" xmlSpace="preserve">
                 <path fill={fill2} d="M40.02,1.78c0,0-13.48,0.3-16,1.93s-0.3,2.37-5.93,2.37s-7.7,0-9.63,2.07s-1.78,2.07-1.78,8.59s0.3,8.3,1.78,9.48
                     c1.48,1.19,2.07,1.78,0,4.15s-3.85,6.22-3.85,10.81s1.19,9.04,2.96,11.56c1.78,2.52,2.52,1.93,0.15,5.19s-6.81,9.04-6.81,9.04h28.44
                     c12.34-0.15,27.75,0.08,32.15-3.11c6.02-4.37,8.74-8.15,10.37-15.56c1.63-7.41,1.48-18.37-8.59-22.22s-17.33-1.19-17.33-1.19
@@ -44,6 +42,7 @@ export default function Dragon(props) {
                 <path fill={fill3} d="M23.94,13.61c0,0-0.44-4.06,1.78-5.78S30,5.94,32.78,5.94s3.78,0.22,2.83,1.5c-0.94,1.28-2,1.5-4.11,1.61
                 c-2.11,0.11-2.72,0.78-2.56,2.11S28.61,13.61,23.94,13.61z"/>
             </svg>
+            <p>{name}</p>
         </button>
     )
 

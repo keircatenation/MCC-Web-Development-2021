@@ -7,8 +7,7 @@ import { themes, dragonTypes } from './assets/data'
 
 function App() {
   const [theme, setTheme] = useState(themes[0])
-  // we are going to keep track of a litght and dark theme for the arena
-  // we have 
+  const [dragons, setDragons] = useState([]);
 
   function handleThemeChange(val) {
     console.log(val, 'theme changes');
@@ -29,8 +28,8 @@ function App() {
           }
         </select>
       </header>
-      <Main theme={theme} />
-      <Sidebar theme={theme} />
+      <Main theme={theme} dragons={dragons} />
+      <Sidebar theme={theme} setDragons={setDragons} />
       <Footer theme={theme} />
     </>
   )
