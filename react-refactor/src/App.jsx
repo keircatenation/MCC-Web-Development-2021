@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Footer from './components/Footer'
 import Main from './components/Main'
 import Sidebar from './components/Sidebar'
+import Timer from './components/Timer'
 import './App.css'
 import { themes, dragonTypes } from './assets/data'
 
@@ -17,6 +18,7 @@ function App() {
     <>
       <header className={theme}>
         Header!
+        <Timer />
         <select name='theme' id='theme-select' onChange={event => handleThemeChange(event.target.value)}>
           {
             themes.map((themeSelection, index) => {
